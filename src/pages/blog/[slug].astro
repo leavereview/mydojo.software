@@ -18,6 +18,20 @@ interface Props {
 const { post } = Astro.props;
 const { Content } = await post.render();
 
+// Generate FAQPage schema if post has FAQs
+const faqSchema = post.data.faqs && post.data.faqs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": post.data.faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+} : null;
+
 // Get related posts (same tags)
 const allPosts = await getCollection('blog');
 const relatedPosts = allPosts
@@ -35,6 +49,9 @@ const relatedPosts = allPosts
   type="article"
   publishedDate={post.data.date}
 >
+  {faqSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  )}
   <article>
     <!-- Hero -->
     <header class="bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">

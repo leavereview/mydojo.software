@@ -9,6 +9,10 @@ const blogCollection = defineCollection({
     image: z.string().optional(),
     tags: z.array(z.string()).optional(),
     author: z.string().default('MyDojo Team'),
+    faqs: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })).optional(),
   }),
 });
 
