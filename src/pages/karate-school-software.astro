@@ -228,258 +228,51 @@ import PillarPageLayout from '../layouts/PillarPageLayout.astro';
 <li><a href="/martial-arts-billing-software/" class="link">Billing Software Features</a></li>
 </ul>
 
-<h2>Schema Markup Implementation</h2>
-
-<p>Add the following JSON-LD schema to your page's <head> section for enhanced SEO:</p>
-
-<p>&#123;</p>
-<p>"@context": "https://schema.org",</p>
-<p>"@type": "FAQPage",</p>
-<p>"mainEntity": [</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "What is karate school software?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "Karate school software is a management platform designed specifically for karate dojos. It handles student databases, kyu-dan belt progression, kata curriculum tracking, class scheduling, testing management, and billing while using karate-appropriate terminology and workflows."</p>
-<p>&#125;</p>
-<p>&#125;,</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "Can karate software track kata progress?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "Yes, quality karate software includes kata library management. You can track which kata students have learned, which they are currently studying, and which are required for their next belt. Some systems link video resources for reference and allow performance notes."</p>
-<p>&#125;</p>
-<p>&#125;,</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "How does belt testing work in karate software?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "The system tracks attendance and time-in-rank to determine testing eligibility automatically. When students qualify, they can register and pay testing fees. After the test, results are recorded and ranks update automatically, triggering certificate generation and belt ordering workflows."</p>
-<p>&#125;</p>
-<p>&#125;,</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "Does karate software support different styles?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "Yes, configurable systems support various styles (Shotokan, Goju-Ryu, Shito-Ryu, Wado-Ryu, etc.) with custom belt colours, kata lists, and testing requirements specific to each style traditions. You can even manage multiple styles within the same dojo."</p>
-<p>&#125;</p>
-<p>&#125;,</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "How much does karate school software cost?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "Most karate software costs 50-150 GBP per month depending on student count and features. Smaller schools typically find options at 50-80 GBP monthly. Pricing often scales with active student numbers or follows tiered plans based on features."</p>
-<p>&#125;</p>
-<p>&#125;</p>
-<p>]</p>
-<p>&#125;</p>
-
-<p>.karate-header &#123;</p>
-<p>color: #dc2626;</p>
-<p>margin-bottom: 2em !important;</p>
-<p>text-transform: uppercase;</p>
-<p>letter-spacing: 1px;</p>
-<p>font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;</p>
-<p>&#125;</p>
-<p>.karate-intro &#123;</p>
-<p>background-color: #fee2e2;</p>
-<p>padding: 1.5em;</p>
-<p>border-radius: 8px;</p>
-<p>border-left: 4px solid #dc2626;</p>
-<p>font-size: 18px;</p>
-<p>margin: 2em 0;</p>
-<p>line-height: 1.7;</p>
-<p>&#125;</p>
-<p>.karate-checklist li:before &#123;</p>
-<p>content: "🥋";</p>
-<p>color: #dc2626;</p>
-<p>font-weight: normal;</p>
-<p>position: absolute;</p>
-<p>left: 0;</p>
-<p>font-size: 1.2em;</p>
-<p>&#125;</p>
-<p>.belt-progression-table &#123;</p>
-<p>width: 100%;</p>
-<p>border-collapse: collapse;</p>
-<p>margin: 2em 0;</p>
-<p>box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);</p>
-<p>overflow: hidden;</p>
-<p>&#125;</p>
-<p>.belt-progression-table th &#123;</p>
-<p>background-color: #dc2626;</p>
-<p>color: white;</p>
-<p>padding: 1.2em 1em;</p>
-<p>text-align: left;</p>
-<p>font-weight: 600;</p>
-<p>font-size: 1.1em;</p>
-<p>&#125;</p>
-<p>.belt-progression-table td &#123;</p>
-<p>padding: 1em;</p>
-<p>border: 1px solid #e5e7eb;</p>
-<p>transition: background-color 0.2s ease;</p>
-<p>&#125;</p>
-<p>.belt-progression-table tr:nth-child(odd) &#123;</p>
-<p>background-color: #fef2f2;</p>
-<p>&#125;</p>
-<p>.belt-progression-table tr:hover &#123;</p>
-<p>background-color: #fecaca;</p>
-<p>&#125;</p>
-<p>.curriculum-card &#123;</p>
-<p>transition: transform 0.3s ease, box-shadow 0.3s ease;</p>
-<p>height: 100%;</p>
-<p>border: 2px solid transparent;</p>
-<p>&#125;</p>
-<p>.curriculum-card:hover &#123;</p>
-<p>transform: translateY(-8px);</p>
-<p>box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);</p>
-<p>border-color: #dc2626;</p>
-<p>&#125;</p>
-<p>.curriculum-card h3 &#123;</p>
-<p>color: #dc2626;</p>
-<p>border-bottom: 3px solid #dc2626;</p>
-<p>padding-bottom: 0.5em;</p>
-<p>margin-bottom: 1em;</p>
-<p>font-size: 1.3em;</p>
-<p>&#125;</p>
-<p>.curriculum-summary &#123;</p>
-<p>background-color: #fef2f2;</p>
-<p>padding: 1.2em;</p>
-<p>border-radius: 8px;</p>
-<p>margin: 2em 0;</p>
-<p>border: 2px solid #dc2626;</p>
-<p>&#125;</p>
-<p>.feature-list &#123;</p>
-<p>list-style: none;</p>
-<p>padding-left: 0;</p>
-<p>&#125;</p>
-<p>.feature-list li &#123;</p>
-<p>position: relative;</p>
-<p>padding-left: 2em;</p>
-<p>margin-bottom: 0.8em;</p>
-<p>line-height: 1.6;</p>
-<p>font-size: 1.05em;</p>
-<p>&#125;</p>
-<p>.feature-list li:before &#123;</p>
-<p>content: "✓";</p>
-<p>color: #dc2626;</p>
-<p>font-weight: bold;</p>
-<p>position: absolute;</p>
-<p>left: 0;</p>
-<p>background-color: #fee2e2;</p>
-<p>width: 1.6em;</p>
-<p>height: 1.6em;</p>
-<p>border-radius: 50%;</p>
-<p>display: flex;</p>
-<p>align-items: center;</p>
-<p>justify-content: center;</p>
-<p>font-size: 1em;</p>
-<p>&#125;</p>
-<p>.testing-features &#123;</p>
-<p>background-color: #fef2f2;</p>
-<p>padding: 1.8em;</p>
-<p>border-radius: 8px;</p>
-<p>border-left: 6px solid #dc2626;</p>
-<p>margin: 1.5em 0;</p>
-<p>&#125;</p>
-<p>.testing-features li &#123;</p>
-<p>margin-bottom: 0.8em;</p>
-<p>padding-left: 0.5em;</p>
-<p>font-size: 1.05em;</p>
-<p>&#125;</p>
-<p>.workflow-steps &#123;</p>
-<p>background-color: #fef2f2;</p>
-<p>padding: 1.8em 1.8em 1.8em 3em;</p>
-<p>border-radius: 8px;</p>
-<p>counter-reset: step-counter;</p>
-<p>margin: 1.5em 0;</p>
-<p>border: 2px solid #dc2626;</p>
-<p>&#125;</p>
-<p>.workflow-steps li &#123;</p>
-<p>counter-increment: step-counter;</p>
-<p>margin-bottom: 1.2em;</p>
-<p>position: relative;</p>
-<p>list-style-type: none;</p>
-<p>font-size: 1.05em;</p>
-<p>&#125;</p>
-<p>.workflow-steps li:before &#123;</p>
-<p>content: counter(step-counter);</p>
-<p>background-color: #dc2626;</p>
-<p>color: white;</p>
-<p>font-weight: bold;</p>
-<p>width: 2.2em;</p>
-<p>height: 2.2em;</p>
-<p>border-radius: 50%;</p>
-<p>display: inline-flex;</p>
-<p>align-items: center;</p>
-<p>justify-content: center;</p>
-<p>position: absolute;</p>
-<p>left: -2.8em;</p>
-<p>top: -0.2em;</p>
-<p>font-size: 1em;</p>
-<p>&#125;</p>
-<p>.belt-guide-link &#123;</p>
-<p>background-color: #fef3c7;</p>
-<p>padding: 1.2em;</p>
-<p>border-radius: 8px;</p>
-<p>border: 2px solid #f59e0b;</p>
-<p>margin: 1.5em 0;</p>
-<p>text-align: center;</p>
-<p>font-weight: 500;</p>
-<p>&#125;</p>
-<p>.belt-guide-link a &#123;</p>
-<p>color: #dc2626;</p>
-<p>text-decoration: none;</p>
-<p>font-weight: 600;</p>
-<p>&#125;</p>
-<p>.belt-guide-link a:hover &#123;</p>
-<p>text-decoration: underline;</p>
-<p>&#125;</p>
-<p>.testing-workflow &#123;</p>
-<p>background-color: #fef2f2;</p>
-<p>padding: 1.8em;</p>
-<p>border-radius: 8px;</p>
-<p>border: 3px dashed #dc2626;</p>
-<p>margin: 1.5em 0;</p>
-<p>&#125;</p>
-<p>.style-card &#123;</p>
-<p>transition: transform 0.3s ease, box-shadow 0.3s ease;</p>
-<p>height: 100%;</p>
-<p>&#125;</p>
-<p>.style-card:hover &#123;</p>
-<p>transform: translateY(-5px);</p>
-<p>box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);</p>
-<p>&#125;</p>
-<p>.style-card h3 &#123;</p>
-<p>color: #dc2626;</p>
-<p>margin-bottom: 1em;</p>
-<p>font-size: 1.3em;</p>
-<p>&#125;</p>
-<p>.implementation-timeline &#123;</p>
-<p>width: 100%;</p>
-<p>border-collapse: collapse;</p>
-<p>margin: 2em 0;</p>
-<p>box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);</p>
-<p>&#125;</p>
-<p>.implementation-timeline th &#123;</p>
-<p>background-color: #dc2626;</p>
-<p>color: white;</p>
-<p>padding: 1.2em 1em;</p>
-<p>text-align: left;</p>
-<p>font-weight: 600;</p>
-<p>&#125;</p>
-<p>.implementation-timeline td &#123;</p>
-<p>padding: 1em;</p>
-<p>border: 1px solid #e5e7eb;</p>
-<p>&#125;</p>
-<p>.implementation-timeline tr:nth-child(even) &#123;</p>
-<p>background-color: #fef2f2;</p>
-<p>&#125;</p>
-<p>.related-resources &#123;</p>
-<p>list-style: none;</p>
-<p>padding-left: 0</p>
+<!-- FAQPage Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is karate school software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Karate school software is a management platform designed specifically for karate dojos. It handles student databases, kyu-dan belt progression, kata curriculum tracking, class scheduling, testing management, and billing while using karate-appropriate terminology and workflows."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can karate software track kata progress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, quality karate software includes kata library management. You can track which kata students have learned, which they are currently studying, and which are required for their next belt. Some systems link video resources for reference and allow performance notes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does belt testing work in karate software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The system tracks attendance and time-in-rank to determine testing eligibility automatically. When students qualify, they can register and pay testing fees. After the test, results are recorded and ranks update automatically, triggering certificate generation and belt ordering workflows."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does karate software support different styles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, configurable systems support various styles (Shotokan, Goju-Ryu, Shito-Ryu, Wado-Ryu, etc.) with custom belt colours, kata lists, and testing requirements specific to each style traditions. You can even manage multiple styles within the same dojo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does karate school software cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most karate software costs 50-150 GBP per month depending on student count and features. Smaller schools typically find options at 50-80 GBP monthly. Pricing often scales with active student numbers or follows tiered plans based on features."
+      }
+    }
+  ]
+})} is:inline />
 </PillarPageLayout>

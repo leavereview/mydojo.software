@@ -264,272 +264,51 @@ import PillarPageLayout from '../layouts/PillarPageLayout.astro';
 
 
 
-<p>Add the following JSON-LD schema to your page's <head> section:</p>
-
-<p>&#123;</p>
-<p>"@context": "https://schema.org",</p>
-<p>"@type": "FAQPage",</p>
-<p>"mainEntity": [</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "What is a martial arts CRM?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "A martial arts CRM is a customer relationship management system designed for martial arts schools. It handles lead capture and nurturing, trial class management, student engagement tracking, retention monitoring, and communication management throughout the student lifecycle."</p>
-<p>&#125;</p>
-<p>&#125;,</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "How does a martial arts CRM differ from generic CRM software?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "Martial arts CRM includes features specific to the industry: trial class scheduling, belt progression as an engagement metric, family account relationships, attendance-based retention alerts, and integration with martial arts management functions. Generic CRMs lack these purpose-built capabilities."</p>
-<p>&#125;</p>
-<p>&#125;,</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "What lead management features should martial arts CRM include?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "Essential features include: website form integration for lead capture, pipeline stage tracking, trial class scheduling and tracking, automated follow-up sequences, source attribution for marketing analysis, and conversion reporting."</p>
-<p>&#125;</p>
-<p>&#125;,</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "How can CRM improve student retention?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "CRM improves retention through attendance decline alerts, engagement scoring, automated re-engagement communications, milestone recognition, and providing complete relationship history so staff can have informed conversations with at-risk students."</p>
-<p>&#125;</p>
-<p>&#125;,</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "How do I measure martial arts CRM success?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "Key metrics include: lead-to-trial conversion rate, trial-to-enrolment conversion rate, student retention rate, average student tenure, lifetime value, and cost per acquisition. Tracking these before and after CRM implementation quantifies impact."</p>
-<p>&#125;</p>
-<p>&#125;</p>
-<p>]</p>
-<p>&#125;</p>
-
-<p>.crm-header &#123;</p>
-<p>color: #2563eb;</p>
-<p>margin-bottom: 2em !important;</p>
-<p>font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;</p>
-<p>text-transform: uppercase;</p>
-<p>letter-spacing: 0.5px;</p>
-<p>&#125;</p>
-<p>.crm-intro &#123;</p>
-<p>background-color: #dbeafe;</p>
-<p>padding: 1.5em;</p>
-<p>border-radius: 8px;</p>
-<p>border-left: 4px solid #2563eb;</p>
-<p>font-size: 18px;</p>
-<p>margin: 2em 0;</p>
-<p>line-height: 1.7;</p>
-<p>&#125;</p>
-<p>.crm-checklist li:before &#123;</p>
-<p>content: "📊";</p>
-<p>color: #2563eb;</p>
-<p>font-weight: normal;</p>
-<p>position: absolute;</p>
-<p>left: 0;</p>
-<p>font-size: 1.2em;</p>
-<p>&#125;</p>
-<p>.crm-function-card &#123;</p>
-<p>transition: transform 0.3s ease, box-shadow 0.3s ease;</p>
-<p>height: 100%;</p>
-<p>border: 2px solid transparent;</p>
-<p>&#125;</p>
-<p>.crm-function-card:hover &#123;</p>
-<p>transform: translateY(-5px);</p>
-<p>box-shadow: 0 8px 15px rgba(37, 99, 235, 0.1);</p>
-<p>border-color: #2563eb;</p>
-<p>&#125;</p>
-<p>.crm-function-card h3 &#123;</p>
-<p>color: #2563eb;</p>
-<p>border-bottom: 2px solid #2563eb;</p>
-<p>padding-bottom: 0.5em;</p>
-<p>margin-bottom: 1em;</p>
-<p>&#125;</p>
-<p>.crm-summary &#123;</p>
-<p>background-color: #dbeafe;</p>
-<p>padding: 1.2em;</p>
-<p>border-radius: 8px;</p>
-<p>margin: 2em 0;</p>
-<p>border: 2px solid #2563eb;</p>
-<p>&#125;</p>
-<p>.crm-feature-list &#123;</p>
-<p>list-style: none;</p>
-<p>padding-left: 0;</p>
-<p>&#125;</p>
-<p>.crm-feature-list li &#123;</p>
-<p>position: relative;</p>
-<p>padding-left: 2em;</p>
-<p>margin-bottom: 0.8em;</p>
-<p>line-height: 1.6;</p>
-<p>&#125;</p>
-<p>.crm-feature-list li:before &#123;</p>
-<p>content: "✓";</p>
-<p>color: #2563eb;</p>
-<p>font-weight: bold;</p>
-<p>position: absolute;</p>
-<p>left: 0;</p>
-<p>background-color: #dbeafe;</p>
-<p>width: 1.5em;</p>
-<p>height: 1.5em;</p>
-<p>border-radius: 50%;</p>
-<p>display: flex;</p>
-<p>align-items: center;</p>
-<p>justify-content: center;</p>
-<p>&#125;</p>
-<p>.crm-pipeline-list &#123;</p>
-<p>background-color: #eff6ff;</p>
-<p>padding: 1.5em 1.5em 1.5em 2.5em;</p>
-<p>border-radius: 8px;</p>
-<p>border-left: 4px solid #2563eb;</p>
-<p>margin: 1.5em 0;</p>
-<p>&#125;</p>
-<p>.crm-pipeline-list li &#123;</p>
-<p>margin-bottom: 0.8em;</p>
-<p>position: relative;</p>
-<p>&#125;</p>
-<p>.crm-pipeline-list li:before &#123;</p>
-<p>content: "→";</p>
-<p>color: #2563eb;</p>
-<p>font-weight: bold;</p>
-<p>position: absolute;</p>
-<p>left: -1.5em;</p>
-<p>&#125;</p>
-<p>.crm-automation-list &#123;</p>
-<p>background-color: #eff6ff;</p>
-<p>padding: 1.5em;</p>
-<p>border-radius: 8px;</p>
-<p>border: 2px dashed #2563eb;</p>
-<p>margin: 1.5em 0;</p>
-<p>&#125;</p>
-<p>.crm-automation-list li &#123;</p>
-<p>margin-bottom: 0.8em;</p>
-<p>padding-left: 0.5em;</p>
-<p>&#125;</p>
-<p>.retention-risk-list &#123;</p>
-<p>background-color: #fef2f2;</p>
-<p>padding: 1.5em 1.5em 1.5em 2.5em;</p>
-<p>border-radius: 8px;</p>
-<p>border-left: 4px solid #dc2626;</p>
-<p>margin: 1.5em 0;</p>
-<p>&#125;</p>
-<p>.retention-risk-list li &#123;</p>
-<p>margin-bottom: 0.8em;</p>
-<p>position: relative;</p>
-<p>&#125;</p>
-<p>.retention-risk-list li:before &#123;</p>
-<p>content: "⚠️";</p>
-<p>position: absolute;</p>
-<p>left: -1.5em;</p>
-<p>&#125;</p>
-<p>.relationship-timeline-list &#123;</p>
-<p>background-color: #f0f9ff;</p>
-<p>padding: 1.5em;</p>
-<p>border-radius: 8px;</p>
-<p>margin: 1.5em 0;</p>
-<p>border: 2px solid #0ea5e9;</p>
-<p>&#125;</p>
-<p>.relationship-timeline-list li &#123;</p>
-<p>margin-bottom: 0.8em;</p>
-<p>padding-left: 1em;</p>
-<p>&#125;</p>
-<p>.integration-card &#123;</p>
-<p>transition: transform 0.3s ease;</p>
-<p>height: 100%;</p>
-<p>&#125;</p>
-<p>.integration-card:hover &#123;</p>
-<p>transform: translateY(-5px);</p>
-<p>&#125;</p>
-<p>.integration-card h3 &#123;</p>
-<p>color: #2563eb;</p>
-<p>margin-bottom: 1em;</p>
-<p>border-bottom: 2px solid #2563eb;</p>
-<p>padding-bottom: 0.5em;</p>
-<p>&#125;</p>
-<p>.integration-card ul &#123;</p>
-<p>list-style: none;</p>
-<p>padding-left: 0;</p>
-<p>&#125;</p>
-<p>.integration-card li &#123;</p>
-<p>position: relative;</p>
-<p>padding-left: 1.5em;</p>
-<p>margin-bottom: 0.5em;</p>
-<p>&#125;</p>
-<p>.integration-card li:before &#123;</p>
-<p>content: "↔️";</p>
-<p>position: absolute;</p>
-<p>left: 0;</p>
-<p>&#125;</p>
-<p>.metrics-card &#123;</p>
-<p>transition: transform 0.3s ease;</p>
-<p>height: 100%;</p>
-<p>&#125;</p>
-<p>.metrics-card:hover &#123;</p>
-<p>transform: translateY(-5px);</p>
-<p>&#125;</p>
-<p>.metrics-card h3 &#123;</p>
-<p>color: #2563eb;</p>
-<p>margin-bottom: 1em;</p>
-<p>&#125;</p>
-<p>.metrics-card ul &#123;</p>
-<p>list-style: none;</p>
-<p>padding-left: 0;</p>
-<p>&#125;</p>
-<p>.metrics-card li &#123;</p>
-<p>position: relative;</p>
-<p>padding-left: 1.5em;</p>
-<p>margin-bottom: 0.5em;</p>
-<p>&#125;</p>
-<p>.metrics-card li:before &#123;</p>
-<p>content: "📈";</p>
-<p>position: absolute;</p>
-<p>left: 0;</p>
-<p>&#125;</p>
-<p>.roi-examples h3 &#123;</p>
-<p>color: #2563eb;</p>
-<p>margin-top: 0;</p>
-<p>margin-bottom: 0.5em;</p>
-<p>&#125;</p>
-<p>.roi-examples p &#123;</p>
-<p>background-color: white;</p>
-<p>padding: 1em;</p>
-<p>border-radius: 6px;</p>
-<p>border-left: 3px solid #2563eb;</p>
-<p>&#125;</p>
-<p>.crm-faq &#123;</p>
-<p>background-color: #eff6ff;</p>
-<p>padding: 2em;</p>
-<p>border-radius: 8px;</p>
-<p>margin-top: 2em;</p>
-<p>border: 2px solid #2563eb;</p>
-<p>&#125;</p>
-<p>.crm-faq h3 &#123;</p>
-<p>color: #2563eb;</p>
-<p>margin-top: 1.5em;</p>
-<p>background-color: white;</p>
-<p>padding: 0.8em 1em;</p>
-<p>border-radius: 6px;</p>
-<p>border-left: 4px solid #2563eb;</p>
-<p>&#125;</p>
-<p>.crm-faq h3:first-child &#123;</p>
-<p>margin-top: 0;</p>
-<p>&#125;</p>
-<p>.crm-faq p &#123;</p>
-<p>background-color: white;</p>
-<p>padding: 1em;</p>
-<p>border-radius: 6px;</p>
-<p>margin-top: 0.5em;</p>
-<p>&#125;</p>
-<p>.related-resources &#123;</p>
-<p>list-style: none;</p>
-<p>padding-left: 0;</p>
-<p>&#125;</p>
-<p>.related-resources li &#123;</p>
+<!-- FAQPage Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a martial arts CRM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A martial arts CRM is a customer relationship management system designed for martial arts schools. It handles lead capture and nurturing, trial class management, student engagement tracking, retention monitoring, and communication management throughout the student lifecycle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a martial arts CRM differ from generic CRM software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Martial arts CRM includes features specific to the industry: trial class scheduling, belt progression as an engagement metric, family account relationships, attendance-based retention alerts, and integration with martial arts management functions. Generic CRMs lack these purpose-built capabilities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What lead management features should martial arts CRM include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Essential features include: website form integration for lead capture, pipeline stage tracking, trial class scheduling and tracking, automated follow-up sequences, source attribution for marketing analysis, and conversion reporting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can CRM improve student retention?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CRM improves retention through attendance decline alerts, engagement scoring, automated re-engagement communications, milestone recognition, and providing complete relationship history so staff can have informed conversations with at-risk students."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I measure martial arts CRM success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Key metrics include: lead-to-trial conversion rate, trial-to-enrolment conversion rate, student retention rate, average student tenure, lifetime value, and cost per acquisition. Tracking these before and after CRM implementation quantifies impact."
+      }
+    }
+  ]
+})} is:inline />
 </PillarPageLayout>

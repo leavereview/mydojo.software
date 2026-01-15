@@ -254,135 +254,51 @@ import PillarPageLayout from '../layouts/PillarPageLayout.astro';
 <li><a href="/martial-arts-billing-software/" class="link">Billing Software</a> — Payment processing details</li>
 </ul>
 
-<h2>Schema Markup Implementation</h2>
-
-
-
-<p>&#123;</p>
-<p>"@context": "https://schema.org",</p>
-<p>"@type": "FAQPage",</p>
-<p>"mainEntity": [</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "What is dojo management software?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "Dojo management software is a specialised platform for traditional martial arts schools. It handles student databases, kyu/dan rank tracking, grading ceremonies, class scheduling, and billing while using terminology and workflows appropriate to the dojo environment rather than generic gym language."</p>
-<p>&#125;</p>
-<p>&#125;,</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "How is dojo software different from gym software?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "Dojo software is purpose-built for martial arts operations. It includes belt rank progression tracking, testing eligibility automation, curriculum management, and grading ceremony coordination—features absent from generic gym platforms. It also uses appropriate terminology (students vs members, dojo vs facility, sensei vs trainer)."</p>
-<p>&#125;</p>
-<p>&#125;,</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "Can dojo software track multiple martial arts?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "Yes, quality dojo software supports multiple disciplines with separate rank tracks. A school teaching both Karate and Judo can maintain independent belt progressions, testing schedules, and curriculum requirements for each art while sharing student accounts and billing."</p>
-<p>&#125;</p>
-<p>&#125;,</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "How does testing management work?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "Testing management includes automatic eligibility determination based on attendance and time-in-rank, test scheduling with capacity limits, student registration and fee collection, grading panel assignment, results recording, certificate generation, and automatic rank updates upon passing."</p>
-<p>&#125;</p>
-<p>&#125;,</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "What should dojo software cost?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "Dojo management software typically costs £50-200 per month depending on student count and features. Smaller dojos (under 100 students) often find suitable options at £50-80 monthly, while larger schools with advanced features may pay £150-200. Per-student pricing models charge £1-3 per active student."</p>
-<p>&#125;</p>
-<p>&#125;</p>
-<p>]</p>
-<p>&#125;</p>
-
-<p>.dojo-intro &#123;</p>
-<p>color: #7c2d12;</p>
-<p>margin-bottom: 2em !important;</p>
-<p>font-family: Georgia, serif;</p>
-<p>&#125;</p>
-<p>.traditional-box &#123;</p>
-<p>background-color: #fef3c7;</p>
-<p>border-left: 4px solid #d97706;</p>
-<p>padding: 1.5em;</p>
-<p>margin: 2em 0;</p>
-<p>font-style: italic;</p>
-<p>&#125;</p>
-<p>.checklist &#123;</p>
-<p>list-style: none;</p>
-<p>padding-left: 0;</p>
-<p>&#125;</p>
-<p>.checklist li &#123;</p>
-<p>position: relative;</p>
-<p>padding-left: 1.5em;</p>
-<p>margin-bottom: 0.5em;</p>
-<p>&#125;</p>
-<p>.checklist li:before &#123;</p>
-<p>content: "⚫";</p>
-<p>color: #7c2d12;</p>
-<p>font-weight: bold;</p>
-<p>position: absolute;</p>
-<p>left: 0;</p>
-<p>&#125;</p>
-<p>.timeline-table &#123;</p>
-<p>width: 100%;</p>
-<p>border-collapse: collapse;</p>
-<p>margin: 1.5em 0;</p>
-<p>&#125;</p>
-<p>.timeline-table th &#123;</p>
-<p>background-color: #7c2d12;</p>
-<p>color: white;</p>
-<p>padding: 1em;</p>
-<p>text-align: left;</p>
-<p>&#125;</p>
-<p>.timeline-table td &#123;</p>
-<p>padding: 1em;</p>
-<p>border: 1px solid #e5e7eb;</p>
-<p>&#125;</p>
-<p>.timeline-table tr:nth-child(even) &#123;</p>
-<p>background-color: #fef3c7;</p>
-<p>&#125;</p>
-<p>.doj-faq &#123;</p>
-<p>background-color: #fef3c7;</p>
-<p>padding: 2em;</p>
-<p>border-radius: 8px;</p>
-<p>margin-top: 2em;</p>
-<p>border: 1px solid #d97706;</p>
-<p>&#125;</p>
-<p>.doj-faq h3 &#123;</p>
-<p>color: #7c2d12;</p>
-<p>margin-top: 1.5em;</p>
-<p>border-bottom: 2px solid #d97706;</p>
-<p>padding-bottom: 0.5em;</p>
-<p>&#125;</p>
-<p>.doj-faq h3:first-child &#123;</p>
-<p>margin-top: 0;</p>
-<p>&#125;</p>
-<p>.doj-faq p &#123;</p>
-<p>background-color: white;</p>
-<p>padding: 1em;</p>
-<p>border-radius: 4px;</p>
-<p>border-left: 3px solid #7c2d12;</p>
-<p>&#125;</p>
-<p>@media (max-width: 768px) &#123;</p>
-<p>.wp-block-columns &#123;</p>
-<p>flex-direction: column;</p>
-<p>&#125;</p>
-<p>.timeline-table &#123;</p>
-<p>display: block;</p>
-<p>overflow-x: auto;</p>
-<p>&#125;</p>
-<p>.doj-faq &#123;</p>
-<p>padding: 1em;</p>
-<p>&#125;</p>
-<p>&#125;</p>
+<!-- FAQPage Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is dojo management software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dojo management software is a specialised platform for traditional martial arts schools. It handles student databases, kyu/dan rank tracking, grading ceremonies, class scheduling, and billing while using terminology and workflows appropriate to the dojo environment rather than generic gym language."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is dojo software different from gym software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dojo software is purpose-built for martial arts operations. It includes belt rank progression tracking, testing eligibility automation, curriculum management, and grading ceremony coordination—features absent from generic gym platforms. It also uses appropriate terminology (students vs members, dojo vs facility, sensei vs trainer)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can dojo software track multiple martial arts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, quality dojo software supports multiple disciplines with separate rank tracks. A school teaching both Karate and Judo can maintain independent belt progressions, testing schedules, and curriculum requirements for each art while sharing student accounts and billing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does testing management work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Testing management includes automatic eligibility determination based on attendance and time-in-rank, test scheduling with capacity limits, student registration and fee collection, grading panel assignment, results recording, certificate generation, and automatic rank updates upon passing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should dojo software cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dojo management software typically costs £50-200 per month depending on student count and features. Smaller dojos (under 100 students) often find suitable options at £50-80 monthly, while larger schools with advanced features may pay £150-200. Per-student pricing models charge £1-3 per active student."
+      }
+    }
+  ]
+})} is:inline />
 </PillarPageLayout>

@@ -305,5 +305,43 @@ import PillarPageLayout from '../layouts/PillarPageLayout.astro';
 <li><a href="/martial-arts-crm/" class="link">Martial Arts CRM</a> — Lead and member management</li>
 </ul>
 
-<p>&#123;   "@context": "https://schema.org",   "@type": "FAQPage",   "mainEntity": [     &#123;"@type": "Question", "name": "What is MMA gym software?", "acceptedAnswer": &#123;"@type": "Answer", "text": "MMA gym software is a management platform for mixed martial arts facilities handling multi-discipline scheduling, fighter development, and varied membership models."&#125;&#125;,     &#123;"@type": "Question", "name": "How does MMA software handle multiple disciplines?", "acceptedAnswer": &#123;"@type": "Answer", "text": "Quality MMA software supports separate class categories, progression systems, and scheduling for each discipline while maintaining unified membership records."&#125;&#125;   ] &#125;</p>
+<!-- FAQPage Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is MMA gym software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MMA gym software is a management platform for mixed martial arts facilities handling multi-discipline scheduling, fighter development, and varied membership models."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does MMA software handle multiple disciplines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quality MMA software supports separate class categories, progression systems, and scheduling for each discipline while maintaining unified membership records."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can MMA software track fighter development?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, competition-focused features include training logs, sparring session records, fight history, weight tracking for cuts, and goal setting. These tools help coaches and fighters monitor preparation and development over time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does MMA software track BJJ belt ranks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, MMA software includes BJJ belt progression tracking from white through black belt, including stripe tracking. This exists alongside any progression systems used for other disciplines taught at the gym."
+      }
+    }
+  ]
+})} is:inline />
 </PillarPageLayout>

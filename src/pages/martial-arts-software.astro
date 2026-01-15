@@ -389,113 +389,43 @@ import PillarPageLayout from '../layouts/PillarPageLayout.astro';
 
 <p>Yes, belt progression tracking is a core feature of dedicated martial arts software. Comprehensive systems include visual curriculum maps, individual progress tracking against requirements, stripe and incremental achievements, automatic testing eligibility determination based on attendance and time-in-rank, testing event scheduling, certificate generation, and support for multiple martial arts disciplines with different belt systems.</p>
 
-<h2>Schema Markup Implementation</h2>
-
-
-
-<p>&#123;</p>
-<p>"@context": "https://schema.org",</p>
-<p>"@type": "FAQPage",</p>
-<p>"mainEntity": [</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "What is martial arts software?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "Martial arts software is a specialised management platform designed for dojos, academies, and combat sports gyms. It handles student databases, belt progression tracking, class scheduling, membership billing, attendance, and communication—all tailored to the unique operational needs of martial arts instruction rather than generic gym management."</p>
-<p>&#125;</p>
-<p>&#125;,</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "How much does martial arts software cost?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "Most martial arts software costs between £50-300 per month depending on your student count and required features. Common pricing models include per-student charges (£1-3 per active student), tiered plans based on school size, or flat monthly rates. Additional costs may include payment processing fees (2-3%), SMS credits, and premium feature add-ons."</p>
-<p>&#125;</p>
-<p>&#125;,</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "What features should I look for in martial arts management software?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "Essential features include: student database with family accounts, belt/rank progression tracking with curriculum mapping, class scheduling with capacity management, recurring billing with multiple payment options, attendance tracking with check-in systems, communication tools (email, SMS, push notifications), student portal for self-service, mobile apps for students and instructors, and comprehensive reporting."</p>
-<p>&#125;</p>
-<p>&#125;,</p>
-<p>&#123;</p>
-<p>"@type": "Question",</p>
-<p>"name": "Can martial arts software track belt progression and testing?",</p>
-<p>"acceptedAnswer": &#123;</p>
-<p>"@type": "Answer",</p>
-<p>"text": "Yes, belt progression tracking is a core feature of dedicated martial arts software. Comprehensive systems include visual curriculum maps, individual progress tracking against requirements, stripe and incremental achievements, automatic testing eligibility determination based on attendance and time-in-rank, testing event scheduling, certificate generation, and support for multiple martial arts disciplines with different belt systems."</p>
-<p>&#125;</p>
-<p>&#125;</p>
-<p>]</p>
-<p>&#125;</p>
-
-<p>.lead-intro &#123;</p>
-<p>color: #1e40af;</p>
-<p>margin-bottom: 2em !important;</p>
-<p>&#125;</p>
-<p>.highlight-box &#123;</p>
-<p>background-color: #f0f9ff;</p>
-<p>border-left: 4px solid #1e40af;</p>
-<p>padding: 1.5em;</p>
-<p>margin: 2em 0;</p>
-<p>&#125;</p>
-<p>.checklist &#123;</p>
-<p>list-style: none;</p>
-<p>padding-left: 0;</p>
-<p>&#125;</p>
-<p>.checklist li &#123;</p>
-<p>position: relative;</p>
-<p>padding-left: 1.5em;</p>
-<p>margin-bottom: 0.5em;</p>
-<p>&#125;</p>
-<p>.checklist li:before &#123;</p>
-<p>content: "✓";</p>
-<p>color: #10b981;</p>
-<p>font-weight: bold;</p>
-<p>position: absolute;</p>
-<p>left: 0;</p>
-<p>&#125;</p>
-<p>.pricing-table &#123;</p>
-<p>width: 100%;</p>
-<p>border-collapse: collapse;</p>
-<p>margin: 2em 0;</p>
-<p>&#125;</p>
-<p>.pricing-table th &#123;</p>
-<p>background-color: #1e40af;</p>
-<p>color: white;</p>
-<p>padding: 1em;</p>
-<p>text-align: left;</p>
-<p>&#125;</p>
-<p>.pricing-table td &#123;</p>
-<p>padding: 1em;</p>
-<p>border: 1px solid #e5e7eb;</p>
-<p>&#125;</p>
-<p>.pricing-table tr:nth-child(even) &#123;</p>
-<p>background-color: #f9fafb;</p>
-<p>&#125;</p>
-<p>.faq-section &#123;</p>
-<p>background-color: #f8fafc;</p>
-<p>padding: 2em;</p>
-<p>border-radius: 8px;</p>
-<p>margin-top: 2em;</p>
-<p>&#125;</p>
-<p>.faq-section h3 &#123;</p>
-<p>color: #1e40af;</p>
-<p>margin-top: 1.5em;</p>
-<p>&#125;</p>
-<p>.faq-section h3:first-child &#123;</p>
-<p>margin-top: 0;</p>
-<p>&#125;</p>
-<p>@media (max-width: 768px) &#123;</p>
-<p>.wp-block-columns &#123;</p>
-<p>flex-direction: column;</p>
-<p>&#125;</p>
-<p>.pricing-table &#123;</p>
-<p>display: block;</p>
-<p>overflow-x: auto;</p>
-<p>&#125;</p>
-<p>&#125;</p>
+<!-- FAQPage Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is martial arts software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Martial arts software is a specialised management platform designed for dojos, academies, and combat sports gyms. It handles student databases, belt progression tracking, class scheduling, membership billing, attendance, and communication—all tailored to the unique operational needs of martial arts instruction rather than generic gym management."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does martial arts software cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most martial arts software costs between £50-300 per month depending on your student count and required features. Common pricing models include per-student charges (£1-3 per active student), tiered plans based on school size, or flat monthly rates. Additional costs may include payment processing fees (2-3%), SMS credits, and premium feature add-ons."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What features should I look for in martial arts management software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Essential features include: student database with family accounts, belt/rank progression tracking with curriculum mapping, class scheduling with capacity management, recurring billing with multiple payment options, attendance tracking with check-in systems, communication tools (email, SMS, push notifications), student portal for self-service, mobile apps for students and instructors, and comprehensive reporting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can martial arts software track belt progression and testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, belt progression tracking is a core feature of dedicated martial arts software. Comprehensive systems include visual curriculum maps, individual progress tracking against requirements, stripe and incremental achievements, automatic testing eligibility determination based on attendance and time-in-rank, testing event scheduling, certificate generation, and support for multiple martial arts disciplines with different belt systems."
+      }
+    }
+  ]
+})} is:inline />
 </PillarPageLayout>
