@@ -31,4 +31,4 @@ jobs:
           REMOTE_USER: deploy
           SOURCE: dist/
           TARGET: /var/www/mydojo.software/
-          ARGS: "-rlgoDzvc -i --delete"
+          ARGS: "-rltDvz --delete"
