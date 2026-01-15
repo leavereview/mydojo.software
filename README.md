@@ -1,43 +1,156 @@
-# Astro Starter Kit: Minimal
+# MyDojo Static Website
 
-```sh
-npm create astro@latest -- --template minimal
+A fast, SEO-optimized static website built with Astro for MyDojo.Software - the martial arts management platform.
+
+## 🚀 Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📁 Project Structure
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
+```
+mydojo-static/
 ├── public/
+│   ├── images/         # Static images
+│   ├── logo.svg        # Site logo
+│   └── favicon.svg     # Favicon
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/     # Reusable components
+│   │   ├── Navigation.astro
+│   │   └── Footer.astro
+│   ├── content/
+│   │   └── blog/       # Blog posts (Markdown)
+│   ├── layouts/        # Page layouts
+│   │   ├── BaseLayout.astro
+│   │   └── PillarPageLayout.astro
+│   ├── pages/          # All website pages
+│   │   ├── index.astro
+│   │   ├── blog/
+│   │   └── *.astro     # Pillar pages
+│   ├── styles/
+│   │   └── global.css  # Tailwind + custom styles
+│   └── utils/
+│       └── internalLinks.ts
+├── astro.config.mjs
+├── tailwind.config.mjs
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🎨 Design System
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Colors
+- **Primary Navy**: `#1A1A2E`
+- **Accent Red**: `#E94560`
+- **Light Red**: `#FFE7EC`
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Typography
+- Font: Inter (Google Fonts)
+- Headings: Bold (700)
+- Body: Regular (400)
 
-## 🧞 Commands
+### Components
+- `.btn-primary` - Red button
+- `.btn-secondary` - White outlined button
+- `.card` - White card with shadow
+- `.badge-primary` - Red badge
+- `.container-custom` - Max-width container
 
-All commands are run from the root of the project, from a terminal:
+## 📝 Adding Content
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### New Blog Post
+Create a new `.md` file in `src/content/blog/`:
 
-## 👀 Want to learn more?
+```markdown
+---
+title: "Your Post Title"
+description: "Meta description"
+date: "2025-01-15"
+image: "/images/your-image.jpg"
+tags: ["karate", "belts"]
+author: "MyDojo Team"
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Your markdown content here...
+```
+
+### New Page
+Create a new `.astro` file in `src/pages/`:
+
+```astro
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page Title" description="Page description">
+  <!-- Your content -->
+</BaseLayout>
+```
+
+## 🚀 Deployment
+
+### Cloudflare Pages (Recommended)
+
+1. Push to GitHub
+2. Connect to Cloudflare Pages
+3. Set build command: `npm run build`
+4. Set output directory: `dist`
+
+Or use GitHub Actions (see `.github/workflows/deploy.yml`)
+
+### Manual Deploy
+
+```bash
+npm run build
+# Upload 'dist' folder to your hosting
+```
+
+## 🔧 Configuration
+
+### Site URL
+Update `site` in `astro.config.mjs`:
+
+```js
+export default defineConfig({
+  site: 'https://yourdomain.com',
+  // ...
+});
+```
+
+### Colors
+Edit `tailwind.config.mjs` to change brand colors.
+
+### Navigation
+Edit `src/components/Navigation.astro` to update menu items.
+
+## 📊 SEO Features
+
+- ✅ Semantic HTML
+- ✅ Meta tags (title, description, OG, Twitter)
+- ✅ Schema.org JSON-LD
+- ✅ Automatic sitemap generation
+- ✅ Clean URLs
+- ✅ Internal linking structure
+- ✅ Mobile responsive
+- ✅ Fast page loads (static HTML)
+
+## 🛠️ Tech Stack
+
+- [Astro](https://astro.build) - Static site generator
+- [Tailwind CSS](https://tailwindcss.com) - Styling
+- [TypeScript](https://typescriptlang.org) - Type safety
+
+## 📄 License
+
+Proprietary - MyDojo Software

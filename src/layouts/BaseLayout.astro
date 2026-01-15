@@ -1,0 +1,122 @@
+---
+// BaseLayout.astro - Main layout with SEO and schema.org
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  publishedDate?: string;
+  modifiedDate?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = 'MyDojo Software - The complete martial arts management platform for dojos, karate schools, and MMA gyms. Streamline scheduling, billing, and student management.',
+  image = '/images/og-default.jpg',
+  type = 'website',
+  publishedDate,
+  modifiedDate,
+  noindex = false
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = title === 'Home' ? 'MyDojo Software - Martial Arts Management Platform' : `${title} | MyDojo Software`;
+
+// Schema.org JSON-LD
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://mydojo.software/#organization",
+      "name": "MyDojo Software",
+      "url": "https://mydojo.software",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mydojo.software/logo.svg"
+      },
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mydojo.software/#website",
+      "url": "https://mydojo.software",
+      "name": "MyDojo Software",
+      "publisher": {
+        "@id": "https://mydojo.software/#organization"
+      }
+    },
+    {
+      "@type": type === 'article' ? 'Article' : 'WebPage',
+      "@id": canonicalURL.href,
+      "url": canonicalURL.href,
+      "name": title,
+      "description": description,
+      "isPartOf": {
+        "@id": "https://mydojo.software/#website"
+      },
+      ...(publishedDate && { "datePublished": publishedDate }),
+      ...(modifiedDate && { "dateModified": modifiedDate })
+    }
+  ]
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  
+  <!-- Primary Meta Tags -->
+  <title>{fullTitle}</title>
+  <meta name="title" content={fullTitle} />
+  <meta name="description" content={description} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+  
+  <!-- Canonical -->
+  <link rel="canonical" href={canonicalURL} />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={type} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(image, Astro.site)} />
+  <meta property="og:site_name" content="MyDojo Software" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={canonicalURL} />
+  <meta property="twitter:title" content={fullTitle} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content={new URL(image, Astro.site)} />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+</head>
+<body class="min-h-screen flex flex-col">
+  <Navigation />
+  
+  <main class="flex-grow pt-16 md:pt-20">
+    <slot />
+  </main>
+  
+  <Footer />
+</body>
+</html>

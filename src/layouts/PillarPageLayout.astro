@@ -1,0 +1,142 @@
+---
+// PillarPageLayout.astro - Template for SEO pillar pages
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  heroImage?: string;
+  heroImageAlt?: string;
+  badge?: string;
+  ctaText?: string;
+  ctaLink?: string;
+}
+
+const {
+  title,
+  description,
+  heroImage = '/images/full-shot-asian-people-practicing-taekwondo.jpg',
+  heroImageAlt = 'Martial arts training',
+  badge = 'Complete Guide',
+  ctaText = 'Start Free Trial',
+  ctaLink = '/contact/'
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy via-brand-navy to-gray-900 text-white">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style={`background-image: url('${heroImage}'); background-size: cover; background-position: center;`}></div>
+    </div>
+    <div class="container-custom relative py-16 md:py-24">
+      <div class="max-w-4xl">
+        <span class="badge-primary mb-6">{badge}</span>
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          {title}
+        </h1>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl">
+          {description}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href={ctaLink} class="btn-primary text-lg px-8 py-4">
+            {ctaText}
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="#content" class="btn-secondary text-lg px-8 py-4">
+            Read Guide
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table of Contents (optional sidebar) -->
+  <section id="content" class="section bg-white">
+    <div class="container-custom">
+      <div class="lg:grid lg:grid-cols-4 lg:gap-12">
+        <!-- Main Content -->
+        <div class="lg:col-span-3">
+          <article class="prose max-w-none">
+            <slot />
+          </article>
+        </div>
+        
+        <!-- Sidebar -->
+        <aside class="hidden lg:block">
+          <div class="sticky top-24">
+            <!-- Quick Links Card -->
+            <div class="card mb-6">
+              <h3 class="text-lg font-bold text-brand-navy mb-4">Quick Links</h3>
+              <ul class="space-y-2 text-sm">
+                <li>
+                  <a href="/martial-arts-software/" class="text-gray-600 hover:text-brand-red transition-colors">
+                    → Martial Arts Software
+                  </a>
+                </li>
+                <li>
+                  <a href="/dojo-management-software/" class="text-gray-600 hover:text-brand-red transition-colors">
+                    → Dojo Management
+                  </a>
+                </li>
+                <li>
+                  <a href="/karate-school-software/" class="text-gray-600 hover:text-brand-red transition-colors">
+                    → Karate Software
+                  </a>
+                </li>
+                <li>
+                  <a href="/mma-gym-software/" class="text-gray-600 hover:text-brand-red transition-colors">
+                    → MMA Gym Software
+                  </a>
+                </li>
+                <li>
+                  <a href="/martial-arts-crm/" class="text-gray-600 hover:text-brand-red transition-colors">
+                    → Martial Arts CRM
+                  </a>
+                </li>
+                <li>
+                  <a href="/martial-arts-billing-software/" class="text-gray-600 hover:text-brand-red transition-colors">
+                    → Billing Software
+                  </a>
+                </li>
+              </ul>
+            </div>
+            
+            <!-- CTA Card -->
+            <div class="bg-brand-red-light rounded-xl p-6">
+              <h3 class="text-lg font-bold text-brand-navy mb-2">Ready to Get Started?</h3>
+              <p class="text-sm text-gray-600 mb-4">
+                Try MyDojo free for 14 days. No credit card required.
+              </p>
+              <a href="/contact/" class="btn-primary w-full text-center text-sm">
+                Start Free Trial
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-gradient-to-r from-brand-red to-brand-red-dark text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Ready to Transform Your Martial Arts School?
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Join hundreds of dojos and academies already using MyDojo to streamline their operations.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">
+          Start Your Free Trial
+        </a>
+        <a href="/pricing/" class="btn bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4">
+          View Pricing
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

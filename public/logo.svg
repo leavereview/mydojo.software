@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <!-- Belt Icon -->
+  <g>
+    <!-- Belt strap -->
+    <rect x="8" y="18" width="28" height="14" rx="2" fill="#E94560"/>
+    <!-- Belt knot -->
+    <path d="M36 22 L44 18 L44 32 L36 28 Z" fill="#E94560"/>
+    <circle cx="40" cy="25" r="3" fill="#1A1A2E"/>
+    <!-- Hanging belt ends -->
+    <path d="M38 28 Q42 35 40 42" stroke="#E94560" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M42 28 Q46 35 48 42" stroke="#E94560" stroke-width="4" stroke-linecap="round" fill="none"/>
+  </g>
+  <!-- Text -->
+  <text x="60" y="34" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700" fill="#1A1A2E">
+    My<tspan fill="#E94560">Dojo</tspan>
+  </text>
+</svg>

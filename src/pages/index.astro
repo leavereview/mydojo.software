@@ -1,17 +1,283 @@
 ---
+// Homepage - index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
 
+const features = [
+  {
+    icon: 'calendar',
+    title: 'Class Scheduling',
+    description: 'Powerful scheduling tools with recurring classes, instructor assignments, and automated reminders.'
+  },
+  {
+    icon: 'users',
+    title: 'Student Management',
+    description: 'Track student progress, belt ranks, attendance, and performance with comprehensive profiles.'
+  },
+  {
+    icon: 'credit-card',
+    title: 'Billing & Payments',
+    description: 'Automated billing, membership management, and integrated payment processing.'
+  },
+  {
+    icon: 'chart',
+    title: 'Reports & Analytics',
+    description: 'Real-time insights into your dojo performance, revenue, and student retention.'
+  },
+  {
+    icon: 'belt',
+    title: 'Belt & Rank Tracking',
+    description: 'Manage belt progression, testing schedules, and certification for all martial arts styles.'
+  },
+  {
+    icon: 'mobile',
+    title: 'Mobile App',
+    description: 'Students and parents can book classes, track progress, and make payments on the go.'
+  }
+];
+
+const testimonials = [
+  {
+    quote: "MyDojo transformed how we run our karate school. Attendance is up 30% since we started using the app.",
+    author: "Sensei Mike Thompson",
+    role: "Head Instructor, Thompson Karate Academy"
+  },
+  {
+    quote: "The billing automation alone saves us 10+ hours every month. Best investment we've made.",
+    author: "Sarah Chen",
+    role: "Owner, Chen's MMA & BJJ"
+  },
+  {
+    quote: "Parents love being able to see their kids' progress. It's improved our retention significantly.",
+    author: "Master Kim",
+    role: "Grandmaster, Kim's Taekwondo"
+  }
+];
+
+const stats = [
+  { number: '500+', label: 'Martial Arts Schools' },
+  { number: '50,000+', label: 'Students Managed' },
+  { number: '99.9%', label: 'Uptime' },
+  { number: '4.9/5', label: 'Customer Rating' }
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>MyDojo Software</title>
-	</head>
-	<body>
-		<h1>MyDojo Software</h1>
-		<p>Coming soon...</p>
-	</body>
-</html>
+<BaseLayout title="Home" description="MyDojo Software - The complete martial arts management platform for dojos, karate schools, MMA gyms, and BJJ academies. Streamline scheduling, billing, and student management.">
+  
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy via-brand-navy to-gray-900 text-white">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: url('/images/group-diverse-teens-young-people-doing-activities-together-celebrating-world-youth-skills-day.jpg'); background-size: cover; background-position: center;"></div>
+    </div>
+    <div class="container-custom relative py-20 md:py-32">
+      <div class="max-w-3xl">
+        <span class="badge-primary mb-6">
+          #1 Martial Arts Management Software
+        </span>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+          Run Your <span class="text-brand-red">Dojo</span> Like a Pro
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+          The all-in-one platform for martial arts schools. Scheduling, billing, student management, and more — so you can focus on teaching.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/contact/" class="btn-primary text-lg px-8 py-4">
+            Start Free Trial
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/martial-arts-software/" class="btn-secondary text-lg px-8 py-4">
+            See Features
+          </a>
+        </div>
+        <p class="mt-6 text-sm text-gray-400">
+          No credit card required • 14-day free trial • Cancel anytime
+        </p>
+      </div>
+    </div>
+    <!-- Decorative element -->
+    <div class="absolute -bottom-1 left-0 right-0">
+      <svg class="w-full h-12 text-white" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="currentColor" opacity=".25"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="currentColor" opacity=".5"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,googl172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Trust Badges -->
+  <section class="py-12 bg-gray-50 border-b border-gray-100">
+    <div class="container-custom">
+      <p class="text-center text-sm text-gray-500 uppercase tracking-wider mb-8">Trusted by martial arts schools worldwide</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        {stats.map((stat) => (
+          <div>
+            <div class="text-3xl md:text-4xl font-bold text-brand-navy">{stat.number}</div>
+            <div class="text-sm text-gray-600 mt-1">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="badge-primary mb-4">Features</span>
+        <h2 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6">
+          Everything You Need to Run Your Martial Arts School
+        </h2>
+        <p class="text-xl text-gray-600">
+          From class scheduling to student management, we've got you covered with powerful tools designed specifically for martial arts schools.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {features.map((feature) => (
+          <div class="card group">
+            <div class="w-12 h-12 rounded-xl bg-brand-red-light flex items-center justify-center mb-4 group-hover:bg-brand-red transition-colors">
+              <svg class="w-6 h-6 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {feature.icon === 'calendar' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />}
+                {feature.icon === 'users' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />}
+                {feature.icon === 'credit-card' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />}
+                {feature.icon === 'chart' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />}
+                {feature.icon === 'belt' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />}
+                {feature.icon === 'mobile' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />}
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-brand-navy mb-2">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="/martial-arts-software/" class="btn-outline">
+          See All Features
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Feature Section -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="badge-primary mb-4">For All Martial Arts</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
+            Built for Every Style and Discipline
+          </h2>
+          <p class="text-lg text-gray-600 mb-6">
+            Whether you run a karate dojo, BJJ academy, taekwondo school, or MMA gym, MyDojo adapts to your unique needs with customizable belt systems, class structures, and terminology.
+          </p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700"><strong class="text-brand-navy">Karate & Traditional Arts:</strong> Kyu/Dan ranking, kata tracking, tournament management</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700"><strong class="text-brand-navy">BJJ & Grappling:</strong> IBJJF belt system, stripe tracking, competition records</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700"><strong class="text-brand-navy">MMA & Kickboxing:</strong> Multi-discipline tracking, sparring logs, fight records</span>
+            </li>
+          </ul>
+          <a href="/dojo-management-software/" class="btn-primary">
+            Learn More
+          </a>
+        </div>
+        <div class="relative">
+          <img 
+            src="/images/full-shot-asian-people-practicing-taekwondo.jpg" 
+            alt="Martial arts students training" 
+            class="rounded-2xl shadow-2xl"
+          />
+          <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 hidden md:block">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-full bg-brand-red-light flex items-center justify-center">
+                <svg class="w-6 h-6 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <div class="font-bold text-brand-navy">All Styles</div>
+                <div class="text-sm text-gray-500">One Platform</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section bg-brand-navy text-white">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">Testimonials</span>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">
+          Loved by Martial Arts Schools
+        </h2>
+        <p class="text-xl text-gray-300">
+          See what school owners and instructors say about MyDojo.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial) => (
+          <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div class="flex gap-1 mb-4">
+              {[1,2,3,4,5].map(() => (
+                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <p class="text-gray-300 mb-6 leading-relaxed">"{testimonial.quote}"</p>
+            <div>
+              <div class="font-semibold">{testimonial.author}</div>
+              <div class="text-sm text-gray-400">{testimonial.role}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-gradient-to-r from-brand-red to-brand-red-dark text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">
+        Ready to Transform Your Dojo?
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Join hundreds of martial arts schools already using MyDojo to streamline their operations and grow their business.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">
+          Start Your Free Trial
+        </a>
+        <a href="/pricing/" class="btn bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4">
+          View Pricing
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-white/70">
+        No credit card required • Setup in 5 minutes
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
