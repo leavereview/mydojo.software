@@ -13,7 +13,7 @@ The Brazilian Jiu-Jitsu belt system represents one of the most demanding progres
 
 This guide covers everything about the BJJ belt ranking system: the order of belts, what each rank represents, typical promotion timelines, and how the stripe system works between belt levels.
 
-# BJJ Belt Order: White to Black
+## BJJ Belt Order: White to Black
 
 Adult BJJ uses five belt colours in a fixed order:
 
@@ -21,7 +21,7 @@ Adult BJJ uses five belt colours in a fixed order:
 
 Beyond black belt, BJJ continues with coral belt (red and black, then red and white) and ultimately red belt (9th and 10th degree), though these highest ranks are reserved for pioneers and lifetime contributors to the art.
 
-# The Stripe System
+## The Stripe System
 
 Between belt promotions, instructors award stripes (degrees) to mark progress. Most schools use 4 stripes per belt, applied as tape around the belt's black bar (or red bar for black belts).
 
@@ -37,7 +37,7 @@ Stripes typically represent:
 
 The stripe system provides more frequent recognition than belt promotions alone, helping maintain student motivation during the long journey between belts.
 
-# White Belt: The Beginning
+## White Belt: The Beginning
 
 Every BJJ practitioner starts at white belt regardless of experience in other martial arts. The white belt phase focuses on survival: learning to protect yourself, escape bad positions, and understand fundamental concepts like base, posture, and pressure.
 
@@ -55,7 +55,7 @@ Every BJJ practitioner starts at white belt regardless of experience in other ma
 
 Most students spend 1-2 years at white belt. Promotion to blue belt typically requires demonstrating solid defensive skills and basic attacking ability.
 
-# Blue Belt: Technical Foundation
+## Blue Belt: Technical Foundation
 
 Blue belt marks the transition from survival to attack. Blue belts can effectively control untrained opponents and begin developing preferred techniques and positions.
 
@@ -73,25 +73,25 @@ This is often the belt where practitioners face the greatest dropout risk—the 
 
 - Ability to roll (spar) safely and continuously
 
-# Purple Belt: Developing Your Game
+## Purple Belt: Developing Your Game
 
 Purple belt represents the intermediate stage where practitioners develop their personal style. Rather than learning everything equally, purple belts begin specialising in positions and techniques that suit their body type and preferences.
 
 At purple belt, many practitioners begin assistant teaching roles, helping beginners understand fundamentals while deepening their own knowledge through instruction.
 
-# Brown Belt: Advanced Refinement
+## Brown Belt: Advanced Refinement
 
 Brown belt is the final preparation for black belt. Techniques are refined, gaps in knowledge are filled, and practitioners develop the well-rounded game expected of black belts.
 
 The minimum age for brown belt is 18, and IBJJF rules require at least 18 months between receiving brown and being eligible for black belt.
 
-# Black Belt: The Beginning of Mastery
+## Black Belt: The Beginning of Mastery
 
 Despite representing perhaps a decade of training, black belt in BJJ is considered the beginning of true mastery rather than its conclusion. Black belts continue learning and refining their art for the rest of their lives.
 
 Black belt degrees (marked by stripes or bars on the belt) continue up to 6th degree, after which practitioners may receive coral belts and eventually red belt at the highest levels.
 
-# Kids Belt System
+## Kids Belt System
 
 Children under 16 use a different belt system with more intermediate colours, providing more frequent promotions suited to younger attention spans:
 
@@ -99,7 +99,7 @@ White → Grey → Yellow → Orange → Green
 
 Each kids belt may have white, solid, and black variations (e.g., grey-white, solid grey, grey-black), creating up to 13 levels before reaching the adult system at age 16.
 
-# How Long Does Each Belt Take?
+## How Long Does Each Belt Take?
 
 Total time to black belt varies significantly based on training frequency, natural ability, competition focus, and instructor standards. Typical timelines:
 
@@ -111,7 +111,7 @@ Total time to black belt varies significantly based on training frequency, natur
 
 There are no shortcuts. Even world-champion competitors typically spend 8+ years reaching black belt.
 
-# Promotion Criteria
+## Promotion Criteria
 
 Unlike arts with standardised testing, BJJ promotions are typically awarded at the instructor's discretion based on:
 
@@ -127,7 +127,7 @@ Unlike arts with standardised testing, BJJ promotions are typically awarded at t
 
 Some academies hold formal gradings while others surprise students with promotions during regular training.
 
-# Tracking BJJ Progression
+## Tracking BJJ Progression
 
 Given the long timeline between belts, tracking progress becomes important for both students and instructors. Modern [martial arts software](/martial-arts-software/) helps academies monitor:
 
@@ -143,7 +143,7 @@ Given the long timeline between belts, tracking progress becomes important for b
 
 [MMA gym software](/mma-gym-software/) can track BJJ progression alongside other disciplines for academies teaching multiple arts.
 
-# Frequently Asked Questions
+## Frequently Asked Questions
 
 ## What is the order of BJJ belts?
 
@@ -179,8 +179,8 @@ Modern academies use [martial arts management software](/martial-arts-software/)
 
 ## Related Guides
 
-- [Karate Belt Colors & Order](/karate-belts/) — How the original belt system works
+- [Karate Belt Colors & Order](/blog/karate-belts/) — How the original belt system works
 
-- [Types of Martial Arts](/types-of-martial-arts/) — Compare BJJ to other fighting styles
+- [Types of Martial Arts](/blog/types-of-martial-arts/) — Compare BJJ to other fighting styles
 
 - [MMA Gym Software](/mma-gym-software/) — Multi-discipline tracking for BJJ and striking

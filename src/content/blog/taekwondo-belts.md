@@ -13,7 +13,7 @@ The taekwondo belt system marks a student's journey from white belt beginner to 
 
 This guide covers the complete taekwondo belt ranking system, including differences between World Taekwondo (WT, formerly WTF) and International Taekwondo Federation (ITF) systems, what each belt colour represents, and typical requirements for advancement.
 
-# Taekwondo Belt Order: Standard Progression
+## Taekwondo Belt Order: Standard Progression
 
 While specific colours vary by organisation and school, the most common taekwondo belt order is:
 
@@ -21,7 +21,7 @@ While specific colours vary by organisation and school, the most common taekwond
 
 Many schools add intermediate belts (yellow-green stripe, green-blue stripe, etc.) to create more frequent promotion opportunities, particularly for children's programmes.
 
-# The Gup and Dan System
+## The Gup and Dan System
 
 Taekwondo uses the Korean terms "gup" (also spelled geup or kup) for coloured belt ranks and "dan" for black belt degrees:
 
@@ -43,7 +43,7 @@ Key dan milestones:
 
 - **10th Dan:** Reserved for founders or exceptional grandmasters
 
-# WT vs ITF Belt Systems
+## WT vs ITF Belt Systems
 
 The two major taekwondo organisations use slightly different belt systems:
 
@@ -63,7 +63,7 @@ White → Yellow → Yellow/Green → Green → Green/Blue → Blue → Blue/Red
 
 The stripe belts (e.g., yellow/green) represent intermediate ranks between solid colours.
 
-# Belt Color Meanings in Taekwondo
+## Belt Color Meanings in Taekwondo
 
 Each taekwondo belt colour carries symbolic meaning that reflects the student's development:
 
@@ -91,7 +91,7 @@ Red signifies danger and caution. The student now possesses significant power th
 
 Black represents maturity and the opposite of white—the student has absorbed knowledge and completed the beginner's journey. However, black belt marks the **beginning** of true taekwondo study, not its end.
 
-# Requirements for Belt Advancement
+## Requirements for Belt Advancement
 
 Each belt promotion requires demonstrating specific skills. While requirements vary by school and organisation, typical testing includes:
 
@@ -119,7 +119,7 @@ Practical defence techniques against grabs, holds, and attacks.
 
 Knowledge of Korean terminology, taekwondo history, and philosophical principles.
 
-# How Long to Get a Black Belt in Taekwondo?
+## How Long to Get a Black Belt in Taekwondo?
 
 Most students require 3-5 years of consistent training to reach 1st dan black belt. The timeline depends on:
 
@@ -133,7 +133,7 @@ Most students require 3-5 years of consistent training to reach 1st dan black be
 
 Children may earn "junior black belt" (poom) before age 15, which converts to adult 1st dan upon reaching the minimum age.
 
-# Tracking Taekwondo Belt Progression
+## Tracking Taekwondo Belt Progression
 
 Modern taekwondo schools use [martial arts software](/martial-arts-software/) to track student progression through the belt ranks. These systems monitor:
 
@@ -149,7 +149,7 @@ Modern taekwondo schools use [martial arts software](/martial-arts-software/) to
 
 For schools teaching multiple martial arts or offering both WT and ITF programmes, software that handles multiple ranking systems simultaneously streamlines administration significantly.
 
-# Frequently Asked Questions
+## Frequently Asked Questions
 
 ## What is the order of taekwondo belts?
 
@@ -177,14 +177,14 @@ Red belt signifies danger and represents the student's developing power that mus
 
 ## Is taekwondo belt order the same as karate?
 
-No. While both use coloured belts progressing to black, the specific colours and order differ. Taekwondo typically emphasises red belt before black, while [karate belt order](/karate-belts/) often uses brown belt at the advanced level. The meanings and testing requirements also vary between arts.
+No. While both use coloured belts progressing to black, the specific colours and order differ. Taekwondo typically emphasises red belt before black, while [karate belt order](/blog/karate-belts/) often uses brown belt at the advanced level. The meanings and testing requirements also vary between arts.
 
 ## Related Guides
 
-- [Karate Belt Colors & Order](/karate-belts/) — Compare to karate's ranking system
+- [Karate Belt Colors & Order](/blog/karate-belts/) — Compare to karate's ranking system
 
-- [BJJ Belt Ranks](/jiu-jitsu-belt-ranks/) — Understand Brazilian Jiu-Jitsu's belt system
+- [BJJ Belt Ranks](/blog/jiu-jitsu-belt-ranks/) — Understand Brazilian Jiu-Jitsu's belt system
 
-- [Types of Martial Arts](/types-of-martial-arts/) — Explore different fighting styles
+- [Types of Martial Arts](/blog/types-of-martial-arts/) — Explore different fighting styles
 
 - [Martial Arts Software](/martial-arts-software/) — Track student belt progression

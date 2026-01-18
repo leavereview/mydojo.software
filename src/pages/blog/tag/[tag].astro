@@ -1,0 +1,158 @@
+---
+// Tag Archive Page - /blog/tag/[tag]
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+
+  // Get all unique tags
+  const tags = new Set<string>();
+  posts.forEach(post => {
+    post.data.tags?.forEach(tag => tags.add(tag));
+  });
+
+  return Array.from(tags).map(tag => ({
+    params: { tag },
+    props: { tag },
+  }));
+}
+
+interface Props {
+  tag: string;
+}
+
+const { tag } = Astro.props;
+const allPosts = await getCollection('blog');
+
+// Filter posts by tag and sort by date
+const posts = allPosts
+  .filter(post => post.data.tags?.includes(tag))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+// Format tag for display
+const displayTag = tag.charAt(0).toUpperCase() + tag.slice(1);
+const tagDescriptions: Record<string, string> = {
+  'karate': 'Explore our guides on karate training, belt systems, and school management.',
+  'bjj': 'Brazilian Jiu-Jitsu resources including belt rankings, training tips, and academy management.',
+  'taekwondo': 'Taekwondo guides covering belt progression, training techniques, and school operations.',
+  'belts': 'Complete guides to martial arts belt systems, rankings, and progression across all styles.',
+  'mma': 'Mixed martial arts resources for gym owners, coaches, and practitioners.',
+  'self-defense': 'Self-defense training guides and martial arts effectiveness comparisons.',
+};
+
+const description = tagDescriptions[tag] || `Articles tagged with ${displayTag} - martial arts guides and resources.`;
+---
+
+<BaseLayout
+  title={`${displayTag} Articles`}
+  description={description}
+>
+  <!-- Breadcrumbs -->
+  <div class="bg-gray-100 py-3">
+    <div class="container-custom">
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: `Tag: ${displayTag}` }
+      ]} />
+    </div>
+  </div>
+
+  <section class="bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
+    <div class="container-custom">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        {displayTag} Articles
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl">
+        {description}
+      </p>
+      <p class="text-gray-400 mt-4">
+        {posts.length} article{posts.length !== 1 ? 's' : ''} found
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <article class="card group">
+            <a href={`/blog/${post.slug}/`} class="block">
+              {post.data.image && (
+                <div class="aspect-video overflow-hidden rounded-lg mb-4 -mx-6 -mt-6">
+                  <img
+                    src={post.data.image}
+                    alt={post.data.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+              <div class="flex flex-wrap gap-2 mb-3">
+                {post.data.tags?.slice(0, 3).map(t => (
+                  <span class={`text-xs px-2 py-1 rounded ${t === tag ? 'bg-brand-red text-white' : 'bg-gray-100 text-gray-600'}`}>
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <h2 class="text-xl font-bold text-brand-navy group-hover:text-brand-red transition-colors mb-2">
+                {post.data.title}
+              </h2>
+              <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                {post.data.description}
+              </p>
+              <div class="flex items-center justify-between text-sm text-gray-500">
+                <span>{post.data.author}</span>
+                <time datetime={post.data.date}>
+                  {new Date(post.data.date).toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric'
+                  })}
+                </time>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+
+      {posts.length === 0 && (
+        <div class="text-center py-12">
+          <p class="text-gray-500">No articles found with this tag.</p>
+          <a href="/blog/" class="btn-primary mt-4 inline-block">
+            View All Articles
+          </a>
+        </div>
+      )}
+
+      <div class="mt-12 text-center">
+        <a href="/blog/" class="btn-outline">
+          ← Back to All Articles
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Resources -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Related Resources</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/martial-arts-software/" class="card hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Martial Arts Software</h3>
+          <p class="text-sm text-gray-600">Complete management platform for martial arts schools.</p>
+        </a>
+        <a href="/dojo-management-software/" class="card hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Dojo Management</h3>
+          <p class="text-sm text-gray-600">Streamline operations for traditional martial arts schools.</p>
+        </a>
+        <a href="/pricing/" class="card hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Pricing</h3>
+          <p class="text-sm text-gray-600">Affordable plans for schools of all sizes.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

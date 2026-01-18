@@ -13,7 +13,7 @@ Martial arts encompass hundreds of distinct fighting systems developed across ev
 
 This guide examines the major categories of martial arts, introduces the most popular styles, and helps you understand what distinguishes one art from another.
 
-# How Martial Arts Are Categorised
+## How Martial Arts Are Categorised
 
 Martial arts can be organised by primary technique (striking vs grappling), by country of origin, or by training emphasis (self-defence vs sport vs traditional).
 
@@ -29,7 +29,7 @@ These arts emphasise controlling opponents through holds, throws, and ground fig
 
 Some martial arts incorporate both striking and grappling, either through historical development or intentional combination of techniques.
 
-# Traditional Striking Arts
+## Traditional Striking Arts
 
 ## Karate
 
@@ -57,7 +57,7 @@ Western boxing focuses exclusively on punches with refined footwork, head moveme
 
 Kickboxing combines boxing punches with kicks. Modern kickboxing under Glory or K-1 rules allows punches, kicks, and knees and has become a major international combat sport.
 
-# Grappling Arts
+## Grappling Arts
 
 ## Brazilian Jiu-Jitsu (BJJ)
 
@@ -75,7 +75,7 @@ Wrestling traditions exist worldwide, from American folkstyle to Greco-Roman. As
 
 Russian sambo combines judo-style throws with wrestling and submissions. Combat sambo adds strikes, making it one of the most complete fighting systems.
 
-# Hybrid and Mixed Martial Arts
+## Hybrid and Mixed Martial Arts
 
 ## Mixed Martial Arts (MMA)
 
@@ -85,11 +85,11 @@ MMA is a competitive format allowing techniques from all martial arts. Modern MM
 
 Developed for the Israeli military, Krav Maga emphasises practical self-defence against real-world violence including weapons and multiple attackers.
 
-# Belt and Ranking Systems
+## Belt and Ranking Systems
 
 Most martial arts use some form of ranking system to mark student progression. The coloured belt system, now universal in karate, taekwondo, and judo, was invented in the 1880s and has spread across martial arts worldwide.
 
-For a detailed breakdown of how belt colours work, see our complete guide to [karate belt colors and order](/karate-belts/).
+For a detailed breakdown of how belt colours work, see our complete guide to [karate belt colors and order](/blog/karate-belts/).
 
 Different arts use different systems:
 
@@ -101,9 +101,9 @@ Different arts use different systems:
 
 - **Kung Fu:** Varies by style; some use sashes, others use no formal ranking
 
-# Choosing a Martial Art
+## Choosing a Martial Art
 
-# Running a Martial Arts School
+## Running a Martial Arts School
 
 For those interested in teaching martial arts professionally, managing a school requires balancing instruction with business administration. Modern [martial arts software](/martial-arts-software/) helps school owners handle student management, scheduling, billing, and belt progression tracking—freeing up time to focus on teaching.
 
@@ -119,7 +119,7 @@ Schools teaching multiple disciplines, such as MMA academies offering BJJ, strik
 
 - For tradition: Karate, kung fu, and judo preserve cultural heritage
 
-# Frequently Asked Questions
+## Frequently Asked Questions
 
 **Q1: What is the most effective martial art?A: **Effectiveness depends on context. For self-defence, arts with live sparring like BJJ, Muay Thai, wrestling, and boxing have proven effective. MMA combines multiple arts for complete fighting ability. The best martial art is one you will train consistently.
 

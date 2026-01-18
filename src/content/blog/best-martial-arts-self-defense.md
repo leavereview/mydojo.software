@@ -13,7 +13,7 @@ When choosing a martial art for self-defense, the options can be overwhelming. K
 
 This guide examines the most effective martial arts for real-world self-defense, based on what we've learned from decades of MMA competition, street altercation analysis, and law enforcement experience.
 
-# What Makes a Martial Art Effective for Self-Defense?
+## What Makes a Martial Art Effective for Self-Defense?
 
 Before ranking specific arts, let's establish what actually matters in self-defense situations:
 
@@ -33,7 +33,7 @@ Real fights can occur at any distance: standing with space to move, in close cli
 
 Can you train regularly without constant injury? Is there a school near you? The best martial art is one you'll actually practice consistently for years.
 
-# Top Martial Arts for Self-Defense
+## Top Martial Arts for Self-Defense
 
 ## 1. Brazilian Jiu-Jitsu (BJJ)
 
@@ -59,7 +59,7 @@ Can you train regularly without constant injury? Is there a school near you? The
 
 **Time to basic competence:** 6-12 months
 
-Learn more about the [BJJ belt ranking system](/jiu-jitsu-belt-ranks/) and progression timeline.
+Learn more about the [BJJ belt ranking system](/blog/jiu-jitsu-belt-ranks/) and progression timeline.
 
 ## 2. Muay Thai
 
@@ -179,25 +179,25 @@ Learn more about the [BJJ belt ranking system](/jiu-jitsu-belt-ranks/) and progr
 
 **Time to basic competence:** 3-6 months
 
-# What About Traditional Martial Arts?
+## What About Traditional Martial Arts?
 
 ## Karate
 
 Traditional karate can be effective for self-defense, but effectiveness varies dramatically by school. Schools that emphasize full-contact sparring (like Kyokushin) produce capable fighters. Schools focusing primarily on forms (kata) without sparring are less practical for self-defense.
 
-Learn more about [karate belt progression](/karate-belts/) and what each rank represents.
+Learn more about [karate belt progression](/blog/karate-belts/) and what each rank represents.
 
 ## Taekwondo
 
 Olympic-style taekwondo emphasizes high kicks and point-scoring that may not translate well to self-defense. However, TKD develops excellent kicking power and flexibility. Schools with self-defense curriculum alongside sport training can be effective.
 
-See our [taekwondo belt guide](/taekwondo-belts/) for more on TKD training.
+See our [taekwondo belt guide](/blog/taekwondo-belts/) for more on TKD training.
 
 ## Kung Fu
 
 Chinese martial arts vary enormously. Some styles (Wing Chun, Sanda) have practical applications, while others focus on health, tradition, or performance. Evaluate the specific school's training methodology rather than the style name.
 
-# The Best Combination
+## The Best Combination
 
 For comprehensive self-defense, consider training two complementary arts:
 
@@ -207,7 +207,7 @@ For comprehensive self-defense, consider training two complementary arts:
 
 **MMA Training:** Addresses all ranges in integrated training. If you can only commit to one art, this provides the broadest skill set.
 
-# Self-Defense Beyond Technique
+## Self-Defense Beyond Technique
 
 Technical skill is only part of self-defense. Equally important:
 
@@ -223,7 +223,7 @@ Technical skill is only part of self-defense. Equally important:
 
 The best self-defense is avoiding fights entirely. Martial arts training should include awareness of when *not* to fight.
 
-# Frequently Asked Questions
+## Frequently Asked Questions
 
 ## What is the most effective martial art for self-defense?
 
@@ -247,10 +247,10 @@ Either works. Striking (boxing, Muay Thai) gives faster early results and addres
 
 ## Related Guides
 
-- [Types of Martial Arts](/types-of-martial-arts/) — Complete overview of fighting styles
+- [Types of Martial Arts](/blog/types-of-martial-arts/) — Complete overview of fighting styles
 
-- [BJJ Belt Ranks](/jiu-jitsu-belt-ranks/) — Understanding jiu-jitsu progression
+- [BJJ Belt Ranks](/blog/jiu-jitsu-belt-ranks/) — Understanding jiu-jitsu progression
 
-- [Karate Belts](/karate-belts/) — Karate ranking system explained
+- [Karate Belts](/blog/karate-belts/) — Karate ranking system explained
 
 - [MMA Gym Software](/mma-gym-software/) — Managing multi-discipline training

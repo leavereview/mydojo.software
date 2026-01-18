@@ -1,0 +1,11 @@
+# robots.txt for mydojo.software
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mydojo.software/sitemap.xml
+
+# Disallow admin and private paths (if any)
+Disallow: /api/
+Disallow: /_astro/

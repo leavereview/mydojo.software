@@ -1,26 +1,33 @@
 ---
 // PillarPageLayout.astro - Template for SEO pillar pages
 import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 interface Props {
   title: string;
   description: string;
   heroImage?: string;
-  heroImageAlt?: string;
   badge?: string;
   ctaText?: string;
   ctaLink?: string;
+  breadcrumbLabel?: string;
 }
 
 const {
   title,
   description,
   heroImage = '/images/full-shot-asian-people-practicing-taekwondo.jpg',
-  heroImageAlt = 'Martial arts training',
   badge = 'Complete Guide',
   ctaText = 'Start Free Trial',
-  ctaLink = '/contact/'
+  ctaLink = '/contact/',
+  breadcrumbLabel
 } = Astro.props;
+
+// Generate breadcrumb items
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: breadcrumbLabel || title }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -31,6 +38,7 @@ const {
     </div>
     <div class="container-custom relative py-16 md:py-24">
       <div class="max-w-4xl">
+        <Breadcrumbs items={breadcrumbs} class="mb-6 text-gray-400" />
         <span class="badge-primary mb-6">{badge}</span>
         <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
           {title}

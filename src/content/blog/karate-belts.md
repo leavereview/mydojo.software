@@ -15,7 +15,7 @@ This comprehensive guide examines every aspect of the karate belt system: the hi
 
 **Quick Reference:** The standard karate belt order is: white → yellow → orange → green → blue → purple → brown → black. Most students take 3-5 years to reach black belt with consistent training.
 
-# The Origins of the Karate Belt System
+## The Origins of the Karate Belt System
 
 Contrary to popular belief, the coloured belt ranking system is a relatively modern invention rather than an ancient tradition. The system we know today was adapted for karate from the judo ranking system created by Jigoro Kano in the late 1800s.
 
@@ -29,7 +29,7 @@ Initially, Kano system used only white belts for beginners and black belts for a
 
 Gichin Funakoshi, considered the father of modern karate, introduced karate to mainland Japan in the 1920s. He adopted the belt ranking system from judo, helping karate gain acceptance in Japanese martial arts culture. As karate spread internationally after World War II, the belt system became universally associated with the art.
 
-# Understanding the Kyu-Dan System
+## Understanding the Kyu-Dan System
 
 Karate uses a two-tiered ranking system: kyu grades (coloured belts) for students below black belt, and dan grades (black belt levels) for advanced practitioners.
 
@@ -45,7 +45,7 @@ Dan grades count upward from 1st dan (shodan) through higher numbers. The word d
 
 Most schools recognise up to 10th dan, though ranks above 5th or 6th dan are typically honorary, awarded for lifetime contribution to the art rather than through examination.
 
-# Karate Belt Colors and Their Meanings
+## Karate Belt Colors and Their Meanings
 
 While belt colours vary between styles and organisations, certain colours appear consistently with generally accepted meanings. Here is the standard progression followed by many schools:
 
@@ -67,7 +67,7 @@ Kyokushin commonly uses: white, orange, blue, yellow, green, brown, black.
 
 Individual schools within these styles may add or remove colours based on their preferences and the age of their students (children programmes often include more interim colours).
 
-# Requirements for Belt Advancement
+## Requirements for Belt Advancement
 
 Each belt represents mastery of specific skills and concepts. While exact requirements vary by school and style, general patterns exist across karate instruction.
 
@@ -123,7 +123,7 @@ Each belt represents mastery of specific skills and concepts. While exact requir
 
 - Typically 3-5 years of training
 
-# The Black Belt Journey
+## The Black Belt Journey
 
 Reaching black belt represents not the end of the journey but its true beginning. In Japanese, black belt is called kuroi obi, and first-degree black belt is shodan, meaning first step.
 
@@ -145,7 +145,7 @@ After black belt, advancement continues through dan grades:
 
 Traditional karate emphasises that time and maturity matter as much as technical skill. Even exceptional students cannot rush through ranks because the character development and depth of understanding require years to cultivate.
 
-# Belt Testing and Examinations
+## Belt Testing and Examinations
 
 Advancement between belt ranks requires passing a grading examination. The testing process itself teaches important lessons about preparation, performance under pressure, and honest self-assessment.
 
@@ -187,7 +187,7 @@ Defer: Student shows promise but needs additional preparation. They may retest a
 
 Fail: Rare but possible if student is significantly unprepared. Most schools avoid this through careful screening before allowing students to test.
 
-# Modern Belt System Considerations
+## Modern Belt System Considerations
 
 Contemporary karate schools have adapted the belt system for modern contexts while trying to preserve its meaning.
 
@@ -221,7 +221,7 @@ Digital tracking provides several advantages over paper-based systems:
 
 Whether you're a student tracking your own journey or a school owner managing hundreds of students, understanding the belt system provides crucial context for setting goals and measuring achievement.
 
-# Frequently Asked Questions
+## Frequently Asked Questions
 
 **Q1: How long does it take to get a black belt in karate?A: **Most students require 3-5 years of consistent training to achieve black belt (shodan). This timeline varies based on training frequency, natural ability, and the standards of the specific school. Some organisations have minimum time requirements at each rank that cannot be shortened regardless of skill.
 

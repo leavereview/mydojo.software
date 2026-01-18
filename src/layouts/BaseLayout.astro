@@ -11,6 +11,7 @@ interface Props {
   type?: 'website' | 'article';
   publishedDate?: string;
   modifiedDate?: string;
+  author?: string;
   noindex?: boolean;
 }
 
@@ -21,6 +22,7 @@ const {
   type = 'website',
   publishedDate,
   modifiedDate,
+  author = 'MyDojo Team',
   noindex = false
 } = Astro.props;
 
@@ -38,7 +40,9 @@ const schemaOrg = {
       "url": "https://mydojo.software",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://mydojo.software/logo.svg"
+        "url": "https://mydojo.software/logo.svg",
+        "width": 200,
+        "height": 60
       },
       "sameAs": []
     },
@@ -56,10 +60,27 @@ const schemaOrg = {
       "@id": canonicalURL.href,
       "url": canonicalURL.href,
       "name": title,
+      "headline": title,
       "description": description,
       "isPartOf": {
         "@id": "https://mydojo.software/#website"
       },
+      ...(type === 'article' && {
+        "author": {
+          "@type": "Person",
+          "name": author,
+          "url": "https://mydojo.software/about/"
+        },
+        "publisher": {
+          "@id": "https://mydojo.software/#organization"
+        }
+      }),
+      ...(image && {
+        "image": {
+          "@type": "ImageObject",
+          "url": new URL(image, Astro.site).href
+        }
+      }),
       ...(publishedDate && { "datePublished": publishedDate }),
       ...(modifiedDate && { "dateModified": modifiedDate })
     }
