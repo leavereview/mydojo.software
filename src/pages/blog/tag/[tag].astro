@@ -35,8 +35,8 @@ const posts = allPosts
 // Format tag for display (capitalize each word)
 const displayTag = tag.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
-// noindex sparse tags (fewer than 3 posts) to avoid thin content penalties
-const shouldNoindex = posts.length < 3;
+// noindex sparse tags (fewer than 5 posts) to avoid thin content penalties
+const shouldNoindex = posts.length < 5;
 
 // Tag descriptions for SEO
 const tagDescriptions: Record<string, string> = {
@@ -75,15 +75,20 @@ const description = tagDescriptions[tag] || `Explore ${posts.length} articles ab
 
   <section class="bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
     <div class="container-custom">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">
-        {displayTag} Articles
-      </h1>
-      <p class="text-xl text-gray-300 max-w-2xl">
-        {description}
-      </p>
-      <p class="text-gray-400 mt-4">
-        {posts.length} article{posts.length !== 1 ? 's' : ''} found
-      </p>
+      <div class="max-w-4xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          {displayTag} Articles
+        </h1>
+        <p class="text-xl text-gray-300 mb-4">
+          {description}
+        </p>
+        <p class="text-gray-400 mb-4">
+          {posts.length} article{posts.length !== 1 ? 's' : ''} found
+        </p>
+        <p class="text-gray-400">
+          Whether you're a seasoned instructor expanding your school or just starting your martial arts business journey, our {tag.toLowerCase()} resources provide practical guidance and proven strategies. Browse our curated collection below to find actionable insights for your dojo.
+        </p>
+      </div>
     </div>
   </section>
 
