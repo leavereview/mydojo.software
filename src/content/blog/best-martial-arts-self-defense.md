@@ -1,9 +1,9 @@
 ---
 title: "Best martial arts self defense"
-description: "Best Martial Arts for Self Defense: What Actually Works"
+description: "Compare the best martial arts for self-defense: BJJ, Krav Maga, boxing, and more. Learn what actually works in real situations."
 date: "2025-12-30"
 image: "/images/two-judo-wrestlers-showing-their-technical-skills-fight-club.jpg"
-tags: ["karate", "bjj", "taekwondo", "belts", "mma", "self-defense"]
+tags: ["Self-Defense", "Martial Arts"]
 author: "MyDojo Team"
 ---
 

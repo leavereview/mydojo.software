@@ -1,9 +1,9 @@
 ---
-title: "Karate Belts Guide: Complete Ranking System for Dojos"
+title: "Karate Belts: Complete Guide"
 description: "Master the complete karate belt system! Learn rankings, requirements, testing procedures, and how to effectively manage belt progressions in your dojo."
 date: "2026-01-20"
 image: "/images/front-view-asian-people-practicing-taekwondo.jpg"
-tags: ["karate", "bjj", "belts", "self-defense"]
+tags: ["Karate", "Belts"]
 author: "MyDojo Team"
 faqs:
   - question: "How long does it typically take to earn a black belt in karate?"

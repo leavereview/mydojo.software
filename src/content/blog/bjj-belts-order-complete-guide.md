@@ -1,9 +1,9 @@
 ---
-title: "BJJ Belts Order: Complete Guide to Brazilian Jiu-Jitsu Rankings"
+title: "BJJ Belt Order: Complete Guide"
 description: "Master the BJJ belts order from white to coral belt. Complete guide to Brazilian Jiu-Jitsu rankings, requirements, and progression timeline for 2024."
 date: "2026-01-13"
 image: "/images/karate-player-performing-karate-stance.jpg"
-tags: ["karate", "bjj", "taekwondo", "belts", "mma"]
+tags: ["BJJ", "Belts"]
 author: "MyDojo Team"
 faqs:
   - question: "How long does it take to get each belt in BJJ?"

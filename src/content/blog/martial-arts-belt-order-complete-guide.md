@@ -1,9 +1,9 @@
 ---
-title: "Martial Arts Belt Order: Complete Guide to Ranking Systems"
+title: "Martial Arts Belt Order Guide"
 description: "Picture this: a new student walks into your dojo, excited to begin their martial arts journey, and immediately asks, \"How long until I get my black belt?\"..."
 date: "2026-01-16"
 image: "/images/close-up-female-karate-fighter.jpg"
-tags: ["karate", "bjj", "taekwondo", "belts", "mma"]
+tags: ["Belts", "Martial Arts"]
 author: "MyDojo Team"
 ---
 

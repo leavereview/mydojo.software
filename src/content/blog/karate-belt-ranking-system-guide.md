@@ -1,9 +1,9 @@
 ---
-title: "Complete Karate Belt Ranking System Guide for School Owners"
+title: "Karate Belt Ranking System Guide"
 description: "Did you know that over 70% of martial arts students quit before reaching their black belt? Often, this high dropout rate stems from unclear progression..."
 date: "2026-01-09"
 image: "/images/group-diverse-teens-young-people-doing-activities-together-celebrating-world-youth-skills-day.jpg"
-tags: ["karate", "belts", "self-defense"]
+tags: ["Karate", "Belts"]
 author: "MyDojo Team"
 ---
 

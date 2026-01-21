@@ -1,9 +1,9 @@
 ---
 title: "Types of martial arts"
-description: "A Guide to Fighting Styles, Combat Systems, and Training Methods"
+description: "Explore different types of martial arts: striking, grappling, and hybrid styles. Find the right discipline for your fitness and self-defense goals."
 date: "2025-12-29"
 image: "/images/karate-player-performing-karate-stance.jpg"
-tags: ["karate", "bjj", "taekwondo", "belts", "mma"]
+tags: ["Martial Arts"]
 author: "MyDojo Team"
 ---
 

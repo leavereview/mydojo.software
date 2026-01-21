@@ -1,9 +1,9 @@
 ---
 title: "Jiu Jitsu belt ranks"
-description: "Brazilian Jiu-Jitsu Belt Ranks: The Complete Guide to BJJ Belt Order and Progression"
+description: "Complete guide to BJJ belt ranks from white to black. Learn the belt order, typical progression timeline, and what's required at each level."
 date: "2025-12-30"
 image: "/images/black-white-portrait-athlete-participating-olympic-championship-sports.jpg"
-tags: ["karate", "bjj", "taekwondo", "belts", "mma"]
+tags: ["BJJ", "Belts"]
 author: "MyDojo Team"
 ---
 

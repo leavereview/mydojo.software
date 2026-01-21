@@ -1,9 +1,9 @@
 ---
 title: "Taekwondo belts"
-description: "Taekwondo Belt Order and Colors: The Complete Guide to TKD Belt Ranks"
+description: "Complete guide to taekwondo belt order and colors. Understand TKD belt ranks from white to black, testing requirements, and progression timeline."
 date: "2025-12-30"
 image: "/images/full-shot-asian-people-practicing-taekwondo.jpg"
-tags: ["karate", "bjj", "taekwondo", "belts"]
+tags: ["Taekwondo", "Belts"]
 author: "MyDojo Team"
 ---
 

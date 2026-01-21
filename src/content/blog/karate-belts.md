@@ -1,9 +1,9 @@
 ---
-title: "Karate Belt Colors & Order: Complete Ranking Guide"
-description: "The Complete Guide to Karate Belt Colors, Order, and Ranking System"
+title: "Karate Belts: Colors & Order"
+description: "Complete guide to karate belt colors and order. Learn the ranking system from white to black belt, requirements, and what each color represents."
 date: "2025-12-29"
 image: "/images/close-up-female-karate-fighter.jpg"
-tags: ["karate", "belts"]
+tags: ["Karate", "Belts"]
 author: "MyDojo Team"
 ---
 

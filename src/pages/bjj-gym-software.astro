@@ -1,0 +1,355 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqs = [
+  {
+    question: "What is BJJ gym software?",
+    answer: "BJJ gym software is a management platform designed specifically for Brazilian Jiu-Jitsu academies. It handles student databases, belt and stripe progression, class scheduling, attendance tracking, competition records, and billing with BJJ-specific terminology and workflows."
+  },
+  {
+    question: "How does BJJ software track belt progression?",
+    answer: "Quality BJJ software tracks the complete IBJJF belt system (white, blue, purple, brown, black) along with stripes at each level. It monitors time-in-rank, attendance requirements, and instructor assessments to help determine promotion readiness."
+  },
+  {
+    question: "Can BJJ software handle competition tracking?",
+    answer: "Yes. BJJ software can track tournament registrations, competition history, match results, medal counts, and IBJJF points. This helps coaches identify competitors and track their competitive development."
+  },
+  {
+    question: "Does BJJ software support multiple class types?",
+    answer: "Yes. You can configure different class types like fundamentals, advanced, no-gi, competition training, kids classes, and open mat sessions—each with appropriate prerequisites and scheduling."
+  },
+  {
+    question: "How much does BJJ gym software cost?",
+    answer: "Most BJJ software costs £50-150 per month depending on student count and features. Smaller academies typically find options at £50-80 monthly, while larger schools with advanced features may pay more."
+  }
+];
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "BJJ Gym Software: Complete Guide for Brazilian Jiu-Jitsu Academies",
+  "description": "Everything you need to know about BJJ gym software. Belt tracking, competition management, class scheduling, and billing for Brazilian Jiu-Jitsu academies.",
+  "image": "https://mydojo.software/images/blog-bjj.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "MyDojo Software"
+  },
+  "datePublished": "2026-01-18",
+  "dateModified": "2026-01-18"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title="BJJ Gym Software Guide (2026)"
+  description="BJJ gym software built for Brazilian Jiu-Jitsu academies. Belt and stripe tracking, competition management, class scheduling, and billing. Start your free trial."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Breadcrumbs -->
+  <div class="bg-gray-100 py-3">
+    <div class="container-custom">
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'BJJ Gym Software' }
+      ]} />
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: url('/images/hero-martial-arts.jpg'); background-size: cover; background-position: center;"></div>
+    </div>
+    <div class="container-custom relative">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Complete Guide</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">BJJ Gym Software</h1>
+        <p class="text-xl text-gray-300 mb-4">
+          <strong>BJJ gym software</strong> built specifically for Brazilian Jiu-Jitsu academies. Track belts and stripes, manage competition teams, schedule gi and no-gi classes, and handle billing—all with tools that understand the unique needs of BJJ.
+        </p>
+        <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 9 minutes</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
+          <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="py-8 bg-gray-50 border-b">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+        <div>
+          <div class="text-xl font-bold text-brand-navy">5</div>
+          <div class="text-xs text-gray-600">Belt ranks tracked</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-brand-navy">4</div>
+          <div class="text-xs text-gray-600">Stripes per belt</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-brand-navy">100%</div>
+          <div class="text-xs text-gray-600">IBJJF compliant</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-brand-navy">24/7</div>
+          <div class="text-xs text-gray-600">Online booking</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-brand-navy">10+</div>
+          <div class="text-xs text-gray-600">Hours saved weekly</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table of Contents -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
+          <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
+            <li><a href="#what-is" class="hover:text-brand-red">→ What Is BJJ Software?</a></li>
+            <li><a href="#belt-tracking" class="hover:text-brand-red">→ Belt & Stripe Tracking</a></li>
+            <li><a href="#features" class="hover:text-brand-red">→ Essential Features</a></li>
+            <li><a href="#competition" class="hover:text-brand-red">→ Competition Management</a></li>
+            <li><a href="#choosing" class="hover:text-brand-red">→ Choosing Software</a></li>
+            <li><a href="#faq" class="hover:text-brand-red">→ FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+
+        <h2 id="what-is" class="text-3xl font-bold text-brand-navy mb-6">What Is BJJ Gym Software?</h2>
+        <p class="text-lg text-gray-600 mb-6">
+          <strong>BJJ gym software</strong> is a management platform designed specifically for Brazilian Jiu-Jitsu academies. Unlike generic martial arts software, BJJ-specific tools understand the unique aspects of Jiu-Jitsu: the belt and stripe system, the distinction between gi and no-gi training, the competition-focused culture, and the longer timeline to black belt.
+        </p>
+        <p class="text-gray-600 mb-8">
+          The best BJJ software handles student management, belt progression tracking, class scheduling for different training types, attendance monitoring, competition records, and billing—all using terminology and workflows familiar to BJJ practitioners. At MyDojo, we've built tools that work for pure BJJ academies as well as <a href="/mma-gym-software/" class="text-brand-red hover:underline">MMA gyms</a> that include BJJ in their curriculum.
+        </p>
+
+        <h2 id="belt-tracking" class="text-3xl font-bold text-brand-navy mt-12 mb-6">BJJ Belt and Stripe Tracking</h2>
+        <p class="text-gray-600 mb-6">
+          The BJJ belt system is unique in martial arts. The journey from white to black belt typically takes 10-15 years, with each belt representing a significant investment of time and skill development. Your software needs to track this progression accurately.
+        </p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">The BJJ Belt System</h3>
+        <div class="overflow-x-auto mb-8">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b-2 border-gray-200">
+                <th class="py-3 px-4 text-brand-navy">Belt</th>
+                <th class="py-3 px-4 text-brand-navy">Typical Time</th>
+                <th class="py-3 px-4 text-brand-navy">Focus Areas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4 font-medium">White Belt</td>
+                <td class="py-3 px-4 text-gray-600">1-2 years</td>
+                <td class="py-3 px-4 text-gray-600">Fundamental positions, basic submissions, survival</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4 font-medium">Blue Belt</td>
+                <td class="py-3 px-4 text-gray-600">2-3 years</td>
+                <td class="py-3 px-4 text-gray-600">Technique expansion, competition introduction, game development</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4 font-medium">Purple Belt</td>
+                <td class="py-3 px-4 text-gray-600">2-3 years</td>
+                <td class="py-3 px-4 text-gray-600">Advanced techniques, teaching fundamentals, strategy refinement</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4 font-medium">Brown Belt</td>
+                <td class="py-3 px-4 text-gray-600">1-2 years</td>
+                <td class="py-3 px-4 text-gray-600">Mastery preparation, teaching advanced concepts, competition excellence</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4 font-medium">Black Belt</td>
+                <td class="py-3 px-4 text-gray-600">Ongoing</td>
+                <td class="py-3 px-4 text-gray-600">Continued learning, teaching, degrees (1st-6th dan)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-gray-600 mb-6">
+          For a comprehensive breakdown of the BJJ ranking system, including stripe requirements and IBJJF minimum time rules, see our <a href="/blog/bjj-belts-order-complete-guide/" class="text-brand-red hover:underline">complete guide to BJJ belts</a>.
+        </p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Stripe Tracking</h3>
+        <p class="text-gray-600 mb-6">
+          Each belt (except black) typically includes up to four stripes awarded between belt promotions. Stripes recognize progress and keep students motivated during the long journey between belts. Your software should:
+        </p>
+        <ul class="space-y-2 mb-8">
+          <li>Track current belt and stripe count for each student</li>
+          <li>Record stripe award dates and awarding instructor</li>
+          <li>Monitor attendance thresholds for stripe eligibility</li>
+          <li>Alert instructors when students approach promotion criteria</li>
+          <li>Generate promotion certificates and update records automatically</li>
+        </ul>
+
+        <h2 id="features" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Essential Features for BJJ Academies</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 my-8">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Gi & No-Gi Class Management</h3>
+            <p class="text-gray-700 text-sm">Schedule and track attendance separately for gi and no-gi classes. Many students train both, and your software should reflect their complete training picture.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Open Mat Scheduling</h3>
+            <p class="text-gray-700 text-sm">Manage open mat sessions with capacity limits, skill-level requirements, and optional check-in to track participation without formal instruction.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Competition Team Management</h3>
+            <p class="text-gray-700 text-sm">Identify competitors, track competition schedules, manage team registrations, and monitor competition results and rankings.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Kids Programme Support</h3>
+            <p class="text-gray-700 text-sm">Handle the kids belt system (with additional belts between white and blue) separately from adult progression, including parent portal access.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Private Lesson Booking</h3>
+            <p class="text-gray-700 text-sm">Allow students to book private sessions with specific instructors, with separate pricing and scheduling from regular classes.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Membership Flexibility</h3>
+            <p class="text-gray-700 text-sm">Support different membership types: unlimited, limited classes per week, gi-only, no-gi-only, or competition team add-ons.</p>
+          </div>
+        </div>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Attendance Tracking for Promotion</h3>
+        <p class="text-gray-600 mb-6">
+          Many BJJ academies use attendance as one factor in promotion decisions. Quality software provides:
+        </p>
+        <ul class="space-y-2 mb-8">
+          <li><strong>Attendance reports:</strong> Total classes, gi vs no-gi breakdown, consistency over time</li>
+          <li><strong>Promotion readiness indicators:</strong> Flag students meeting minimum attendance thresholds</li>
+          <li><strong>Historical tracking:</strong> View attendance patterns at each belt level</li>
+          <li><strong>QR code check-in:</strong> Fast, accurate attendance capture</li>
+        </ul>
+
+        <h2 id="competition" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Competition Management</h2>
+        <p class="text-gray-600 mb-6">
+          BJJ has a strong competition culture. Many students compete regularly, and academies often maintain competition teams. Your software should support this:
+        </p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Competition Features</h3>
+        <ul class="space-y-3 mb-6">
+          <li><strong>Tournament calendar:</strong> Track upcoming competitions (IBJJF, local tournaments, in-house)</li>
+          <li><strong>Team registration:</strong> Manage group sign-ups and payment collection</li>
+          <li><strong>Weight class tracking:</strong> Monitor students' competition weight categories</li>
+          <li><strong>Results recording:</strong> Log match outcomes, submission types, points</li>
+          <li><strong>Medal tracking:</strong> Maintain historical record of competitive achievements</li>
+          <li><strong>IBJJF points:</strong> Track ranking points for serious competitors</li>
+        </ul>
+
+        <div class="bg-red-50 border-l-4 border-brand-red p-4 my-6">
+          <p class="font-bold text-brand-navy">Competition drives retention</p>
+          <p>Students who compete typically train more consistently and stay enrolled longer. Supporting their competitive goals strengthens your academy community and retention rates.</p>
+        </div>
+
+        <h2 id="choosing" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Choosing BJJ Software</h2>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">BJJ-Specific vs Generic</h3>
+        <p class="text-gray-600 mb-6">
+          Generic martial arts software often struggles with BJJ's unique requirements:
+        </p>
+        <ul class="space-y-2 mb-6">
+          <li>Belt systems designed for karate's kyu/dan don't fit BJJ's five-belt progression</li>
+          <li>Stripe tracking is often missing or poorly implemented</li>
+          <li>No distinction between gi and no-gi training</li>
+          <li>Competition tracking as an afterthought rather than core feature</li>
+          <li>Kids programme with different belt colours not supported</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Look For</h3>
+        <ul class="space-y-2 mb-6">
+          <li><strong>True BJJ belt system:</strong> White through black with proper stripe tracking</li>
+          <li><strong>Kids belt support:</strong> Additional belts for youth programme</li>
+          <li><strong>Gi/no-gi distinction:</strong> Separate tracking for both training types</li>
+          <li><strong>Competition features:</strong> Tournament tracking, results, team management</li>
+          <li><strong>Open mat management:</strong> Informal session scheduling and check-in</li>
+          <li><strong>Flexible memberships:</strong> Support for varied training packages</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Questions to Ask Vendors</h3>
+        <ul class="space-y-2 mb-8">
+          <li>How does your stripe tracking work?</li>
+          <li>Can I configure separate kids and adult belt systems?</li>
+          <li>How do you handle gi and no-gi class tracking?</li>
+          <li>What competition management features are included?</li>
+          <li>Can students book private lessons online?</li>
+          <li>Do you support IBJJF membership tracking?</li>
+        </ul>
+
+        <p>Related: <a href="/martial-arts-software/" class="text-brand-red hover:underline">Martial Arts Software Overview</a> | <a href="/mma-gym-software/" class="text-brand-red hover:underline">MMA Gym Software</a> | <a href="/blog/jiu-jitsu-belt-ranks/" class="text-brand-red hover:underline">Jiu-Jitsu Belt Ranks Guide</a></p>
+
+        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6 mb-8">
+          {faqs.map((faq) => (
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
+              <p class="text-gray-700">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Level Up Your Academy?</h2>
+      <p class="text-xl mb-8 opacity-90">Join BJJ academies worldwide using MyDojo to track belt progression, manage competitions, and grow their student base.</p>
+      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free 14-Day Trial</a>
+      <p class="text-sm mt-4 opacity-75">No credit card required. Setup in 10 minutes.</p>
+    </div>
+  </section>
+
+  <!-- Related Content -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Resources</h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <a href="/martial-arts-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Martial Arts Software</h3>
+          <p class="text-gray-600 text-sm">Complete software overview</p>
+        </a>
+        <a href="/blog/bjj-belts-order-complete-guide/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">BJJ Belt Guide</h3>
+          <p class="text-gray-600 text-sm">Complete belt system breakdown</p>
+        </a>
+        <a href="/mma-gym-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">MMA Gym Software</h3>
+          <p class="text-gray-600 text-sm">Multi-discipline management</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

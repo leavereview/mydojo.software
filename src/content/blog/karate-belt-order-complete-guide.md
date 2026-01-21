@@ -1,9 +1,9 @@
 ---
-title: "Karate Belt Order: Complete Guide to Ranking Systems (2024)"
+title: "Karate Belt Order Guide"
 description: "Master the karate belt order with our comprehensive guide. Learn traditional rankings, variations by style, and how to track student progress effectively."
 date: "2026-01-06"
 image: "/images/black-white-portrait-athlete-participating-olympic-championship-sports.jpg"
-tags: ["karate", "bjj", "taekwondo", "belts", "self-defense"]
+tags: ["Karate", "Belts"]
 author: "MyDojo Team"
 faqs:
   - question: "How long does it typically take to earn a black belt in karate?"
