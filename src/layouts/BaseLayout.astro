@@ -9,6 +9,7 @@ interface Props {
   description?: string;
   image?: string;
   type?: 'website' | 'article';
+  schemaType?: 'Article' | 'BlogPosting' | 'WebPage' | 'CollectionPage';
   publishedDate?: string;
   modifiedDate?: string;
   author?: string;
@@ -20,11 +21,15 @@ const {
   description = 'MyDojo Software - The complete martial arts management platform for dojos, karate schools, and MMA gyms. Streamline scheduling, billing, and student management.',
   image = '/images/og-default.jpg',
   type = 'website',
+  schemaType,
   publishedDate,
   modifiedDate,
   author = 'MyDojo Team',
   noindex = false
 } = Astro.props;
+
+// Determine the schema type to use
+const resolvedSchemaType = schemaType || (type === 'article' ? 'Article' : 'WebPage');
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const fullTitle = title === 'Home' ? 'MyDojo Software - Martial Arts Management Platform' : `${title} | MyDojo Software`;
@@ -56,7 +61,7 @@ const schemaOrg = {
       }
     },
     {
-      "@type": type === 'article' ? 'Article' : 'WebPage',
+      "@type": resolvedSchemaType,
       "@id": canonicalURL.href,
       "url": canonicalURL.href,
       "name": title,
@@ -65,7 +70,7 @@ const schemaOrg = {
       "isPartOf": {
         "@id": "https://mydojo.software/#website"
       },
-      ...(type === 'article' && {
+      ...((resolvedSchemaType === 'Article' || resolvedSchemaType === 'BlogPosting') && {
         "author": {
           "@type": "Person",
           "name": author,
@@ -75,7 +80,7 @@ const schemaOrg = {
           "@id": "https://mydojo.software/#organization"
         }
       }),
-      ...(image && {
+      ...(image && (resolvedSchemaType === 'Article' || resolvedSchemaType === 'BlogPosting') && {
         "image": {
           "@type": "ImageObject",
           "url": new URL(image, Astro.site).href
