@@ -2,7 +2,7 @@
 title: "Martial Arts Marketing Tips"
 description: "Effective marketing strategies for martial arts schools. Digital marketing, local outreach, lead generation, and proven tactics to attract new students."
 image: /images/blog-kids-class.jpg
-date: "2026-01-18"
+date: "2026-02-13"
 tags: ["Marketing"]
 author: "MyDojo Team"
 ---

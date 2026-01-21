@@ -2,7 +2,7 @@
 title: "BJJ Blue Belt: Requirements & Tips"
 description: "Everything about earning your BJJ blue belt: requirements, timeline, techniques, and mindset for your first Jiu-Jitsu promotion."
 image: /images/blog-bjj.jpg
-date: "2026-01-18"
+date: "2026-01-23"
 tags: ["BJJ", "Belts", "Training"]
 author: "MyDojo Team"
 ---

@@ -2,7 +2,7 @@
 title: "Adult Karate Classes: Getting Started"
 description: "Thinking about starting karate as an adult? This guide covers what to expect, benefits, common concerns, and how to find the right class for you."
 image: /images/blog-instructor.jpg
-date: "2026-01-18"
+date: "2026-01-23"
 tags: ["Karate", "Training"]
 author: "MyDojo Team"
 ---

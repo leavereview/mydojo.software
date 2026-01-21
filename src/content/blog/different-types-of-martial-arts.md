@@ -2,7 +2,7 @@
 title: "Types of Martial Arts Explained"
 description: "Explore different types of martial arts from around the world. Understand striking, grappling, and hybrid styles to find the right martial art for you."
 image: /images/blog-mma-training.jpg
-date: "2026-01-18"
+date: "2026-01-30"
 tags: ["Martial Arts", "Training"]
 author: "MyDojo Team"
 ---

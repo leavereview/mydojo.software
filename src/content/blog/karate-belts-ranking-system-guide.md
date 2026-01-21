@@ -1,7 +1,7 @@
 ---
 title: "Karate Belts: Complete Guide"
 description: "Master the complete karate belt system! Learn rankings, requirements, testing procedures, and how to effectively manage belt progressions in your dojo."
-date: "2026-01-20"
+date: "2026-02-20"
 image: "/images/front-view-asian-people-practicing-taekwondo.jpg"
 tags: ["Karate", "Belts"]
 author: "MyDojo Team"

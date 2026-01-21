@@ -2,7 +2,7 @@
 title: "Karate Belt Colors: Full Guide"
 description: "Learn the meaning behind karate belt colors, the ranking order, and what each level represents. Complete guide for students, parents, and instructors."
 image: /images/blog-belt-ceremony.jpg
-date: "2026-01-18"
+date: "2026-02-06"
 tags: ["Karate", "Belts"]
 author: "MyDojo Team"
 ---

@@ -2,7 +2,7 @@
 title: "How Much Do Gym Owners Make?"
 description: "Discover realistic gym owner salary expectations for martial arts schools. Revenue factors, profit margins, and how to increase your dojo's profitability."
 image: /images/blog-dojo-interior.jpg
-date: "2026-01-18"
+date: "2026-02-06"
 tags: ["Business"]
 author: "MyDojo Team"
 ---

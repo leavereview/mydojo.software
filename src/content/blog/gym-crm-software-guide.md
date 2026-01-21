@@ -2,7 +2,7 @@
 title: "Gym CRM Software Guide"
 description: "Compare gym CRM software options for martial arts schools. Features to look for, questions to ask, and how to choose the right system."
 image: /images/blog-instructor.jpg
-date: "2026-01-18"
+date: "2026-01-30"
 tags: ["Software"]
 author: "MyDojo Team"
 ---

@@ -2,7 +2,7 @@
 title: "Martial Arts Retention Strategies"
 description: "Proven retention strategies for martial arts schools. Keep students longer with engagement tactics, communication strategies, and community building."
 image: /images/blog-belt-ceremony.jpg
-date: "2026-01-18"
+date: "2026-02-13"
 tags: ["Membership", "Business"]
 author: "MyDojo Team"
 ---

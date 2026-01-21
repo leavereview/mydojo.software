@@ -2,7 +2,7 @@
 title: "Cost to Open a Gym: Full Breakdown"
 description: "Detailed breakdown of gym startup costs including space, equipment, licensing, and ongoing expenses. Real numbers for martial arts and fitness facilities."
 image: /images/blog-dojo-interior.jpg
-date: "2026-01-18"
+date: "2026-01-30"
 tags: ["Business", "Starting a Gym"]
 author: "MyDojo Team"
 ---
