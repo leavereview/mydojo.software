@@ -1,398 +1,411 @@
 ---
-// Martial Arts Scheduling Software - Pillar Page
-import PillarPageLayout from '../layouts/PillarPageLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import StatisticsSection from '../components/seo/StatisticsSection.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+
+const schedulingStats = [
+  {
+    label: 'Admin Time Saved Weekly',
+    value: '12+ hrs',
+    change: { value: 65, direction: 'up' as const, period: 'vs manual' },
+    context: 'With automated scheduling and reminders'
+  },
+  {
+    label: 'No-Show Reduction',
+    value: '58%',
+    change: { value: 58, direction: 'up' as const, period: 'with reminders' },
+    context: 'Using SMS and email automated reminders'
+  },
+  {
+    label: 'Phone Call Reduction',
+    value: '70%',
+    change: { value: 70, direction: 'up' as const, period: 'with self-service' },
+    context: 'Students book and manage their own schedules'
+  },
+  {
+    label: 'Class Utilization Rate',
+    value: '89%',
+    change: { value: 24, direction: 'up' as const, period: 'with optimization' },
+    context: 'Automated capacity management fills classes efficiently'
+  },
+  {
+    label: 'Average Classes per Week',
+    value: '45+',
+    context: 'Typical martial arts school schedule complexity'
+  },
+  {
+    label: 'Scheduling Conflicts Eliminated',
+    value: '95%',
+    context: 'Real-time availability prevents double-bookings'
+  }
+];
+
+const comparisonData = [
+  {
+    label: 'Automated Class Reminders',
+    values: [true, true, false],
+    highlight: true
+  },
+  {
+    label: 'Student Self-Service Booking',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Real-Time Capacity Management',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Belt/Skill-Based Class Restrictions',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Recurring Schedule Templates',
+    values: [true, true, false]
+  },
+  {
+    label: 'Multi-Instructor Coordination',
+    values: [true, true, 'Manual']
+  },
+  {
+    label: 'Waitlist Management',
+    values: [true, false, false]
+  },
+  {
+    label: 'Family Member Coordination',
+    values: [true, false, false]
+  },
+  {
+    label: 'Private Lesson Scheduling',
+    values: [true, 'Limited', 'Paper calendar']
+  },
+  {
+    label: 'No-Show Tracking & Analytics',
+    values: [true, false, false]
+  }
+];
+
+const faqItems = [
+  {
+    question: "What is martial arts scheduling software?",
+    answer: "Martial arts scheduling software is a specialized booking system designed for dojos and martial arts schools. Unlike generic scheduling tools, it understands belt ranks, skill prerequisites, multi-instructor classes, family bookings, and the unique complexities of martial arts programs. It automates class reminders, manages capacity by skill level, enables student self-service booking, and tracks attendance patterns to reduce no-shows and optimize class sizes.",
+    links: [
+      { text: 'View all features', url: '/martial-arts-software/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "How does automated scheduling reduce no-shows?",
+    answer: "Automated reminders via SMS and email 24-48 hours before class dramatically reduce no-shows. Students can confirm attendance or cancel with one click, allowing waitlisted students to fill the spot automatically. The system tracks no-show patterns and can flag chronic offenders for instructor follow-up, improving overall attendance accountability.",
+    links: [
+      { text: 'CRM features', url: '/martial-arts-crm/' },
+      { text: 'Contact us', url: '/contact/' }
+    ]
+  },
+  {
+    question: "Can students book their own classes?",
+    answer: "Yes. MyDojo provides a student portal and mobile app where members can view their schedule, book available classes, join waitlists, and manage their bookings. The system automatically enforces belt-level restrictions, class capacity limits, and membership tier access. This self-service reduces admin phone calls by 70% while giving students the flexibility they expect.",
+    links: [
+      { text: 'Dojo management', url: '/dojo-management-software/' },
+      { text: 'Start free trial', url: '/contact/' }
+    ]
+  },
+  {
+    question: "How does skill-based scheduling work?",
+    answer: "You can set belt rank or skill requirements for each class. When students try to book, the system checks their current rank and only shows classes they're eligible to attend. This prevents white belts from accidentally booking advanced classes and ensures proper skill segregation. Instructors can also manually override restrictions for special cases.",
+    links: [
+      { text: 'Karate school features', url: '/karate-school-software/' },
+      { text: 'BJJ features', url: '/bjj-school-software/' }
+    ]
+  },
+  {
+    question: "Can I manage multiple instructors' schedules?",
+    answer: "Absolutely. Each instructor has their own calendar, availability settings, and class assignments. The system prevents double-booking instructors across locations or time slots. You can assign primary and assistant instructors to classes, track their teaching hours, and manage substitute instructor workflows when someone is unavailable.",
+    links: [
+      { text: 'Overview', url: '/martial-arts-software/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "How do recurring schedules work?",
+    answer: "Create schedule templates that repeat weekly, bi-weekly, or monthly. For example, set \"Kids Karate\" to run Monday/Wednesday/Friday at 4pm with a specific instructor and capacity. The system automatically generates these classes for your chosen timeframe and allows exceptions for holidays or special events without disrupting the overall pattern.",
+    links: [
+      { text: 'Karate features', url: '/karate-school-software/' },
+      { text: 'Start trial', url: '/contact/' }
+    ]
+  },
+  {
+    question: "What happens when a class fills up?",
+    answer: "Students are automatically placed on a waitlist and notified when spots open. If a booked student cancels, the first person on the waitlist receives an immediate notification with a booking link. This automation fills last-minute cancellations and maximizes class attendance without staff intervention.",
+    links: [
+      { text: 'Dojo management', url: '/dojo-management-software/' },
+      { text: 'Contact us', url: '/contact/' }
+    ]
+  },
+  {
+    question: "Can I schedule private lessons?",
+    answer: "Yes. MyDojo handles both group classes and one-on-one private lessons. Students can book available private lesson slots with their preferred instructor. The system tracks private lesson packages, automatically deducts sessions, and alerts students when their package is running low. You can also set different pricing for different instructors or session lengths.",
+    links: [
+      { text: 'Billing features', url: '/martial-arts-billing-software/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "How does family scheduling work?",
+    answer: "Parents can book classes for all their children from one account and coordinate schedules to minimize trips. The system shows color-coded family calendars and alerts parents to scheduling conflicts (like two kids having classes at different locations simultaneously). This visibility helps families plan their week and reduces no-shows caused by forgotten commitments.",
+    links: [
+      { text: 'Dojo management', url: '/dojo-management-software/' },
+      { text: 'Start trial', url: '/contact/' }
+    ]
+  },
+  {
+    question: "What scheduling reports are available?",
+    answer: "Track class utilization rates, peak attendance times, no-show patterns by student or class, instructor teaching hours, and booking lead times. These insights help you optimize your schedule by identifying underutilized time slots, overbooked classes that need additional sections, and which class types drive the most engagement. Export data to analyze trends over time.",
+    links: [
+      { text: 'Overview', url: '/martial-arts-software/' },
+      { text: 'Contact sales', url: '/contact/' }
+    ]
+  }
+];
+
+const breadcrumbItems = [
+  { label: 'Home', url: 'https://mydojo.software/' },
+  { label: 'Scheduling Software', url: 'https://mydojo.software/martial-arts-scheduling-software/' }
+];
 ---
 
-<PillarPageLayout
-  title="Martial Arts Scheduling Software"
-  description="Class scheduling software for martial arts schools. Manage recurring classes, private lessons, seminars, and instructor availability."
-  heroImage="/images/black-white-portrait-athlete-participating-olympic-championship-sports.jpg"
-  badge="Complete Guide"
-  breadcrumbLabel="Scheduling Software"
+<BaseLayout
+  title="Martial Arts Scheduling Software (2026) - Class Booking & Capacity Management"
+  description="Automate class scheduling for martial arts schools. Student self-service booking, belt-based restrictions, automated reminders, waitlist management, and instructor coordination. Reduce no-shows by 58% and admin time by 12+ hours weekly."
 >
-<strong>Efficient Scheduling for Martial Arts Schools of All Sizes</strong>
-
-<p>Managing a martial arts school schedule involves far more complexity than booking gym classes. Belt-level restrictions, instructor qualifications, mat space limitations, and the interplay between group classes and private lessons create scheduling challenges that generic calendar tools cannot address.</p>
-
-<p>Martial arts scheduling software provides purpose-built functionality for these unique requirements. From automated class check-ins to instructor availability management, the right platform eliminates scheduling friction while maintaining the structured environment your students expect.</p>
-
-<p>This guide examines the scheduling challenges specific to martial arts operations, essential software features, and how to evaluate platforms that genuinely understand your dojo's needs.</p>
-
-<h2>Key Takeaways</h2>
-
-<ul>
-<li>Belt-level class filtering ensures students attend appropriate sessions</li>
-<li>Instructor availability management prevents scheduling conflicts</li>
-<li>Multi-room/mat space allocation for efficient facility use</li>
-</ul>
-
-<ul>
-<li>Private lesson booking with online payment integration</li>
-<li>Seminar and event scheduling with capacity management</li>
-<li>Automated waitlists and class capacity controls</li>
-</ul>
-
-<h2>Why Martial Arts Schools Need Specialised Scheduling</h2>
-
-<p>Generic scheduling tools treat all appointments equally. A yoga class and a dentist appointment use the same booking logic. Martial arts training operates differently:</p>
-
-<h3>Belt-Level Complexity</h3>
-
-<p>Students can only attend classes appropriate to their rank. A white belt registering for an advanced sparring class creates problems—for the student, other class members, and the instructor. Scheduling software must understand rank restrictions.</p>
-
-<ul>
-<li><strong>Rank-based eligibility</strong> filtering shows only appropriate classes</li>
-<li><strong>Automatic enforcement</strong> prevents ineligible bookings</li>
-<li><strong>Progression visibility</strong> shows students what's available next</li>
-<li><strong>Instructor override</strong> capability for exceptional cases</li>
-</ul>
-
-<h3>Instructor Qualifications</h3>
-
-<p>Not every instructor can teach every class. A black belt may teach beginner classes but not advanced weapons training without specific certification. Scheduling must respect instructor-to-class matching.</p>
-
-<h3>Physical Space Constraints</h3>
-
-<p>Mat space, training areas, and equipment limit what can happen simultaneously. Quality scheduling software manages:</p>
-
-<ul>
-<li>Multiple training areas with different capacities</li>
-<li>Equipment allocation (heavy bags, weapons, mats)</li>
-<li>Concurrent class management without overlap conflicts</li>
-<li>Transition time between classes for cleanup and setup</li>
-</ul>
-
-<h2>Essential Scheduling Features</h2>
-
-<h3>1. Recurring Class Templates</h3>
-
-<p>Most martial arts schools run the same weekly schedule for months at a time. Effective scheduling software provides:</p>
-
-<ul>
-<li><strong>Weekly template creation</strong> with drag-and-drop interface</li>
-<li><strong>Seasonal schedule variants</strong> (summer hours, school holidays)</li>
-<li><strong>One-click schedule changes</strong> for holiday closures</li>
-<li><strong>Template duplication</strong> for rapid schedule creation</li>
-</ul>
-
-<p>Setting up a new term should take minutes, not hours of re-entering the same class information.</p>
-
-<h3>2. Class Capacity Management</h3>
-
-<p>Overcrowded classes reduce training quality and increase safety risks. Scheduling software should enforce sensible limits:</p>
-
-<ul>
-<li>Maximum capacity settings per class type</li>
-<li>Automatic waitlist creation when classes fill</li>
-<li>Waitlist notifications when spots open</li>
-<li>Priority waitlist options for certain membership types</li>
-</ul>
-
-<h3>3. Private Lesson Scheduling</h3>
-
-<p>One-on-one instruction requires different handling than group classes:</p>
-
-<ul>
-<li><strong>Instructor availability calendars</strong> students can view</li>
-<li><strong>Online booking with payment</strong> collection</li>
-<li><strong>Automatic reminders</strong> to reduce no-shows</li>
-<li><strong>Cancellation policies</strong> with enforced notice periods</li>
-<li><strong>Package tracking</strong> for prepaid lesson bundles</li>
-</ul>
-
-<h3>4. Check-In and Attendance</h3>
-
-<p>Tracking who actually attends class matters for rank progression, billing verification, and understanding your school's patterns:</p>
-
-<ul>
-<li><strong>Self-service kiosk mode</strong> for student check-in</li>
-<li><strong>Instructor mobile check-in</strong> via app</li>
-<li><strong>Attendance history</strong> per student</li>
-<li><strong>Attendance requirements</strong> for rank eligibility</li>
-<li><strong>No-show tracking</strong> and follow-up triggers</li>
-</ul>
-
-<h3>5. Instructor Availability Management</h3>
-
-<p>Managing instructor schedules across multiple people requires dedicated functionality:</p>
-
-<ul>
-<li><strong>Individual availability calendars</strong> per instructor</li>
-<li><strong>Blackout dates</strong> for holidays and absences</li>
-<li><strong>Cover scheduling</strong> when instructors are unavailable</li>
-<li><strong>Qualification tracking</strong> for class assignments</li>
-<li><strong>Conflict detection</strong> preventing double-booking</li>
-</ul>
-
-<h3>6. Seminar and Event Scheduling</h3>
-
-<p>Special events differ from regular classes in structure and booking requirements:</p>
-
-<ul>
-<li>One-time event creation with flexible timing</li>
-<li>Registration with deposit or full payment</li>
-<li>External instructor guest teaching</li>
-<li>Multi-day event support for camps and intensives</li>
-<li>Attendance tracking for continuing education credits</li>
-</ul>
-
-<h2>Student-Facing Scheduling Features</h2>
-
-<h3>Online Class Booking</h3>
-
-<p>Students should be able to view and book classes without contacting the school:</p>
-
-<ul>
-<li><strong>Mobile-friendly schedule view</strong></li>
-<li><strong>Real-time availability</strong> showing open spots</li>
-<li><strong>Rank-filtered views</strong> showing eligible classes only</li>
-<li><strong>Booking confirmations</strong> via email or app notification</li>
-<li><strong>Easy cancellation</strong> within policy windows</li>
-</ul>
-
-<h3>Calendar Integration</h3>
-
-<p>Students appreciate having their martial arts schedule in their personal calendar:</p>
-
-<ul>
-<li>Google Calendar sync</li>
-<li>Apple Calendar integration</li>
-<li>Outlook compatibility</li>
-<li>Automatic updates when schedule changes</li>
-</ul>
-
-<h3>Reminder Systems</h3>
-
-<p>Reduce no-shows with automated reminders:</p>
-
-<ul>
-<li>Email reminders 24-48 hours before class</li>
-<li>SMS/text reminders same day</li>
-<li>Push notifications via mobile app</li>
-<li>Customisable reminder timing and frequency</li>
-</ul>
-
-<h2>Scheduling for Different School Types</h2>
-
-<h3>Traditional Dojos</h3>
-
-<p>Schools focused on traditional arts like Karate, Judo, or Aikido typically need:</p>
-
-<ul>
-<li>Belt-level class filtering</li>
-<li>Grading preparation class scheduling</li>
-<li>Seminar registration for visiting instructors</li>
-<li>Kata and technique workshop scheduling</li>
-</ul>
-
-<h3>MMA and Combat Sports</h3>
-
-<p>Mixed martial arts schools often require:</p>
-
-<ul>
-<li>Discipline-specific class categories (striking, grappling, wrestling)</li>
-<li>Open mat scheduling alongside structured classes</li>
-<li>Competition team training scheduling</li>
-<li>Fighter preparation scheduling</li>
-</ul>
-
-<h3>Brazilian Jiu-Jitsu Academies</h3>
-
-<p>BJJ schools benefit from:</p>
-
-<ul>
-<li>Gi and No-Gi class differentiation</li>
-<li>Open mat time management</li>
-<li>Competition class scheduling</li>
-<li>Stripe and belt progress tracking integration</li>
-</ul>
-
-<h3>Multi-Discipline Schools</h3>
-
-<p>Schools teaching multiple arts need:</p>
-
-<ul>
-<li>Separate schedules per discipline</li>
-<li>Combined student view across all arts</li>
-<li>Cross-training class options</li>
-<li>Unified private lesson booking</li>
-</ul>
-
-<h2>Reporting and Analytics</h2>
-
-<p>Understanding your schedule's effectiveness helps optimise operations:</p>
-
-<h3>Attendance Analytics</h3>
-
-<ul>
-<li><strong>Class popularity</strong> by time slot and day</li>
-<li><strong>Instructor performance</strong> by attendance rates</li>
-<li><strong>No-show rates</strong> by class type and student segment</li>
-<li><strong>Capacity utilisation</strong> across all classes</li>
-</ul>
-
-<h3>Schedule Optimisation Insights</h3>
-
-<ul>
-<li>Underperforming time slots to consider removing</li>
-<li>Oversubscribed classes that need additional sessions</li>
-<li>Instructor workload distribution</li>
-<li>Peak demand periods for resource planning</li>
-</ul>
-
-<h2>Integration with Other Systems</h2>
-
-<p>Scheduling doesn't exist in isolation. Effective platforms connect with:</p>
-
-<h3>Billing Integration</h3>
-
-<ul>
-<li>Private lesson payments at booking</li>
-<li>Seminar registration fees</li>
-<li>Membership validation for class access</li>
-<li>Drop-in class purchases</li>
-</ul>
-
-<h3>Student Management</h3>
-
-<ul>
-<li>Attendance contributing to rank eligibility</li>
-<li>Student profiles showing booking history</li>
-<li>Family account coordination</li>
-<li>Communication triggered by booking events</li>
-</ul>
-
-<h3>Website Integration</h3>
-
-<ul>
-<li>Embedded schedule widgets</li>
-<li>Online booking from your website</li>
-<li>Real-time availability display</li>
-<li>Branded booking experience</li>
-</ul>
-
-<h2>Implementation Best Practices</h2>
-
-<h3>Before You Start</h3>
-
-<ul>
-<li><strong>Document your current schedule</strong> completely</li>
-<li><strong>Map instructor qualifications</strong> to class types</li>
-<li><strong>Define capacity limits</strong> for each class</li>
-<li><strong>Identify booking rules</strong> (cancellation windows, rank restrictions)</li>
-<li><strong>List integration requirements</strong> with existing systems</li>
-</ul>
-
-<h3>Rollout Strategy</h3>
-
-<ol>
-<li><strong>Configure the system</strong> with your complete schedule</li>
-<li><strong>Test internally</strong> with staff bookings</li>
-<li><strong>Soft launch</strong> with a subset of students</li>
-<li><strong>Gather feedback</strong> and adjust</li>
-<li><strong>Full deployment</strong> with clear student communication</li>
-</ol>
-
-<h3>Training Requirements</h3>
-
-<ul>
-<li><strong>Front desk staff</strong> need full scheduling capabilities</li>
-<li><strong>Instructors</strong> need check-in and basic schedule viewing</li>
-<li><strong>Students</strong> need self-service booking orientation</li>
-<li><strong>Owners/managers</strong> need reporting and configuration access</li>
-</ul>
-
-<h2>Frequently Asked Questions</h2>
-
-<h3>What is martial arts scheduling software?</h3>
-
-<p>Martial arts scheduling software is a specialised platform for managing class schedules, private lessons, seminars, and instructor availability at martial arts schools. It includes features like belt-level class restrictions, capacity management, and attendance tracking that generic scheduling tools lack.</p>
-
-<h3>How does belt-level scheduling work?</h3>
-
-<p>Belt-level scheduling automatically filters which classes students can book based on their current rank. A white belt sees only beginner-appropriate classes, while advanced students see their eligible options. This prevents mismatched skill levels in classes and ensures appropriate training progression.</p>
-
-<h3>Can I manage multiple locations with one system?</h3>
-
-<p>Yes, quality martial arts scheduling software supports multi-location operations. Each location maintains its own schedule while sharing student databases, allowing students to book across locations and providing consolidated reporting for owners.</p>
-
-<h3>How do private lesson bookings work?</h3>
-
-<p>Students view instructor availability calendars, select available time slots, and book directly with payment. The system manages instructor calendars, sends confirmations and reminders, and tracks prepaid lesson packages. Cancellation policies can be enforced automatically.</p>
-
-<h3>Can students book classes online?</h3>
-
-<p>Yes, students can view real-time schedules, see available spots, and book directly through web portals or mobile apps. Booking confirmations, reminders, and calendar integration happen automatically.</p>
-
-<h3>How does the waitlist feature work?</h3>
-
-<p>When a class reaches capacity, additional booking attempts go to a waitlist. If a registered student cancels, the first waitlisted student receives automatic notification and can claim the spot. Priority waitlist options can favour certain membership types.</p>
-
-<h3>What reports can I generate?</h3>
-
-<p>Scheduling reports include class attendance by time slot, instructor performance metrics, capacity utilisation rates, no-show tracking, and historical attendance trends. These insights help optimise your schedule for maximum effectiveness.</p>
-
-<h3>Does scheduling software integrate with billing?</h3>
-
-<p>Integrated platforms connect scheduling with billing, enabling private lesson payment at booking, seminar registration fees, membership validation for class access, and tracking of included vs. additional classes based on membership type.</p>
-
-<h2>Related Resources</h2>
-
-<ul>
-<li><a href="/martial-arts-software/" class="link">Martial Arts Software</a> — Complete platform overview</li>
-<li><a href="/dojo-management-software/" class="link">Dojo Management Software</a> — Traditional dojo features</li>
-</ul>
-
-<ul>
-<li><a href="/blog/adult-karate-classes-guide/" class="link">Adult Karate Classes Guide</a> — Growing adult programmes</li>
-<li><a href="/martial-arts-billing-software/" class="link">Billing Software</a> — Payment processing details</li>
-</ul>
-
-<!-- FAQPage Schema -->
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is martial arts scheduling software?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Martial arts scheduling software is a specialised platform for managing class schedules, private lessons, seminars, and instructor availability at martial arts schools. It includes features like belt-level class restrictions, capacity management, and attendance tracking that generic scheduling tools lack."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does belt-level scheduling work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Belt-level scheduling automatically filters which classes students can book based on their current rank. A white belt sees only beginner-appropriate classes, while advanced students see their eligible options. This prevents mismatched skill levels in classes and ensures appropriate training progression."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I manage multiple locations with one system?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, quality martial arts scheduling software supports multi-location operations. Each location maintains its own schedule while sharing student databases, allowing students to book across locations and providing consolidated reporting for owners."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do private lesson bookings work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Students view instructor availability calendars, select available time slots, and book directly with payment. The system manages instructor calendars, sends confirmations and reminders, and tracks prepaid lesson packages. Cancellation policies can be enforced automatically."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can students book classes online?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, students can view real-time schedules, see available spots, and book directly through web portals or mobile apps. Booking confirmations, reminders, and calendar integration happen automatically."
-      }
+  <BreadcrumbsEnhanced site="mydojo" items={breadcrumbItems} />
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block bg-red-50 text-red-600 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          Complete Guide to Scheduling Software
+        </span>
+        <h1 class="text-4xl md:text-5xl font-bold text-navy mb-6">
+          Martial Arts Scheduling Software
+        </h1>
+        <p class="text-xl text-gray-600 mb-8">
+          Automate class booking, reduce no-shows by 58%, and save 12+ hours of admin time every week with intelligent scheduling designed specifically for martial arts schools.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="/contact/" class="btn-primary">Start Free Trial</a>
+          <a href="/pricing/" class="btn-secondary">View Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FeaturedAnswer question="What is martial arts scheduling software?">
+    Martial arts scheduling software automates class booking, manages capacity by belt rank, sends automated reminders, coordinates instructor schedules, enables student self-service, and tracks attendance patterns. It reduces no-shows through SMS/email reminders and optimizes class utilization with real-time availability.
+  </FeaturedAnswer>
+
+  <StatisticsSection
+    site="mydojo"
+    pageUrl="https://mydojo.software/martial-arts-scheduling-software/"
+    title="Martial Arts Scheduling Statistics"
+    stats={schedulingStats}
+  />
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+        <h2>Why Martial Arts Schools Need Specialized Scheduling</h2>
+        <p>
+          Managing a martial arts school schedule involves complexity that generic booking systems can't handle. You're not just filling time slots—you're coordinating multiple instructors across belt levels, enforcing skill prerequisites, managing family bookings where parents juggle multiple children's schedules, and handling both group classes and private lessons.
+        </p>
+        <p>
+          Manual scheduling with paper calendars or basic digital tools creates bottlenecks. Staff spend hours answering phone calls about class availability, manually checking belt requirements, and chasing down students to fill last-minute cancellations. Without automated reminders, no-show rates can reach 30-40%, leaving instructors teaching half-empty classes and wasting valuable mat time.
+        </p>
+
+        <h2>Automated Reminders Dramatically Reduce No-Shows</h2>
+        <p>
+          The single biggest scheduling win is automated class reminders. MyDojo sends SMS and email notifications 24-48 hours before each class with one-click confirmation links. Students can confirm attendance, cancel if needed, or add the class to their personal calendar—all from their phone in seconds.
+        </p>
+        <p>
+          When a student cancels with advance notice, the system immediately notifies waitlisted students that a spot opened. The first person to respond gets the slot automatically. This automation fills classes without staff intervention and reduces no-shows by an average of 58% according to our client data.
+        </p>
+
+        <h2>Student Self-Service Booking Reduces Admin Load</h2>
+        <p>
+          Give students control of their schedules through a mobile app and web portal. They can browse available classes, see which instructors are teaching, check current enrollment numbers, and book their spot instantly. The system automatically enforces belt-level restrictions, membership tier access, and class capacity limits.
+        </p>
+        <p>
+          This self-service dramatically reduces phone calls—our clients report 70% fewer scheduling inquiries. Staff time previously spent on the phone answering "What time is the advanced class?" and "Can I bring a friend?" is redirected to higher-value activities like trial class follow-up and student engagement.
+        </p>
+
+        <h2>Skill-Based Class Restrictions</h2>
+        <p>
+          Different belt ranks need different training. MyDojo lets you set minimum belt requirements for each class. White belts only see beginner classes in their booking portal, while black belts can access all levels. This prevents awkward situations where new students accidentally book advanced sparring sessions they're not ready for.
+        </p>
+        <p>
+          The system checks eligibility automatically based on the student's current rank in their profile. As students progress and earn new belts, their available class options expand automatically. Instructors can manually override restrictions for special cases, like allowing a talented student to try the next level early.
+        </p>
+
+        <h2>Real-Time Capacity Management</h2>
+        <p>
+          Set maximum capacity for each class based on mat space, instructor ratios, or equipment availability. The system displays real-time enrollment numbers so students know if a class is filling up. When capacity is reached, new students join a waitlist instead of being turned away.
+        </p>
+        <p>
+          Capacity can vary by class type. Your kids' beginners class might max out at 20 students for safety, while adult sparring is capped at 12 due to space constraints. Competition team training might have unlimited capacity. These limits are enforced automatically, preventing overcrowding without staff having to manually track numbers.
+        </p>
+
+        <h2>Multi-Instructor Coordination</h2>
+        <p>
+          Schools with multiple instructors need visibility into everyone's schedule. MyDojo shows a consolidated calendar across all instructors and locations. You can see at a glance who's teaching what, identify gaps in coverage, and prevent double-booking instructors across simultaneous classes.
+        </p>
+        <p>
+          Each instructor has personal availability settings—marking when they're available to teach, unavailable due to travel, or only available at certain locations. When creating new classes, the system only suggests instructors who are available at that time. Substitute instructor workflows handle last-minute coverage needs.
+        </p>
+
+        <h2>Recurring Schedule Templates</h2>
+        <p>
+          Most martial arts schools run the same schedule every week. Create a template once—"Kids Karate Monday/Wednesday/Friday 4pm with Instructor John, capacity 20"—and the system generates all those classes automatically for the next 3-6 months. Make exceptions for holidays or special events without disrupting the overall pattern.
+        </p>
+        <p>
+          Templates handle complex patterns like alternating weeks (beginners week 1, intermediate week 2) or monthly specialty classes. When you update a template, you can choose whether to apply changes to all future classes or just new ones, preserving any manual adjustments already made.
+        </p>
+
+        <h2>Waitlist Management</h2>
+        <p>
+          Popular classes fill up quickly, especially during peak evening hours. Rather than turning students away, place them on an automated waitlist. When someone cancels, the first person on the waitlist receives an instant notification via SMS and email with a link to claim the spot.
+        </p>
+        <p>
+          Waitlists are first-come, first-served by default, but you can prioritize by membership level (unlimited members before limited class packages) or manually override the order. Students can join waitlists for multiple classes and are automatically removed from other waitlists when they book a conflicting time slot.
+        </p>
+
+        <h2>Family Scheduling Coordination</h2>
+        <p>
+          Parents with multiple children training at your school need to coordinate schedules to minimize trips. MyDojo's family calendar shows all children's classes in one view with color-coding by child. Parents instantly see if two kids have overlapping classes at different locations—a scheduling conflict they need to resolve.
+        </p>
+        <p>
+          The system alerts parents to conflicts when they try to book. It can also suggest alternative classes that work for the whole family, like back-to-back sessions where one child finishes right as another begins. This coordination reduces no-shows caused by forgotten commitments and helps families plan their week.
+        </p>
+
+        <h2>Private Lesson Scheduling</h2>
+        <p>
+          Many schools offer private one-on-one lessons alongside group classes. MyDojo handles both in one system. Set up private lesson time blocks for each instructor, define session lengths (30min, 60min, 90min), and set pricing that can vary by instructor or session length.
+        </p>
+        <p>
+          Students book available private lesson slots through the same portal they use for group classes. The system tracks private lesson packages—if a student purchased 10 sessions, each booking automatically deducts from their balance. Automated alerts notify students when they have 2 sessions remaining so they can purchase their next package.
+        </p>
+
+        <h2>Attendance Tracking Integration</h2>
+        <p>
+          Scheduling and attendance work together. When students book a class, they appear on that class's attendance roster. Instructors mark attendance from a tablet or phone, and the system tracks no-shows, late arrivals, and consistent attendance patterns.
+        </p>
+        <p>
+          Chronic no-shows trigger automated follow-up. After 3 missed classes, the system can send a re-engagement email or flag the student for staff outreach. Conversely, students with perfect attendance streaks can receive recognition or rewards, encouraging continued commitment.
+        </p>
+
+        <h2>Scheduling Analytics & Optimization</h2>
+        <p>
+          Data reveals opportunities to optimize your schedule. Track class utilization rates to identify underbooked time slots that might be candidates for cancellation or combination with other classes. See which class times have the highest demand so you can add capacity where it's needed most.
+        </p>
+        <p>
+          Analyze no-show patterns by class type, time of day, or individual student to understand why people aren't attending. Track how far in advance students typically book classes—if most book day-of, your schedule might not be visible enough or students don't feel classes will fill up.
+        </p>
+
+        <h2>Mobile App for On-The-Go Booking</h2>
+        <p>
+          Students expect mobile convenience. MyDojo's mobile app lets members manage their entire schedule from their phone. Book classes while commuting, get push notifications for reminders and waitlist openings, and view their upcoming schedule at a glance.
+        </p>
+        <p>
+          The app syncs with device calendars so booked classes automatically appear in Apple Calendar or Google Calendar alongside their other commitments. Students can enable push notifications for specific class types (only notify me about sparring sessions) to reduce notification fatigue.
+        </p>
+
+        <h2>Integration with Billing</h2>
+        <p>
+          Scheduling connects to your billing system. Membership tiers determine which classes students can book (unlimited members access all classes, basic members get 8/month). The system automatically enforces these limits and prompts students to upgrade when they hit their cap.
+        </p>
+        <p>
+          For drop-in classes or special workshops, scheduling can charge per-class fees directly. Students book the class and pay in one transaction. This works for guest passes, trial classes, or premium workshops that have separate pricing from regular memberships.
+        </p>
+
+        <h2>Getting Started with MyDojo Scheduling</h2>
+        <p>
+          Implementation takes 1-2 weeks from signup to launch. You'll import your current class schedule, set capacity limits and skill requirements, configure automated reminder timing, and invite students to create their portal accounts. Most schools see immediate benefits—fewer phone calls and better class attendance—within the first billing cycle.
+        </p>
+        <p>
+          Start with a free trial to test scheduling with your staff and a small group of students. MyDojo includes onboarding support, template setup, and training materials to help your team and students adapt to the new system.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ComparisonTable
+    title="Martial Arts Scheduling vs General Booking vs Manual Tracking"
+    headers={['MyDojo (Martial Arts-Specific)', 'Generic Booking Tools', 'Spreadsheets/Paper']}
+    rows={comparisonData}
+  />
+
+  <FAQEnhanced
+    site="mydojo"
+    pageUrl="https://mydojo.software/martial-arts-scheduling-software/"
+    title="Frequently Asked Questions About Martial Arts Scheduling Software"
+    faqs={faqItems}
+  />
+
+  <section class="section bg-navy text-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Ready to Automate Your Scheduling?
+        </h2>
+        <p class="text-xl mb-8 text-gray-300">
+          Reduce no-shows by 58%, save 12+ hours weekly, and give students the self-service booking they expect. Start your free trial today.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="/contact/" class="btn-primary">Start Free Trial</a>
+          <a href="/pricing/" class="btn-secondary bg-white text-navy hover:bg-gray-100">View Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 4rem 0;
+  }
+
+  @media (min-width: 768px) {
+    .section {
+      padding: 6rem 0;
     }
-  ]
-})} is:inline />
-</PillarPageLayout>
+  }
+
+  .prose {
+    color: #1a1a2e;
+  }
+
+  .prose h2 {
+    color: #1a1a2e;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose p {
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+  }
+
+  .prose a {
+    color: #e94560;
+    text-decoration: none;
+  }
+
+  .prose a:hover {
+    text-decoration: underline;
+  }
+</style>

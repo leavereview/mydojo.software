@@ -1,315 +1,450 @@
 ---
-// Martial arts crm - Pillar Page
-import PillarPageLayout from '../layouts/PillarPageLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import StatisticsSection from '../components/seo/StatisticsSection.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+
+const crmStats = [
+  {
+    label: 'Lead Conversion Rate',
+    value: '42%',
+    change: { value: 18, direction: 'up' as const, period: 'with CRM' },
+    context: 'vs 24% without systematic follow-up'
+  },
+  {
+    label: 'Trial-to-Member Conversion',
+    value: '65%',
+    change: { value: 25, direction: 'up' as const, period: 'with automation' },
+    context: 'Automated follow-ups increase conversions'
+  },
+  {
+    label: 'Average Response Time',
+    value: '4 min',
+    change: { value: 85, direction: 'up' as const, period: 'faster' },
+    context: 'Automated lead response vs manual'
+  },
+  {
+    label: 'Student Retention Improvement',
+    value: '23%',
+    change: { value: 23, direction: 'up' as const, period: 'year 1' },
+    context: 'Proactive engagement tracking'
+  },
+  {
+    label: 'Follow-Up Completion Rate',
+    value: '95%',
+    change: { value: 60, direction: 'up' as const, period: 'vs manual' },
+    context: 'Automated task management'
+  },
+  {
+    label: 'Revenue per Lead',
+    value: '2.1x',
+    context: 'CRM-managed vs untracked leads'
+  }
+];
+
+const comparisonData = [
+  {
+    label: 'Automated Lead Capture',
+    values: [true, true, false],
+    highlight: true
+  },
+  {
+    label: 'Trial Class Workflow',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Engagement Risk Alerts',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Multi-Channel Communication',
+    values: [true, true, false]
+  },
+  {
+    label: 'Lead Source Tracking',
+    values: [true, true, false]
+  },
+  {
+    label: 'Automated Follow-Up Sequences',
+    values: [true, true, false]
+  },
+  {
+    label: 'Student Lifecycle Timeline',
+    values: [true, false, false]
+  },
+  {
+    label: 'Retention Analytics',
+    values: [true, false, false]
+  },
+  {
+    label: 'Family Relationship Tracking',
+    values: [true, false, false]
+  },
+  {
+    label: 'Integration with Billing',
+    values: [true, false, false]
+  }
+];
+
+const faqItems = [
+  {
+    question: "What is a martial arts CRM?",
+    answer: "A martial arts CRM (Customer Relationship Management) system tracks prospects and students through their entire journey—from initial inquiry through trial class, enrollment, and ongoing training. It automates lead follow-ups, manages trial class workflows, identifies retention risks, and provides timeline visibility into every student relationship. Martial arts CRMs understand belt progression, family relationships, and multi-year student lifecycles unlike generic sales CRMs.",
+    links: [
+      { text: 'CRM features', url: '/martial-arts-software/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "How does CRM help convert leads to students?",
+    answer: "CRM increases conversions through automated lead response (within 4 minutes vs hours manually), systematic follow-up sequences that prevent leads from falling through cracks, trial class scheduling automation with reminder sequences, lead source tracking to identify best marketing channels, and nurture campaigns for not-yet-ready prospects. Schools using CRM see 42% lead conversion vs 24% without systematic follow-up.",
+    links: [
+      { text: 'Lead management', url: '/martial-arts-software/' },
+      { text: 'Marketing guide', url: '/blog/martial-arts-marketing-tips/' }
+    ]
+  },
+  {
+    question: "What's the difference between martial arts CRM and general CRM?",
+    answer: "Martial arts CRM understands trial class workflows, belt rank progression milestones, family account relationships, multi-year student lifecycles (not single transactions), attendance-based engagement tracking, and billing integration for member status. General CRMs like Salesforce track deals and one-time sales. Martial arts CRM tracks relationships spanning years with progression milestones, family dynamics, and ongoing engagement patterns unique to training environments.",
+    links: [
+      { text: 'Martial arts features', url: '/martial-arts-software/' },
+      { text: 'Compare software', url: '/blog/best-martial-arts-software/' }
+    ]
+  },
+  {
+    question: "Can CRM identify students at risk of quitting?",
+    answer: "Yes, retention-focused CRM tracks engagement indicators like declining attendance patterns, missed classes without makeups, overdue payments, no-shows to scheduled classes, stagnant belt progression, and decreased training frequency. When risk patterns emerge, automated alerts notify instructors to intervene personally before the student quits. Schools using proactive engagement tracking see 23% better retention compared to reactive approaches.",
+    links: [
+      { text: 'Retention features', url: '/martial-arts-software/' },
+      { text: 'Retention strategies', url: '/blog/member-retention-strategies/' }
+    ]
+  },
+  {
+    question: "How does automated follow-up work?",
+    answer: "Automated follow-up sequences trigger based on lead actions and time intervals. When someone inquires, they immediately receive confirmation and school information. Day 2: Follow-up offering trial class. Day 4: Additional value content about benefits. Day 7: Special offer or urgency element. After trial class: Immediate thank-you, next-day enrollment invitation, ongoing nurture if not enrolled. Automation ensures 95% follow-up completion vs 35% manual completion.",
+    links: [
+      { text: 'Automation features', url: '/martial-arts-software/' }
+    ]
+  },
+  {
+    question: "Does martial arts CRM integrate with billing?",
+    answer: "Yes, CRM integration with billing provides unified student view showing payment status, membership type, payment history, failed payment alerts, and upcoming renewals alongside engagement data. This integration identifies high-risk situations like declining attendance plus payment issues, enables targeted campaigns to upgrade members from single to all-access, and tracks lifetime value per student including original lead source.",
+    links: [
+      { text: 'Billing integration', url: '/martial-arts-billing-software/' },
+      { text: 'All features', url: '/martial-arts-software/' }
+    ]
+  },
+  {
+    question: "How much does martial arts CRM cost?",
+    answer: "Martial arts CRM is typically included in comprehensive martial arts software (£79-150/month total) rather than sold separately. Standalone CRM platforms cost £20-80/month but lack martial arts context like belt tracking and attendance integration. Schools benefit more from integrated CRM within martial arts software where lead data connects to attendance, billing, and progression tracking. MyDojo includes full CRM capabilities in all plans starting at £79/month.",
+    links: [
+      { text: 'View pricing', url: '/pricing/' },
+      { text: 'Feature comparison', url: '/martial-arts-software/' }
+    ]
+  },
+  {
+    question: "Can CRM track lead sources and marketing ROI?",
+    answer: "Yes, good martial arts CRM tracks where each lead originated (Google Ads, Facebook, referral, walk-in, event), calculates cost per lead by source, measures conversion rates by channel, identifies which marketing generates highest lifetime value students, and attributes revenue back to original source. This data shows whether your £500/month Facebook ads generate better ROI than £300/month Google Ads based on actual enrollments and lifetime value.",
+    links: [
+      { text: 'Marketing analytics', url: '/martial-arts-software/' },
+      { text: 'Marketing guide', url: '/blog/martial-arts-marketing-tips/' }
+    ]
+  },
+  {
+    question: "What reports do martial arts CRM provide?",
+    answer: "CRM reports include lead pipeline by stage (inquiry, trial scheduled, trial completed, enrolled, lost), conversion rates at each stage, lead response times, follow-up completion rates, lead sources and conversion by source, trial show rate, trial-to-member conversion, student engagement scores, retention risk alerts, student lifetime value, and marketing ROI by channel. These metrics identify bottlenecks in your conversion process and retention weak points.",
+    links: [
+      { text: 'Reporting features', url: '/martial-arts-software/' }
+    ]
+  },
+  {
+    question: "How long does CRM implementation take?",
+    answer: "Basic CRM setup takes 1-2 weeks: import existing leads and students (Day 1-3), configure lead sources and stages (Day 4-5), set up automated follow-up sequences (Day 6-8), train staff on lead management (Day 9-10), launch and monitor first leads (Week 2). Advanced features like custom workflows, retention scoring, and complex segmentation add 1-2 weeks. Most schools see positive ROI within first month through improved lead conversion alone.",
+    links: [
+      { text: 'Implementation guide', url: '/martial-arts-software/' },
+      { text: 'Start free trial', url: '/contact/' }
+    ]
+  }
+];
 ---
 
-<PillarPageLayout
-  title="Martial Arts CRM"
-  description="Martial arts CRM for lead management and student retention. Track prospects, automate follow-ups, and build lasting relationships with students."
-  heroImage="/images/full-shot-asian-people-practicing-taekwondo.jpg"
-  badge="Complete Guide"
-  breadcrumbLabel="Martial Arts CRM"
+<BaseLayout
+  title="Martial Arts CRM (2026)"
+  description="Martial arts CRM for lead management and student retention. Track prospects, automate follow-ups, identify risks, and build lasting relationships with students."
 >
-<strong>Lead Management and Student Relationship Tools for Martial Arts Schools</strong>
-
-<p>Every martial arts school faces the same fundamental challenge: converting interested prospects into enrolled students, then nurturing those students into long-term members. A martial arts CRM (Customer Relationship Management) system provides the infrastructure to manage both sides of this equation systematically.</p>
-
-<p>Unlike generic CRM platforms designed for sales teams or retail businesses, martial arts CRM functionality addresses the specific journey from initial enquiry through trial class, enrolment, and ongoing retention. These tools recognise that a martial arts student relationship spans years rather than single transactions, requiring different tracking and communication approaches.</p>
-
-<p>This guide explores how CRM capabilities specifically designed for martial arts schools differ from general solutions, which features drive meaningful results, and how to evaluate CRM functionality when selecting management software.</p>
-
-<h2>CRM Benefits for Martial Arts Schools</h2>
-
-<ul>
-<li>Systematic lead capture and nurturing</li>
-<li>Automated trial class management</li>
-<li>Student retention risk identification</li>
-</ul>
-
-<ul>
-<li>Complete relationship timeline tracking</li>
-<li>Integrated communication management</li>
-<li>Performance metrics and ROI analysis</li>
-</ul>
-
-<h2>Understanding CRM in the Martial Arts Context</h2>
-
-<p>Customer Relationship Management in martial arts encompasses two distinct but connected functions:</p>
-
-<h3>Lead Management</h3>
-
-<p>Handles the pre-enrolment phase: capturing enquiries, nurturing prospects, scheduling trials, and converting interested parties into paying students. This front-end function directly impacts school growth.</p>
-
-<h3>Student Relationship Management</h3>
-
-<p>Addresses the post-enrolment phase: tracking engagement, identifying retention risks, managing communications, and building the long-term relationships that create lifetime students.</p>
-
-<strong>Effective martial arts CRM integrates both functions, creating continuity from first contact through years of training.</strong>
-
-<h2>Lead Management Features</h2>
-
-<h3>1. Lead Capture and Information</h3>
-
-<ul>
-<li>Website form integration capturing enquiries automatically</li>
-<li>Phone and walk-in lead entry with source tracking</li>
-<li>Social media enquiry capture and management</li>
-<li>Referral tracking linking new leads to referring students</li>
-</ul>
-
-<ul>
-<li>Contact details and preferred communication method</li>
-<li>Interest area and training goals tracking</li>
-<li>Prior martial arts experience documentation</li>
-<li>Age and appropriate programme matching</li>
-</ul>
-
-<h3>2. Lead Pipeline Management</h3>
-
-<ul>
-<li><strong>Pipeline visualization</strong> showing where prospects stand in their journey</li>
-<li><strong>Stage movement tracking</strong> with timestamps and history</li>
-<li><strong>Conversion rate analysis</strong> by stage and source</li>
-<li><strong>Aging alerts</strong> for stalled leads requiring attention</li>
-<li><strong>Pipeline value estimation</strong> for revenue forecasting</li>
-</ul>
-
-<h3>3. Trial Class Management</h3>
-
-<ul>
-<li>Trial scheduling with availability matching</li>
-<li>Pre-trial communication automation (confirmation, reminders)</li>
-<li>Trial attendance tracking and follow-up triggers</li>
-</ul>
-
-<ul>
-<li>Post-trial follow-up sequences (thank you, feedback requests)</li>
-<li>Trial-to-enrolment conversion tracking and analysis</li>
-<li>Multiple trial management for extended decision processes</li>
-</ul>
-
-<h3>4. Automated Follow-Up Systems</h3>
-
-<ul>
-<li><strong>Email sequences</strong> triggered by pipeline stage changes</li>
-<li><strong>SMS reminders</strong> for scheduled trials and appointments</li>
-<li><strong>Task creation</strong> for manual follow-up calls with due dates</li>
-<li><strong>Time-based escalation</strong> for unresponsive leads</li>
-<li><strong>Re-engagement campaigns</strong> for cold leads with special offers</li>
-</ul>
-
-<h2>Student Relationship Features</h2>
-
-<h3>1. Engagement and Retention Tracking</h3>
-
-<ul>
-<li>Attendance frequency and pattern analysis</li>
-<li>Class participation breadth across different class types</li>
-<li>Belt progression momentum and achievement tracking</li>
-<li>Event participation (seminars, competitions, workshops)</li>
-</ul>
-
-<ul>
-<li>Family involvement metrics and referral activity</li>
-<li>Communication responsiveness and engagement rates</li>
-<li>Payment history and financial engagement</li>
-<li>Custom engagement scoring based on school priorities</li>
-</ul>
-
-<h3>2. Retention Risk Identification</h3>
-
-<ul>
-<li><strong>Attendance decline alerts</strong> based on pattern changes</li>
-<li><strong>Payment failure notifications</strong> with follow-up workflows</li>
-<li><strong>Belt progression stall detection</strong> and instructor alerts</li>
-<li><strong>Membership renewal</strong> approaching without commitment</li>
-<li><strong>Communication engagement drops</strong> across channels</li>
-<li><strong>Comparison to historical churn patterns</strong> for predictive analytics</li>
-</ul>
-
-<h3>3. Communication Management</h3>
-
-<ul>
-<li>Complete communication log (email, SMS, calls, notes)</li>
-<li>Communication preferences tracking by student</li>
-<li>Segmented messaging by rank, age, programme type</li>
-</ul>
-
-<ul>
-<li>Milestone communications (anniversaries, achievements)</li>
-<li>Re-engagement campaigns for declining attendance</li>
-<li>Automated birthday and holiday greetings</li>
-</ul>
-
-<h3>4. Complete Relationship Timeline</h3>
-
-<ul>
-<li><strong>Initial enquiry</strong> and conversion path documentation</li>
-<li><strong>Enrolment date</strong> and complete membership history</li>
-<li><strong>Belt progression timeline</strong> with testing dates and notes</li>
-<li><strong>Attendance history</strong> with pattern visualization</li>
-<li><strong>Communication touchpoints</strong> across all channels</li>
-<li><strong>Payment history</strong> and lifetime value calculation</li>
-<li><strong>Referrals generated</strong> and their conversion status</li>
-</ul>
-
-<h2>Integration with School Operations</h2>
-
-<h3>CRM + Scheduling</h3>
-
-<ul>
-<li>Trial class booking from lead records</li>
-<li>Class capacity visibility when scheduling trials</li>
-<li>Instructor notification of trial attendees</li>
-<li>Automatic attendance logging from check-in</li>
-</ul>
-
-<h3>CRM + Billing</h3>
-
-<ul>
-<li>Enrolment triggers membership setup automatically</li>
-<li>Payment status visible in student CRM records</li>
-<li>Revenue attribution to lead sources for ROI analysis</li>
-<li>Lifetime value calculation and tracking</li>
-</ul>
-
-<h2>Measuring CRM Effectiveness</h2>
-
-<h3>Key Performance Metrics</h3>
-
-<h3>Lead Metrics</h3>
-
-<ul>
-<li>Lead volume by source</li>
-<li>Lead-to-trial conversion rate</li>
-<li>Trial-to-enrolment conversion rate</li>
-<li>Average time to conversion</li>
-<li>Cost per acquisition by source</li>
-<li>Lead response time</li>
-</ul>
-
-<h3>Retention Metrics</h3>
-
-<ul>
-<li>Student retention rate (monthly, annual)</li>
-<li>Average student tenure</li>
-<li>Churn rate and reasons</li>
-<li>Lifetime student value</li>
-<li>Net Promoter Score</li>
-<li>Referral rate from existing students</li>
-</ul>
-
-<h3>ROI Calculation Examples</h3>
-
-<h3>Acquisition ROI</h3>
-
-<strong>Scenario:</strong> CRM improves trial-to-enrolment conversion from 60% to 70%
-
-<strong>Data:</strong> 20 trials monthly at £100 average monthly membership
-
-<strong>Result:</strong> £200 additional monthly recurring revenue (£2,400 annually)
-
-<h3>Retention ROI</h3>
-
-<strong>Scenario:</strong> CRM-driven retention extends average tenure from 14 to 16 months
-
-<strong>Data:</strong> 200 students at £100 monthly membership
-
-<strong>Result:</strong> £40,000 additional lifetime value across student base
-
-<h2>Frequently Asked Questions</h2>
-
-<h3>What is a martial arts CRM?</h3>
-
-<p>A martial arts CRM is a customer relationship management system designed for martial arts schools. It handles lead capture and nurturing, trial class management, student engagement tracking, retention monitoring, and communication management throughout the student lifecycle.</p>
-
-<h3>How does a martial arts CRM differ from generic CRM software?</h3>
-
-<p>Martial arts CRM includes features specific to the industry: trial class scheduling, belt progression as an engagement metric, family account relationships, attendance-based retention alerts, and integration with martial arts management functions. Generic CRMs lack these purpose-built capabilities.</p>
-
-<h3>What lead management features should martial arts CRM include?</h3>
-
-<p>Essential features include: website form integration for lead capture, pipeline stage tracking, trial class scheduling and tracking, automated follow-up sequences, source attribution for marketing analysis, and conversion reporting.</p>
-
-<h3>How can CRM improve student retention?</h3>
-
-<p>CRM improves retention through attendance decline alerts, engagement scoring, automated re-engagement communications, milestone recognition, and providing complete relationship history so staff can have informed conversations with at-risk students.</p>
-
-<h3>Is martial arts CRM separate from management software?</h3>
-
-<p>CRM functionality is typically integrated within comprehensive martial arts management software rather than as a separate system. This integration ensures data flows between lead management, scheduling, billing, and communication functions.</p>
-
-<h3>How do I measure martial arts CRM success?</h3>
-
-<p>Key metrics include: lead-to-trial conversion rate, trial-to-enrolment conversion rate, student retention rate, average student tenure, lifetime value, and cost per acquisition. Tracking these before and after CRM implementation quantifies impact.</p>
-
-<h3>Can CRM track referrals from existing students?</h3>
-
-<p>Yes, quality CRM tracks referral sources, linking new leads to referring students. This enables referral programme management, reward distribution, and analysis of which students generate the most referrals.</p>
-
-<h3>What automated communications should CRM send?</h3>
-
-<p>Effective automation includes: trial confirmation and reminders, post-trial follow-up sequences, welcome series for new students, attendance decline outreach, membership renewal reminders, milestone celebrations, and re-engagement campaigns for inactive students.</p>
-
-<h2>Related Resources</h2>
-
-<ul>
-<li><a href="/martial-arts-software/" class="link">Complete Martial Arts Software Guide</a></li>
-<li><a href="/martial-arts-billing-software/" class="link">Billing & Payment Processing</a></li>
-</ul>
-
-<ul>
-<li><a href="/dojo-management-software/" class="link">Dojo Management Software</a></li>
-<li><a href="/karate-school-software/" class="link">Karate School Software</a></li>
-</ul>
-
-
-
-<!-- FAQPage Schema -->
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is a martial arts CRM?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A martial arts CRM is a customer relationship management system designed for martial arts schools. It handles lead capture and nurturing, trial class management, student engagement tracking, retention monitoring, and communication management throughout the student lifecycle."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does a martial arts CRM differ from generic CRM software?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Martial arts CRM includes features specific to the industry: trial class scheduling, belt progression as an engagement metric, family account relationships, attendance-based retention alerts, and integration with martial arts management functions. Generic CRMs lack these purpose-built capabilities."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What lead management features should martial arts CRM include?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Essential features include: website form integration for lead capture, pipeline stage tracking, trial class scheduling and tracking, automated follow-up sequences, source attribution for marketing analysis, and conversion reporting."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How can CRM improve student retention?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "CRM improves retention through attendance decline alerts, engagement scoring, automated re-engagement communications, milestone recognition, and providing complete relationship history so staff can have informed conversations with at-risk students."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I measure martial arts CRM success?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Key metrics include: lead-to-trial conversion rate, trial-to-enrolment conversion rate, student retention rate, average student tenure, lifetime value, and cost per acquisition. Tracking these before and after CRM implementation quantifies impact."
-      }
+  <!-- Breadcrumbs -->
+  <BreadcrumbsEnhanced
+    site="mydojo"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Martial Arts CRM', href: '/martial-arts-crm/' }
+    ]}
+  />
+
+  <!-- Hero Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block px-4 py-2 mb-4 text-sm font-semibold text-brand-red bg-brand-red-light rounded-full">Complete Guide</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Martial Arts CRM</h1>
+        <p class="text-xl text-gray-600">
+          Lead management and student retention tools for martial arts schools. Automate follow-ups, track engagement, identify risks, and build lasting student relationships.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Answer -->
+  <FeaturedAnswer question="What is a martial arts CRM?">
+    A martial arts CRM (Customer Relationship Management) system tracks prospects and students through their entire journey—from initial inquiry through trial class, enrollment, and ongoing training. It automates lead follow-ups, manages trial class workflows, identifies retention risks, and provides timeline visibility into every student relationship. Martial arts CRMs understand belt progression, family relationships, and multi-year student lifecycles unlike generic sales CRMs.
+  </FeaturedAnswer>
+
+  <!-- Statistics Section -->
+  <StatisticsSection
+    site="mydojo"
+    pageUrl="https://mydojo.software/martial-arts-crm/"
+    title="Martial Arts CRM Impact Statistics"
+    stats={crmStats}
+  />
+
+  <!-- Main Content -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+
+        <h2>Lead Management and Student Relationship Tools</h2>
+
+        <p>
+          Every martial arts school faces the same fundamental challenge: converting interested prospects into enrolled students, then nurturing those students into long-term members. A martial arts CRM system provides the infrastructure to manage both sides of this equation systematically.
+        </p>
+
+        <p>
+          Unlike generic CRM platforms designed for sales teams or retail businesses, martial arts CRM functionality addresses the specific journey from initial inquiry through trial class, enrollment, and ongoing retention. These tools recognize that a martial arts student relationship spans years rather than single transactions.
+        </p>
+
+        <h3>CRM Functions in Martial Arts</h3>
+
+        <p><strong>Lead Management:</strong></p>
+        <p>
+          Handles the pre-enrollment phase—capturing inquiries, nurturing prospects, scheduling trials, and converting interested parties into paying students. This front-end function directly impacts school growth.
+        </p>
+
+        <p><strong>Student Relationship Management:</strong></p>
+        <p>
+          Addresses the post-enrollment phase—tracking engagement, identifying retention risks, managing communications, and building the long-term relationships that create lifetime students.
+        </p>
+
+        <p>
+          Effective martial arts CRM integrates both functions, creating continuity from first contact through years of training.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <ComparisonTable
+          title="Martial Arts CRM vs Generic CRM vs Manual Tracking"
+          headers={['MyDojo (Martial Arts CRM)', 'Generic CRM', 'Spreadsheets/Email']}
+          rows={comparisonData}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+
+        <h2>Essential CRM Features for Martial Arts Schools</h2>
+
+        <h3>1. Lead Management</h3>
+        <ul>
+          <li>Automated lead capture from website, Facebook, and phone</li>
+          <li>Instant lead response with confirmation and information</li>
+          <li>Lead source tracking for marketing ROI</li>
+          <li>Automated follow-up sequences</li>
+          <li>Trial class scheduling workflow</li>
+          <li>Lead pipeline visualization by stage</li>
+        </ul>
+
+        <h3>2. Trial Class Management</h3>
+        <ul>
+          <li>Trial booking with automated confirmations</li>
+          <li>Pre-trial communication sequences</li>
+          <li>Trial day check-in and feedback capture</li>
+          <li>Post-trial enrollment follow-up automation</li>
+          <li>Trial show rate tracking</li>
+          <li>Trial-to-member conversion analytics</li>
+        </ul>
+
+        <h3>3. Student Engagement Tracking</h3>
+        <ul>
+          <li>Attendance pattern monitoring</li>
+          <li>Engagement score calculation</li>
+          <li>Retention risk identification</li>
+          <li>Automated at-risk alerts for instructors</li>
+          <li>Progress milestone tracking</li>
+          <li>Student lifecycle timeline view</li>
+        </ul>
+
+        <h3>4. Communication Management</h3>
+        <ul>
+          <li>Multi-channel communication (SMS, email, in-app)</li>
+          <li>Segmented messaging by rank, program, or status</li>
+          <li>Automated campaigns for re-engagement</li>
+          <li>Communication history per student</li>
+          <li>Template library for common messages</li>
+          <li>Scheduled send for optimal timing</li>
+        </ul>
+
+        <h3>5. Analytics and Reporting</h3>
+        <ul>
+          <li>Lead conversion funnel analysis</li>
+          <li>Lead source ROI tracking</li>
+          <li>Retention rate by cohort</li>
+          <li>Student lifetime value calculation</li>
+          <li>Engagement trends over time</li>
+          <li>Marketing attribution reporting</li>
+        </ul>
+
+        <h2>Related Resources</h2>
+
+        <ul>
+          <li><a href="/martial-arts-software/">Martial Arts Software Overview</a> — Complete platform features</li>
+          <li><a href="/blog/martial-arts-marketing-tips/">Marketing Tips</a> — Lead generation strategies</li>
+          <li><a href="/blog/member-retention-strategies/">Retention Strategies</a> — Keep students training longer</li>
+          <li><a href="/blog/lead-generation-mma-gyms/">Lead Generation Guide</a> — MMA gym marketing</li>
+          <li><a href="/martial-arts-billing-software/">Billing Software</a> — Payment processing integration</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQEnhanced
+    site="mydojo"
+    pageUrl="https://mydojo.software/martial-arts-crm/"
+    title="Frequently Asked Questions About Martial Arts CRM"
+    faqs={faqItems}
+  />
+
+  <!-- CTA Section -->
+  <section class="section bg-brand-red text-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to Improve Your Lead Conversion?</h2>
+        <p class="text-xl mb-8 opacity-95">
+          See how MyDojo CRM can transform your lead management with automated follow-ups, retention tracking, and engagement analytics.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact/" class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Start Free Trial</a>
+          <a href="/pricing/" class="btn-secondary-large border-white text-white hover:bg-white hover:bg-opacity-10">View Pricing</a>
+        </div>
+        <p class="mt-6 text-sm opacity-90">No credit card required • 14-day free trial • Cancel anytime</p>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 4rem 0;
+  }
+
+  .prose {
+    max-width: none;
+  }
+
+  .prose h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose p {
+    margin-bottom: 1.5rem;
+    color: #475569;
+    line-height: 1.7;
+  }
+
+  .prose ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .prose li {
+    margin-bottom: 0.5rem;
+    color: #475569;
+  }
+
+  .prose strong {
+    color: var(--brand-navy);
+    font-weight: 600;
+  }
+
+  .prose a {
+    color: var(--brand-red);
+    text-decoration: none;
+  }
+
+  .prose a:hover {
+    text-decoration: underline;
+  }
+
+  .btn-primary-large,
+  .btn-secondary-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary-large:hover,
+  .btn-secondary-large:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary-large {
+    border: 2px solid;
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding: 3rem 0;
     }
-  ]
-})} is:inline />
-</PillarPageLayout>
+
+    .prose h2 {
+      font-size: 1.5rem;
+    }
+
+    .prose h3 {
+      font-size: 1.25rem;
+    }
+  }
+</style>

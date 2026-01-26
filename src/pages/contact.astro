@@ -2,9 +2,62 @@
 // Contact Page
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+// ContactPoint Schema for SEO
+const contactPointSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "mainEntity": {
+    "@type": "Organization",
+    "@id": "https://mydojo.software/#organization",
+    "name": "MyDojo.Software",
+    "url": "https://mydojo.software",
+    "logo": "https://mydojo.software/images/logo.png",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "info@mydojo.software",
+        "availableLanguage": ["English"],
+        "areaServed": "GB",
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      },
+      {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "info@mydojo.software",
+        "availableLanguage": ["English"],
+        "areaServed": "GB"
+      },
+      {
+        "@type": "ContactPoint",
+        "contactType": "technical support",
+        "email": "info@mydojo.software",
+        "availableLanguage": ["English"],
+        "areaServed": "GB"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "124 City Road",
+      "addressLocality": "London",
+      "addressRegion": "England",
+      "postalCode": "EC1V 2NX",
+      "addressCountry": "GB"
+    }
+  }
+};
 ---
 
 <BaseLayout title="Contact Us - Get a Demo" description="Contact MyDojo Software for a free demo. Request information, ask questions, or learn how we can streamline your martial arts school.">
+  <!-- ContactPoint Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(contactPointSchema)} />
+
   <!-- Breadcrumbs -->
   <div class="bg-gray-100 py-3">
     <div class="container-custom">

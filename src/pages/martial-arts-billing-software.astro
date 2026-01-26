@@ -1,498 +1,417 @@
 ---
-// Martial Arts Billing Software - Pillar Page
-import PillarPageLayout from '../layouts/PillarPageLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import StatisticsSection from '../components/seo/StatisticsSection.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+
+const billingStats = [
+  {
+    label: 'Failed Payment Recovery Rate',
+    value: '40%',
+    change: { value: 40, direction: 'up' as const, period: 'with auto-retry' },
+    context: 'Automated retry logic recovers initially failed payments'
+  },
+  {
+    label: 'Payment Collection Rate',
+    value: '97%',
+    change: { value: 15, direction: 'up' as const, period: 'vs manual' },
+    context: 'Automated billing reduces collection issues by 15%'
+  },
+  {
+    label: 'Admin Time Saved on Billing',
+    value: '8+ hrs/week',
+    change: { value: 75, direction: 'up' as const, period: 'automated billing' },
+    context: 'Eliminates manual payment processing and reconciliation'
+  },
+  {
+    label: 'Family Discount Automation',
+    value: '100%',
+    context: 'Automatically applies sibling and family discounts'
+  },
+  {
+    label: 'Average Payment Processing Cost',
+    value: '2.5%',
+    context: 'Per transaction for credit/debit cards (1% for direct debit)'
+  },
+  {
+    label: 'Revenue from Automated Testing Fees',
+    value: '£15K/yr',
+    context: 'Average school captures via integrated belt testing billing'
+  }
+];
+
+const comparisonData = [
+  {
+    label: 'Automated Recurring Billing',
+    values: [true, true, false],
+    highlight: true
+  },
+  {
+    label: 'Failed Payment Auto-Retry Logic',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Family Discount Automation',
+    values: [true, false, 'Manual calculation'],
+    highlight: true
+  },
+  {
+    label: 'Pro-Rata Billing for Mid-Cycle',
+    values: [true, 'Limited', 'Manual calculation'],
+    highlight: true
+  },
+  {
+    label: 'Multiple Payment Methods',
+    values: [true, true, 'Limited']
+  },
+  {
+    label: 'Belt Testing Fee Integration',
+    values: [true, false, 'Separate system']
+  },
+  {
+    label: 'Contract Management & Tracking',
+    values: [true, 'Basic', 'Spreadsheets']
+  },
+  {
+    label: 'Family Consolidated Billing',
+    values: [true, false, 'Separate invoices']
+  },
+  {
+    label: 'Revenue Reports & Forecasting',
+    values: [true, 'Basic', 'Manual exports']
+  },
+  {
+    label: 'PCI-Compliant Card Storage',
+    values: [true, true, 'Paper/manual']
+  }
+];
+
+const faqItems = [
+  {
+    question: "What is martial arts billing software?",
+    answer: "Martial arts billing software automates recurring membership payments, processes failed payments with retry logic, manages family discounts, handles contract terms, integrates belt testing and event fees, supports multiple payment methods (card, direct debit, cash), generates invoices and receipts, and provides revenue reporting. Unlike generic payment processors, it understands martial arts pricing structures including age-based rates, program tiers, and promotional offers.",
+    links: [
+      { text: 'View all features', url: '/martial-arts-software/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "How does automated billing work for martial arts schools?",
+    answer: "Automated billing stores payment methods securely with PCI compliance and charges memberships on scheduled dates (typically monthly). The system handles recurring charges automatically, applies discounts, processes pro-rata calculations for mid-cycle starts, retries failed payments with smart retry logic, sends receipts automatically, and notifies both school and student of payment status. This eliminates manual processing and reduces collection issues.",
+    links: [
+      { text: 'Scheduling features', url: '/martial-arts-scheduling-software/' },
+      { text: 'Contact us', url: '/contact/' }
+    ]
+  },
+  {
+    question: "What happens when a payment fails?",
+    answer: "When a payment fails, the system automatically retries the charge 2-3 times over 5-7 days using optimized retry timing. Students receive automated email and SMS notifications about the failed payment with links to update their card details. If retries fail, the account may enter a grace period before suspension. This automated process recovers 40% of initially failed payments and reduces awkward manual collection conversations.",
+    links: [
+      { text: 'CRM features', url: '/martial-arts-crm/' },
+      { text: 'Start trial', url: '/contact/' }
+    ]
+  },
+  {
+    question: "How do family discounts work in billing software?",
+    answer: "Family accounts automatically group siblings and apply tiered discounts (e.g., 10% for 2nd child, 15% for 3rd). All family members appear on a single consolidated invoice with itemized charges. One payment method covers the entire family. Discounts apply automatically when you add family members—no manual calculation required. Parents see a breakdown showing each child's base rate and applied discount.",
+    links: [
+      { text: 'Dojo management', url: '/dojo-management-software/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "What payment methods are supported?",
+    answer: "Modern platforms support credit/debit cards (Visa, Mastercard, Amex) with secure PCI-compliant storage, direct debit/ACH for lower processing fees (1% vs 2.5%), bank transfers, and cash/check tracking for reconciliation. Payment gateways include Stripe, GoCardless, and others. Students can save multiple payment methods and switch between them. In-person point-of-sale supports card readers for equipment sales and drop-in payments.",
+    links: [
+      { text: 'Overview', url: '/martial-arts-software/' },
+      { text: 'Contact sales', url: '/contact/' }
+    ]
+  },
+  {
+    question: "How does pro-rata billing work?",
+    answer: "When students join mid-month, the system calculates a prorated charge for the partial month based on remaining days. For example, joining on the 15th of a 30-day month charges 50% of the monthly fee. The following month resumes full billing. Pro-rata also applies to plan upgrades, downgrades, and when students return from holds, ensuring accurate charges without manual calculation.",
+    links: [
+      { text: 'Scheduling software', url: '/martial-arts-scheduling-software/' },
+      { text: 'Start trial', url: '/contact/' }
+    ]
+  },
+  {
+    question: "Can billing software handle belt testing fees?",
+    answer: "Yes. When students become eligible for belt testing, the system can automatically add testing fees to their next invoice or process as a separate charge. You set testing fee amounts per belt level. The system tracks who has paid, generates testing receipts, and provides testing revenue reports. This integration eliminates manual tracking and ensures no testing fees are missed.",
+    links: [
+      { text: 'Karate features', url: '/karate-school-software/' },
+      { text: 'BJJ features', url: '/bjj-school-software/' }
+    ]
+  },
+  {
+    question: "What contracts and commitment terms are supported?",
+    answer: "Billing systems support month-to-month memberships, 3/6/12-month contracts with or without early termination, auto-renewal options, commitment discounts (lower monthly rate for longer terms), contract end date tracking, and automatic conversion to month-to-month after contract completion. Contract reports show upcoming expirations for renewal conversations. System prevents accidental charges after contract cancellation.",
+    links: [
+      { text: 'Billing features', url: '/martial-arts-billing-software/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "What billing reports are available?",
+    answer: "Comprehensive reports include monthly and annual revenue summaries, revenue by category (memberships, testing, merchandise), membership growth trends, failed payment analysis, accounts receivable aging reports showing overdue amounts, payment processing fees breakdown, family discount impact, contract renewal forecasting, and comparative period analysis. Export to CSV or integrate with QuickBooks/Xero for accounting.",
+    links: [
+      { text: 'CRM features', url: '/martial-arts-crm/' },
+      { text: 'Contact sales', url: '/contact/' }
+    ]
+  },
+  {
+    question: "Is my payment data secure and PCI compliant?",
+    answer: "Yes. Quality martial arts billing platforms use PCI-compliant payment processors (like Stripe or GoCardless) that securely store and tokenize card data. Your system never stores raw card numbers. Data transmission uses SSL encryption. Regular security audits ensure compliance with PCI DSS standards. This protects both your school and your members' financial information from breaches.",
+    links: [
+      { text: 'Overview', url: '/martial-arts-software/' },
+      { text: 'Contact us', url: '/contact/' }
+    ]
+  }
+];
+
+const breadcrumbItems = [
+  { label: 'Home', url: 'https://mydojo.software/' },
+  { label: 'Billing Software', url: 'https://mydojo.software/martial-arts-billing-software/' }
+];
 ---
 
-<PillarPageLayout
-  title="Martial Arts Billing Software"
-  description="Automated billing software for martial arts schools. Process payments, manage memberships, and reduce failed payments with smart retry logic."
-  heroImage="/images/full-shot-asian-people-practicing-taekwondo.jpg"
-  badge="Complete Guide"
-  breadcrumbLabel="Billing Software"
+<BaseLayout
+  title="Martial Arts Billing Software (2026) - Automated Payment & Membership Billing"
+  description="Automated billing software for martial arts schools. Process recurring memberships, recover 40% of failed payments with retry logic, manage family discounts, handle contracts, and integrate testing fees. Save 8+ hours weekly and improve collection rates to 97%."
 >
-<p>Payment Processing and Membership Billing for Martial Arts Schools</p>
-
-<p>Cash flow sustains every martial arts school. Yet collecting payments—especially recurring membership fees—creates administrative burden that distracts from instruction and growth. Martial arts billing software automates this essential function, ensuring revenue flows predictably while reducing the awkward conversations and manual processing that accompany traditional payment collection.</p>
-
-<p>Beyond simple payment processing, martial arts billing systems accommodate the complex pricing structures these schools employ: family discounts, contract terms, testing fees, merchandise sales, and promotional rates. Purpose-built platforms handle these variations automatically, eliminating the spreadsheet gymnastics and manual calculations that generic payment systems require.</p>
-
-<p>This guide examines billing functionality specific to martial arts operations, from membership structures to failed payment handling, helping you evaluate whether your current approach captures all available revenue efficiently.</p>
-
-<h2>Martial Arts Billing Complexity</h2>
-
-<p>Martial arts billing differs from standard subscription businesses in several important ways that generic billing tools struggle to accommodate.</p>
-
-<h3>Diverse Revenue Streams</h3>
-
-<p>A typical martial arts school generates revenue from multiple sources:</p>
-
-<ul>
-<li>Monthly membership fees (the recurring foundation)</li>
-</ul>
-
-<ul>
-<li>Annual or term commitment contracts</li>
-</ul>
-
-<ul>
-<li>Belt testing and grading fees</li>
-</ul>
-
-<ul>
-<li>Equipment and uniform sales</li>
-</ul>
-
-<ul>
-<li>Private lesson packages</li>
-</ul>
-
-<ul>
-<li>Seminar and workshop fees</li>
-</ul>
-
-<ul>
-<li>Drop-in and day pass purchases</li>
-</ul>
-
-<ul>
-<li>Competition registration fees</li>
-</ul>
-
-<ul>
-<li>Summer camp and special programme fees</li>
-</ul>
-
-<p>Each revenue type has different characteristics. Memberships recur monthly. Testing fees occur at irregular intervals. Equipment sales are one-time transactions. Effective billing software handles all types within a unified system.</p>
-
-<h3>Pricing Structure Variations</h3>
-
-<p>Martial arts membership pricing rarely follows simple flat-rate models:</p>
-
-<ul>
-<li>Age-based pricing (kids, teens, adults)</li>
-</ul>
-
-<ul>
-<li>Programme-based pricing (single discipline vs. unlimited)</li>
-</ul>
-
-<ul>
-<li>Family and sibling discounts</li>
-</ul>
-
-<ul>
-<li>Multi-month commitment discounts</li>
-</ul>
-
-<ul>
-<li>Introductory and promotional rates</li>
-</ul>
-
-<ul>
-<li>Black belt or advanced student rates</li>
-</ul>
-
-<ul>
-<li>Competition team supplemental fees</li>
-</ul>
-
-<ul>
-<li>Private lesson packages as add-ons</li>
-</ul>
-
-<p>Software must configure and apply these variations automatically without manual calculation.</p>
-
-<h3>Contract and Commitment Models</h3>
-
-<p>Many schools offer discounts for longer commitments:</p>
-
-<ul>
-<li>Month-to-month with higher rates</li>
-</ul>
-
-<ul>
-<li>3-month, 6-month, or annual terms</li>
-</ul>
-
-<ul>
-<li>Paid-in-full annual options</li>
-</ul>
-
-<ul>
-<li>Introductory periods before term commitment</li>
-</ul>
-
-<ul>
-<li>Contract renewal and expiration handling</li>
-</ul>
-
-<h2>Essential Billing Features</h2>
-
-<h3>Recurring Payment Processing</h3>
-
-<p>The foundation of martial arts billing is automated recurring charges:</p>
-
-<ul>
-<li>Scheduled billing dates (monthly, weekly)</li>
-</ul>
-
-<ul>
-<li>Multiple payment methods (card, bank transfer)</li>
-</ul>
-
-<ul>
-<li>PCI-compliant card storage</li>
-</ul>
-
-<ul>
-<li>Automatic charge processing without manual intervention</li>
-</ul>
-
-<ul>
-<li>Receipt generation and delivery</li>
-</ul>
-
-<ul>
-<li>Billing history and transaction logs</li>
-</ul>
-
-<h3>Payment Gateway Integration</h3>
-
-<p>Connection to payment processors handles the actual money movement:</p>
-
-<ul>
-<li>Stripe integration for card processing</li>
-</ul>
-
-<ul>
-<li>GoCardless or similar for direct debit</li>
-</ul>
-
-<ul>
-<li>Multiple gateway support for redundancy</li>
-</ul>
-
-<ul>
-<li>Competitive processing rates</li>
-</ul>
-
-<ul>
-<li>Settlement and payout tracking</li>
-</ul>
-
-<h3>Failed Payment Management</h3>
-
-<p>Payment failures happen. How software handles them determines revenue recovery:</p>
-
-<ul>
-<li>Automatic retry scheduling (1, 3, 7 days)</li>
-</ul>
-
-<ul>
-<li>Student notification of failed payments</li>
-</ul>
-
-<ul>
-<li>Admin alerts for intervention</li>
-</ul>
-
-<ul>
-<li>Card update requests to students</li>
-</ul>
-
-<ul>
-<li>Grace period management before service suspension</li>
-</ul>
-
-<ul>
-<li>Delinquent account tracking and reporting</li>
-</ul>
-
-<p>Effective failed payment handling typically recovers 30-50% of initially failed charges through automated retry and notification, representing significant revenue that would otherwise require manual collection or be lost entirely.</p>
-
-<h3>Family Billing</h3>
-
-<p>Schools serving families need consolidated billing:</p>
-
-<ul>
-<li>Family accounts grouping related students</li>
-</ul>
-
-<ul>
-<li>Automatic sibling discount application</li>
-</ul>
-
-<ul>
-<li>Single invoice for multiple students</li>
-</ul>
-
-<ul>
-<li>Shared payment methods across family</li>
-</ul>
-
-<ul>
-<li>Family billing history and statements</li>
-</ul>
-
-<h3>Pro-Rata and Mid-Cycle Changes</h3>
-
-<p>Students join mid-month, upgrade plans, or take breaks:</p>
-
-<ul>
-<li>Pro-rata calculation for partial months</li>
-</ul>
-
-<ul>
-<li>Plan change handling with credit or charge adjustments</li>
-</ul>
-
-<ul>
-<li>Freeze and hold management with billing pause</li>
-</ul>
-
-<ul>
-<li>Make-up billing for returned students</li>
-</ul>
-
-<h3>Testing and Event Fees</h3>
-
-<p>Non-recurring charges integrate with member billing:</p>
-
-<ul>
-<li>Belt testing fee processing</li>
-</ul>
-
-<ul>
-<li>Seminar registration and payment</li>
-</ul>
-
-<ul>
-<li>Competition entry fees</li>
-</ul>
-
-<ul>
-<li>Event-specific pricing and early-bird rates</li>
-</ul>
-
-<h3>Point of Sale</h3>
-
-<p>In-person transactions for merchandise and services:</p>
-
-<ul>
-<li>Equipment and uniform sales</li>
-</ul>
-
-<ul>
-<li>Drop-in class purchases</li>
-</ul>
-
-<ul>
-<li>Private lesson payments</li>
-</ul>
-
-<ul>
-<li>Cash handling and tracking</li>
-</ul>
-
-<ul>
-<li>Inventory management integration</li>
-</ul>
-
-<h2>Financial Reporting</h2>
-
-<h3>Revenue Reports</h3>
-
-<p>Understanding income patterns informs business decisions:</p>
-
-<ul>
-<li>Monthly and annual revenue summaries</li>
-</ul>
-
-<ul>
-<li>Revenue by category (memberships, testing, merchandise)</li>
-</ul>
-
-<ul>
-<li>Revenue by programme or class type</li>
-</ul>
-
-<ul>
-<li>Growth trends and comparisons</li>
-</ul>
-
-<ul>
-<li>Forecasting based on contracted commitments</li>
-</ul>
-
-<h3>Accounts Receivable</h3>
-
-<p>Tracking outstanding payments and collection status:</p>
-
-<ul>
-<li>Aging reports showing overdue amounts</li>
-</ul>
-
-<ul>
-<li>Student balance summaries</li>
-</ul>
-
-<ul>
-<li>Collection status tracking</li>
-</ul>
-
-<ul>
-<li>Write-off and bad debt reporting</li>
-</ul>
-
-<h3>Payment Processing Analysis</h3>
-
-<p>Understanding processing efficiency:</p>
-
-<ul>
-<li>Success and failure rates</li>
-</ul>
-
-<ul>
-<li>Recovery rates for failed payments</li>
-</ul>
-
-<ul>
-<li>Processing fees and net revenue</li>
-</ul>
-
-<ul>
-<li>Payment method distribution</li>
-</ul>
-
-<h2>Integration Requirements</h2>
-
-<h3>Accounting Software</h3>
-
-<p>Billing data flows to financial systems:</p>
-
-<ul>
-<li>QuickBooks or Xero integration</li>
-</ul>
-
-<ul>
-<li>Automatic transaction posting</li>
-</ul>
-
-<ul>
-<li>Account reconciliation support</li>
-</ul>
-
-<ul>
-<li>Tax category handling</li>
-</ul>
-
-<h3>Student Management</h3>
-
-<p>Billing connects to student records:</p>
-
-<ul>
-<li>Membership status based on payment</li>
-</ul>
-
-<ul>
-<li>Testing eligibility tied to good standing</li>
-</ul>
-
-<ul>
-<li>Access control based on account status</li>
-</ul>
-
-<ul>
-<li>Communication triggered by billing events</li>
-</ul>
-
-<h2>Compliance and Security</h2>
-
-<h3>PCI Compliance</h3>
-
-<p>Card data handling requires security standards:</p>
-
-<ul>
-<li>PCI-DSS compliant card storage</li>
-</ul>
-
-<ul>
-<li>Tokenisation rather than raw card storage</li>
-</ul>
-
-<ul>
-<li>Secure transmission protocols</li>
-</ul>
-
-<ul>
-<li>Regular security assessments</li>
-</ul>
-
-<h3>Contract and Cancellation</h3>
-
-<p>Consumer protection compliance:</p>
-
-<ul>
-<li>Clear contract terms presentation</li>
-</ul>
-
-<ul>
-<li>Cancellation policy enforcement</li>
-</ul>
-
-<ul>
-<li>Required notice period handling</li>
-</ul>
-
-<ul>
-<li>Refund policy implementation</li>
-</ul>
-
-<h2>Frequently Asked Questions</h2>
-
-<strong>Q1: </strong><strong>What is martial arts billing software?</strong>
-
-<strong>A: </strong>Martial arts billing software automates payment collection for martial arts schools. It handles recurring membership billing, family discounts, testing fees, merchandise sales, and failed payment recovery while integrating with your student management system.
-
-<strong>Q2: </strong><strong>How does automated billing work?</strong>
-
-<strong>A: </strong>Automated billing stores payment methods securely, then processes charges on scheduled dates without manual intervention. Receipts generate automatically, and failed payments trigger retry sequences and notifications. This eliminates manual payment collection while improving cash flow predictability.
-
-<strong>Q3: </strong><strong>What payment methods can martial arts billing accept?</strong>
-
-<strong>A: </strong>Most systems accept credit and debit cards through processors like Stripe, plus direct debit or bank transfers through services like GoCardless. Some support digital wallets. The best platforms allow multiple methods per student for redundancy.
-
-<strong>Q4: </strong><strong>How are family discounts handled?</strong>
-
-<strong>A: </strong>Family billing groups related students under one account. Sibling discounts apply automatically based on configuration (percentage off second child, third child free, etc.). The family receives consolidated billing while each student maintains individual records.
-
-<strong>Q5: </strong><strong>What happens when payments fail?</strong>
-
-<strong>A: </strong>Good billing software automatically retries failed payments on schedule (typically days 1, 3, and 7), notifies students of the failure, requests updated payment information, and alerts administrators. This automated recovery typically retrieves 30-50% of initially failed payments.
-
-<strong>Q6: </strong><strong>Can billing software handle belt testing fees?</strong>
-
-<strong>A: </strong>Yes, martial arts billing integrates event fees with member accounts. When students register for testing, fees charge to their stored payment method. This applies similarly to seminars, competitions, and other events.
-
-<strong>Q7: </strong><strong>How does billing integrate with accounting?</strong>
-
-<strong>A: </strong>Most platforms integrate with QuickBooks, Xero, or similar accounting software. Transactions post automatically with appropriate categorisation, simplifying reconciliation and financial reporting.
-
-<strong>Q8: </strong><strong>Is stored card data secure?</strong>
-
-<strong>A: </strong>Quality billing software is PCI-DSS compliant, meaning it meets payment industry security standards. Card data is tokenised (stored as secure tokens rather than actual numbers) and transmitted through encrypted connections.
-
-<h2>Related Resources</h2>
-
-<ul>
-<li><a href="/martial-arts-software/" class="link">Complete Martial Arts Software Guide</a></li>
-</ul>
-
-<ul>
-<li><a href="/martial-arts-crm/" class="link">CRM & Student Management</a></li>
-</ul>
-
-<ul>
-<li><a href="/dojo-management-software/" class="link">Dojo Management Software</a></li>
-</ul>
-</PillarPageLayout>
+  <BreadcrumbsEnhanced site="mydojo" items={breadcrumbItems} />
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block bg-red-50 text-red-600 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          Complete Billing Guide
+        </span>
+        <h1 class="text-4xl md:text-5xl font-bold text-navy mb-6">
+          Martial Arts Billing Software
+        </h1>
+        <p class="text-xl text-gray-600 mb-8">
+          Automate recurring payments, recover failed charges, manage family discounts, and integrate testing fees. Achieve 97% collection rates and save 8+ hours weekly.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="/contact/" class="btn-primary">Start Free Trial</a>
+          <a href="/pricing/" class="btn-secondary">View Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FeaturedAnswer question="What is martial arts billing software?">
+    Martial arts billing software automates recurring membership payments, processes failed payments with smart retry logic, manages family discounts and contract terms, integrates belt testing and event fees, supports multiple payment methods, generates invoices and receipts automatically, and provides comprehensive revenue reporting—all tailored to martial arts pricing structures.
+  </FeaturedAnswer>
+
+  <StatisticsSection
+    site="mydojo"
+    pageUrl="https://mydojo.software/martial-arts-billing-software/"
+    title="Martial Arts Billing Statistics"
+    stats={billingStats}
+  />
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+        <h2>Why Martial Arts Schools Need Specialized Billing Software</h2>
+        <p>
+          Cash flow sustains every martial arts school. Yet collecting payments—especially recurring membership fees—creates administrative burden that distracts from instruction and growth. Martial arts billing software automates this essential function, ensuring revenue flows predictably while reducing the awkward conversations and manual processing that accompany traditional payment collection.
+        </p>
+        <p>
+          Beyond simple payment processing, martial arts billing systems accommodate the complex pricing structures these schools employ: family discounts that automatically apply when siblings enroll, contract terms ranging from month-to-month to annual commitments, belt testing fees that vary by rank, merchandise sales for uniforms and equipment, and promotional rates for new student acquisition. Purpose-built platforms handle these variations automatically, eliminating the spreadsheet gymnastics and manual calculations that generic payment systems require.
+        </p>
+
+        <h2>Automated Recurring Billing</h2>
+        <p>
+          The foundation of martial arts billing is automated recurring payments. Students provide payment information once—credit card or direct debit details—and the system charges their membership fee automatically on the scheduled date each month. This eliminates manual payment collection, reduces late payments, and ensures predictable cash flow.
+        </p>
+        <p>
+          Automated billing handles membership cycles without intervention: charging on schedule, generating receipts automatically, applying appropriate discounts, calculating pro-rata amounts for mid-cycle enrollments, processing contract renewals, and tracking contract end dates to prevent inappropriate charges. Staff no longer chase payments or process cards manually—the system handles routine billing while flagging only exceptions that require attention.
+        </p>
+
+        <h2>Failed Payment Handling and Smart Retry</h2>
+        <p>
+          Even with automated billing, payments fail—cards expire, accounts lack sufficient funds, or banks decline transactions for fraud prevention. How you handle these failures dramatically impacts revenue. Schools without automated retry logic lose 60-70% of initially failed payments, requiring manual collection efforts or writing off the revenue entirely.
+        </p>
+        <p>
+          Smart retry logic automatically attempts failed payments 2-3 times over 5-7 days using optimized timing. The first retry occurs 1-2 days after the initial failure (allowing for temporary insufficient funds), the second retry happens 3-5 days later, and a final attempt occurs after 7 days. This schedule maximizes recovery while minimizing processing fees from excessive retry attempts.
+        </p>
+        <p>
+          Simultaneously, the system sends automated notifications to students via email and SMS explaining the failed payment and providing a link to update payment details in their portal. This two-pronged approach—automated retry plus proactive communication—recovers approximately 40% of initially failed payments without staff intervention, representing significant revenue that manual processes would miss.
+        </p>
+
+        <h2>Family Billing and Automatic Discounts</h2>
+        <p>
+          Schools serving families need consolidated billing that automatically handles sibling discounts. Rather than tracking which families have 2 or 3 children enrolled and manually calculating discount percentages, billing software applies tiered discounts automatically based on family composition.
+        </p>
+        <p>
+          When a parent enrolls their first child, they pay full price. Add a second child, and the system automatically applies a 10% discount to the second child's membership. A third child receives a 15% discount. These percentages are configurable, but the automation is constant—no manual calculation required. Parents receive a single consolidated invoice showing each child's membership with itemized pricing and applied discounts clearly visible.
+        </p>
+        <p>
+          Family accounts also simplify payment collection. One payment method covers all family members. If a card fails, all family memberships are affected simultaneously, making it clear to the parent that action is needed. Billing history shows the entire family's transactions in one view, and parents can update payment information once to affect all children.
+        </p>
+
+        <h2>Pro-Rata Billing for Mid-Cycle Enrollments</h2>
+        <p>
+          Students join throughout the month, not just on the 1st. Pro-rata billing calculates the appropriate charge for the partial month remaining when someone enrolls mid-cycle. If your monthly membership costs £100 and a student joins on the 15th of a 30-day month, they pay £50 for the partial month. Their next billing date becomes the 15th of each subsequent month, or you can align everyone to the 1st of the month with appropriate pro-rata adjustments.
+        </p>
+        <p>
+          Pro-rata calculations also handle plan changes. When a student upgrades from a basic membership (£80/month) to unlimited (£120/month) on the 10th of the month, the system credits the unused portion of the basic membership and charges the pro-rated amount for the unlimited plan for the remainder of the month. This prevents overcharging and ensures accurate billing without manual arithmetic.
+        </p>
+
+        <h2>Contract Management and Terms</h2>
+        <p>
+          Many martial arts schools offer both month-to-month memberships and term contracts (3, 6, or 12 months). Contracts typically offer lower monthly rates in exchange for commitment, but they require careful tracking to prevent charging students after their contract expires or allowing early termination without appropriate fees.
+        </p>
+        <p>
+          Billing software tracks contract start and end dates automatically. When a 6-month contract expires, the system can automatically convert the membership to month-to-month at the higher rate or send notifications prompting renewal conversations. Early termination handling applies configured fees based on remaining contract duration. Contract reports show upcoming expirations so you can proactively discuss renewals before students lapse.
+        </p>
+
+        <h2>Belt Testing and Event Fee Integration</h2>
+        <p>
+          Belt testing represents a significant revenue stream—typically £30-80 per test—but manual tracking often misses these fees or creates awkward payment conversations at testing events. Integrated billing handles testing fees automatically when students become eligible.
+        </p>
+        <p>
+          When the system determines a student is eligible for testing (based on time-in-rank and attendance requirements), it can automatically add the testing fee to their next invoice or send a notification with a payment link. Parents pay the testing fee through the same portal they use for membership, and the system tracks who has paid, generates testing receipts, and updates the student's rank upon successful testing. This integration captures revenue that would otherwise be missed and eliminates manual fee tracking.
+        </p>
+        <p>
+          Similar integration works for seminars, workshops, and special events. Students register through the portal, pay immediately, and the system tracks event attendance and revenue separately from membership income.
+        </p>
+
+        <h2>Point of Sale for In-Person Transactions</h2>
+        <p>
+          Beyond recurring memberships, schools sell equipment, uniforms, merchandise, private lessons, and drop-in class passes. Integrated point-of-sale functionality processes these transactions through the same system that handles memberships, consolidating all revenue in one platform.
+        </p>
+        <p>
+          Front desk staff can charge a card, accept cash (tracking it for reconciliation), apply discounts, and generate receipts—all within the management software. The transaction appears in the student's billing history and in consolidated revenue reports. Inventory management tracks equipment and uniform stock levels, triggering reorder alerts when quantities run low.
+        </p>
+
+        <h2>Multiple Payment Methods</h2>
+        <p>
+          Schools should support multiple payment options to accommodate member preferences. Credit and debit cards remain the most common method, processing through gateways like Stripe with PCI-compliant secure storage and tokenization. Processing fees typically run 2.5-3% per transaction.
+        </p>
+        <p>
+          Direct debit (ACH in the US, GoCardless in the UK) offers significantly lower processing fees—typically 1% or less—making it attractive for recurring membership billing. Direct debit also has lower failure rates than cards since account numbers don't expire. However, setup requires slightly more information from students and processing takes 3-5 days rather than being instant.
+        </p>
+        <p>
+          Some schools still accept cash and checks, particularly from older demographics or for cultural reasons. Billing software should track these offline payments for reconciliation, apply them to student accounts, and generate receipts to maintain accurate records even when transactions happen outside the automated system.
+        </p>
+
+        <h2>Revenue Reporting and Financial Visibility</h2>
+        <p>
+          Understanding your school's financial health requires accessible reporting. Revenue summaries show monthly and annual income trends, highlighting growth or decline. Revenue by category segments memberships, testing fees, merchandise, and events to identify which income streams drive your business.
+        </p>
+        <p>
+          Forecasting reports project future revenue based on current memberships and contracted commitments. If you have 200 students on monthly memberships averaging £100/month and 50 students on 6-month contracts averaging £90/month, forecasting predicts £24,500 monthly recurring revenue—helping you plan expenses and identify growth targets.
+        </p>
+        <p>
+          Accounts receivable reports show outstanding balances and aging—which students owe money and how long payments are overdue. Collection reports track failed payment recovery rates, time-to-recovery, and which payment methods have the highest failure rates. These insights inform decisions about payment method preferences and collection policies.
+        </p>
+
+        <h2>Integration with Accounting Software</h2>
+        <p>
+          For accurate financial management and tax compliance, billing data must flow into accounting systems. Integration with QuickBooks, Xero, or similar platforms syncs revenue transactions, reconciles accounts, and generates financial statements without manual data entry.
+        </p>
+        <p>
+          Automated synchronization sends daily transaction summaries to your accounting software, categorizing income by type (membership revenue, testing fees, merchandise sales), applying appropriate tax treatments, and matching deposits to bank accounts. This eliminates the manual export-import workflows and reduces errors that arise from duplicate data entry.
+        </p>
+
+        <h2>PCI Compliance and Data Security</h2>
+        <p>
+          Storing and processing payment information requires strict security standards. PCI DSS (Payment Card Industry Data Security Standard) mandates how card data must be handled, stored, and transmitted. Non-compliance risks data breaches, financial penalties, and loss of ability to process cards.
+        </p>
+        <p>
+          Quality billing software uses PCI-compliant payment processors that securely tokenize card data. Your system never stores raw card numbers—only tokens that are useless to attackers. Data transmission uses SSL/TLS encryption. Regular security audits ensure ongoing compliance. This protects both your school and your members' financial information while meeting industry requirements.
+        </p>
+
+        <h2>Cost Considerations</h2>
+        <p>
+          Billing software costs include the platform subscription (often included in martial arts management software pricing) and payment processing fees. Processing fees vary by method: credit/debit cards typically cost 2.5-3% plus £0.20-0.30 per transaction, while direct debit costs approximately 1% with no per-transaction fee.
+        </p>
+        <p>
+          For a school with £20,000 monthly membership revenue, credit card processing costs £500-600 monthly, while direct debit reduces this to £200. Encouraging members to use direct debit through incentives (e.g., £5/month discount) can significantly reduce processing fees while maintaining predictable billing.
+        </p>
+
+        <h2>Getting Started with Automated Billing</h2>
+        <p>
+          Transitioning from manual to automated billing takes 2-4 weeks. You'll configure your membership pricing structures, set up payment gateway connections, import existing student payment information (with appropriate security), configure family discount rules, set failed payment retry schedules, and invite students to set up their payment methods in the portal.
+        </p>
+        <p>
+          Most schools phase the transition—starting with new enrollments using automated billing while gradually migrating existing students. This reduces disruption and allows you to build confidence in the system before processing your entire student base automatically.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ComparisonTable
+    title="Martial Arts Billing vs Generic Payment Processing vs Manual Collection"
+    headers={['MyDojo (Martial Arts-Specific)', 'Generic Payment Processor', 'Manual Collection']}
+    rows={comparisonData}
+  />
+
+  <FAQEnhanced
+    site="mydojo"
+    pageUrl="https://mydojo.software/martial-arts-billing-software/"
+    title="Frequently Asked Questions About Martial Arts Billing Software"
+    faqs={faqItems}
+  />
+
+  <section class="section bg-navy text-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Ready to Automate Your Billing?
+        </h2>
+        <p class="text-xl mb-8 text-gray-300">
+          Achieve 97% collection rates, recover 40% of failed payments, and save 8+ hours weekly. Start your free trial today.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="/contact/" class="btn-primary">Start Free Trial</a>
+          <a href="/pricing/" class="btn-secondary bg-white text-navy hover:bg-gray-100">View Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 4rem 0;
+  }
+
+  @media (min-width: 768px) {
+    .section {
+      padding: 6rem 0;
+    }
+  }
+
+  .prose {
+    color: #1a1a2e;
+  }
+
+  .prose h2 {
+    color: #1a1a2e;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose p {
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+  }
+
+  .prose a {
+    color: #e94560;
+    text-decoration: none;
+  }
+
+  .prose a:hover {
+    text-decoration: underline;
+  }
+</style>

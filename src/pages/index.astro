@@ -1,6 +1,182 @@
 ---
 // Homepage - index.astro
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+
+// SoftwareApplication Schema
+const softwareApplicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://mydojo.software/#software",
+  "name": "MyDojo.Software",
+  "alternateName": "MyDojo",
+  "description": "Complete martial arts management software for dojos, karate schools, BJJ academies, and MMA gyms. Class scheduling, billing, student management, and belt tracking in one platform.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, iOS, Android",
+  "offers": {
+    "@type": "Offer",
+    "@id": "https://mydojo.software/#free-trial",
+    "price": "0",
+    "priceCurrency": "GBP",
+    "name": "14-Day Free Trial",
+    "description": "Try MyDojo.Software free for 14 days with full access to all features",
+    "availability": "https://schema.org/InStock",
+    "url": "https://mydojo.software/contact/",
+    "priceValidUntil": "2026-12-31"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "127",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "featureList": [
+    "Class Scheduling & Booking",
+    "Student Management & Profiles",
+    "Belt & Rank Tracking",
+    "Automated Billing & Payments",
+    "Attendance Tracking",
+    "Parent Portal & Mobile App",
+    "Instructor Management",
+    "Tournament & Competition Tracking",
+    "Membership Management",
+    "Reports & Analytics",
+    "Multi-location Support",
+    "Automated Reminders (SMS & Email)"
+  ],
+  "url": "https://mydojo.software",
+  "screenshot": "https://mydojo.software/images/dashboard-screenshot.jpg",
+  "softwareVersion": "2.0",
+  "applicationSubCategory": "Martial Arts School Management",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Dojos, Karate Schools, BJJ Academies, MMA Gyms, Martial Arts Schools"
+  }
+};
+
+// Free Trial Offer Schema
+const offerSchema = {
+  "@context": "https://schema.org",
+  "@type": "Offer",
+  "@id": "https://mydojo.software/#free-trial-offer",
+  "name": "14-Day Free Trial - MyDojo.Software",
+  "description": "Try MyDojo.Software free for 14 days with complete access to all features including class scheduling, billing, student management, and belt tracking. No credit card required.",
+  "price": "0",
+  "priceCurrency": "GBP",
+  "priceValidUntil": "2026-12-31",
+  "availability": "https://schema.org/InStock",
+  "url": "https://mydojo.software/contact/",
+  "seller": {
+    "@type": "Organization",
+    "name": "MyDojo.Software"
+  },
+  "itemOffered": {
+    "@type": "SoftwareApplication",
+    "name": "MyDojo.Software",
+    "applicationCategory": "BusinessApplication"
+  },
+  "eligibleRegion": {
+    "@type": "Place",
+    "name": "United Kingdom"
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Trial Duration",
+      "value": "14 days"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Credit Card Required",
+      "value": "No"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Full Feature Access",
+      "value": "Yes"
+    }
+  ]
+};
+
+// Review Schemas from testimonials
+const reviewSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "@id": "https://mydojo.software/#review-1",
+    "itemReviewed": {
+      "@type": "SoftwareApplication",
+      "@id": "https://mydojo.software/#software",
+      "name": "MyDojo.Software"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Sensei Mike Thompson"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "reviewBody": "MyDojo transformed how we run our karate school. Attendance is up 30% since we started using the app.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Thompson Karate Academy"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "@id": "https://mydojo.software/#review-2",
+    "itemReviewed": {
+      "@type": "SoftwareApplication",
+      "@id": "https://mydojo.software/#software",
+      "name": "MyDojo.Software"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Sarah Chen"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "reviewBody": "The billing automation alone saves us 10+ hours every month. Best investment we've made.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Chen's MMA & BJJ"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "@id": "https://mydojo.software/#review-3",
+    "itemReviewed": {
+      "@type": "SoftwareApplication",
+      "@id": "https://mydojo.software/#software",
+      "name": "MyDojo.Software"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Master Kim"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "reviewBody": "Parents love being able to see their kids' progress. It's improved our retention significantly.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kim's Taekwondo"
+    }
+  }
+];
 
 const features = [
   {
@@ -62,7 +238,13 @@ const stats = [
 ---
 
 <BaseLayout title="Home" description="Complete martial arts management software for dojos, karate schools, MMA gyms, and BJJ academies. Scheduling, billing, and student management.">
-  
+  <!-- Structured Data Schemas -->
+  <script type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
+  {reviewSchemas.map(reviewSchema => (
+    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
+  ))}
+
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy via-brand-navy to-gray-900 text-white">
     <div class="absolute inset-0 opacity-10">
@@ -200,10 +382,13 @@ const stats = [
           </a>
         </div>
         <div class="relative">
-          <img 
-            src="/images/full-shot-asian-people-practicing-taekwondo.jpg" 
-            alt="Martial arts students training" 
+          <img
+            src="/images/full-shot-asian-people-practicing-taekwondo.jpg"
+            alt="Martial arts students training"
             class="rounded-2xl shadow-2xl"
+            loading="lazy"
+            width="600"
+            height="400"
           />
           <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 hidden md:block">
             <div class="flex items-center gap-3">

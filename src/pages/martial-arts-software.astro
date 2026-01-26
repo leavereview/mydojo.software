@@ -1,432 +1,412 @@
 ---
-// Martial arts software - Pillar Page
-import PillarPageLayout from '../layouts/PillarPageLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import StatisticsSection from '../components/seo/StatisticsSection.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+
+const platformStats = [
+  {
+    label: 'UK Martial Arts Schools',
+    value: '8,500+',
+    context: 'From traditional dojos to MMA gyms across the UK'
+  },
+  {
+    label: 'Admin Time Saved Weekly',
+    value: '15+ hrs',
+    change: { value: 68, direction: 'up' as const, period: 'vs manual' },
+    context: 'Through automation and integrated workflows'
+  },
+  {
+    label: 'Student Retention Improvement',
+    value: '22%',
+    change: { value: 22, direction: 'up' as const, period: 'with software' },
+    context: 'Better communication and engagement tracking'
+  },
+  {
+    label: 'Payment Collection Rate',
+    value: '97%',
+    change: { value: 12, direction: 'up' as const, period: 'automated billing' },
+    context: 'Automated retry logic reduces failed payments'
+  },
+  {
+    label: 'Average Student Count Threshold',
+    value: '75+',
+    context: 'When manual management becomes unsustainable'
+  },
+  {
+    label: 'Implementation Timeline',
+    value: '4-8 weeks',
+    context: 'From signup to full deployment including training'
+  }
+];
+
+const comparisonData = [
+  {
+    label: 'Belt/Rank Progression Tracking',
+    values: [true, false, 'Spreadsheets'],
+    highlight: true
+  },
+  {
+    label: 'Martial Arts Curriculum Mapping',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Testing Eligibility Automation',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Family Account Management',
+    values: [true, 'Limited', 'Manual'],
+    highlight: true
+  },
+  {
+    label: 'Recurring Membership Billing',
+    values: [true, true, 'Manual collection']
+  },
+  {
+    label: 'Class Scheduling & Capacity',
+    values: [true, true, 'Paper calendar']
+  },
+  {
+    label: 'Attendance Tracking',
+    values: [true, true, 'Clipboard']
+  },
+  {
+    label: 'Automated Reminders (SMS/Email)',
+    values: [true, 'Email only', false]
+  },
+  {
+    label: 'Student/Parent Mobile App',
+    values: [true, false, false]
+  },
+  {
+    label: 'Belt Testing & Promotion Tracking',
+    values: [true, false, 'Paper certificates']
+  }
+];
+
+const faqItems = [
+  {
+    question: "What is martial arts software?",
+    answer: "Martial arts software is a specialized management platform designed exclusively for dojos, academies, and combat sports gyms. Unlike generic gym software, it includes martial arts-specific features like belt/rank progression tracking with curriculum mapping, testing eligibility automation, family account management, and terminology appropriate to traditional martial arts schools. It consolidates student databases, scheduling, billing, attendance, and communication into one integrated system.",
+    links: [
+      { text: 'View features', url: '/martial-arts-software/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "How much does martial arts software cost?",
+    answer: "Most platforms cost £50-300 per month depending on student count and features. Common pricing models include per-student charges (£1-3/month per active student), tiered plans based on school size, or flat monthly rates. Additional costs include payment processing fees (2-3% per transaction), SMS credits for text messaging, and optional premium features. ROI typically comes from 15+ hours weekly admin time savings and 22% improved retention.",
+    links: [
+      { text: 'View pricing', url: '/pricing/' },
+      { text: 'Contact sales', url: '/contact/' }
+    ]
+  },
+  {
+    question: "What features are essential in martial arts management software?",
+    answer: "Essential features include: (1) student database with family accounts, (2) belt/rank progression tracking with curriculum maps, (3) class scheduling with capacity management, (4) automated recurring billing with multiple payment methods, (5) attendance tracking with check-in systems, (6) communication tools (email, SMS, push), (7) student/parent portal for self-service, (8) mobile apps, (9) reporting and analytics, and (10) lead management with trial tracking.",
+    links: [
+      { text: 'Scheduling features', url: '/martial-arts-scheduling-software/' },
+      { text: 'Billing features', url: '/martial-arts-billing-software/' }
+    ]
+  },
+  {
+    question: "Can martial arts software track belt progression and testing?",
+    answer: "Yes. Belt tracking is the most martial arts-specific feature in management software. Comprehensive systems include visual curriculum maps per discipline, individual student progress against requirements, stripe and incremental achievements, automatic testing eligibility based on attendance and time-in-rank, testing event scheduling, certificate generation, and support for multiple martial arts with different belt systems (BJJ, karate, taekwondo, etc.).",
+    links: [
+      { text: 'Karate features', url: '/karate-school-software/' },
+      { text: 'BJJ features', url: '/bjj-school-software/' }
+    ]
+  },
+  {
+    question: "How long does implementation take?",
+    answer: "A typical implementation takes 4-8 weeks from signup to full deployment. Weeks 1-2 focus on configuration, data import, and testing. Weeks 3-4 involve staff training and parallel operation with existing systems. Weeks 5-6 soft launch new features. Weeks 7-8 complete full deployment and retire old systems. Data migration typically takes 2-4 weeks before going live with billing.",
+    links: [
+      { text: 'Start free trial', url: '/contact/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "Does martial arts software work for multiple locations?",
+    answer: "Yes. Quality platforms support multi-location operations with centralized student databases, consolidated reporting, and cross-location class booking. Each location maintains its own schedule and instructor assignments while sharing membership data. Students can book classes at any location, and owners get unified reporting across all sites. This is essential for academies with 2+ locations.",
+    links: [
+      { text: 'Dojo management', url: '/dojo-management-software/' },
+      { text: 'Contact us', url: '/contact/' }
+    ]
+  },
+  {
+    question: "What payment methods does martial arts billing software support?",
+    answer: "Modern platforms support credit/debit cards with secure PCI-compliant storage, direct debit/ACH for lower processing fees, bank transfers, and cash/check tracking. Automated recurring billing processes memberships monthly, handles failed payments with retry logic and notifications, and manages family discounts, promotional pricing, contract terms, pro-rata billing, and one-time charges for testing, equipment, and drop-ins.",
+    links: [
+      { text: 'Billing features', url: '/martial-arts-billing-software/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "Can students book classes online?",
+    answer: "Yes. Student portals and mobile apps allow members to view schedules, see real-time class availability, book their spot, join waitlists when full, and manage their bookings with cancellations within policy windows. The system enforces belt-level restrictions (white belts only see beginner classes), capacity limits, and membership tier access automatically, reducing admin phone calls by 70%.",
+    links: [
+      { text: 'Scheduling software', url: '/martial-arts-scheduling-software/' },
+      { text: 'Start trial', url: '/contact/' }
+    ]
+  },
+  {
+    question: "What reports are available in martial arts software?",
+    answer: "Comprehensive reporting includes revenue and financial summaries, membership growth and churn trends, attendance patterns by class and time, retention analysis identifying at-risk students, belt testing and progression metrics, lead and trial conversion tracking, instructor performance and teaching hours, class capacity utilization, and marketing campaign ROI. Export data to CSV for external analysis or integrate with QuickBooks/Xero for accounting.",
+    links: [
+      { text: 'CRM features', url: '/martial-arts-crm/' },
+      { text: 'Contact sales', url: '/contact/' }
+    ]
+  },
+  {
+    question: "Does martial arts software integrate with other tools?",
+    answer: "Yes. Quality platforms integrate with websites for lead capture and class booking, email marketing platforms (Mailchimp, Constant Contact), accounting software (QuickBooks, Xero), calendar applications (Google Calendar, iCal) for schedule syncing, Zapier for automation workflows, and social media platforms. Payment gateways include Stripe, GoCardless, and others. API access enables custom integrations for specific needs.",
+    links: [
+      { text: 'Overview', url: '/martial-arts-software/' },
+      { text: 'Start trial', url: '/contact/' }
+    ]
+  }
+];
+
+const breadcrumbItems = [
+  { label: 'Home', url: 'https://mydojo.software/' },
+  { label: 'Martial Arts Software', url: 'https://mydojo.software/martial-arts-software/' }
+];
 ---
 
-<PillarPageLayout
-  title="Martial Arts Software"
-  description="Complete martial arts management software for dojos, academies, and combat sports gyms. Scheduling, billing, belt tracking, and student management."
-  heroImage="/images/full-shot-asian-people-practicing-taekwondo.jpg"
-  badge="Complete Guide"
-  breadcrumbLabel="Martial Arts Software"
+<BaseLayout
+  title="Martial Arts Software (2026) - Complete Management Platform for Dojos & Gyms"
+  description="Complete martial arts management software for dojos, academies, and combat sports gyms. Belt progression tracking, scheduling, automated billing, attendance, student portals, and mobile apps. Save 15+ hours weekly and improve retention by 22%."
 >
-<strong>The Complete Management Platform for Dojos, Academies & Combat Sports Gyms</strong>
-
-<p>Running a martial arts school involves far more than teaching techniques. Between tracking student progress through belt ranks, managing class schedules, processing membership payments, and communicating with families, administrative tasks can consume hours that should be spent on the mats.</p>
-
-<p>Modern martial arts software consolidates these scattered responsibilities into a single, purpose-built platform. Rather than juggling spreadsheets for attendance, separate billing systems, and manual belt tracking, school owners gain a unified command centre designed specifically for the unique workflows of martial arts instruction.</p>
-
-<p>This comprehensive guide examines everything you need to know about martial arts management software: what features matter most, how to evaluate different platforms, implementation best practices, and the measurable impact these systems have on school operations and student retention.</p>
-
-<strong>See also:</strong> <a href="/dojo-management-software/" class="link">Dojo Management Software</a> for traditional schools | <a href="/mma-gym-software/" class="link">MMA Gym Software</a> for combat sports | <a href="/karate-school-software/" class="link">Karate School Software</a> for karate dojos
-
-<h2>What You'll Learn</h2>
-
-<ul>
-<li>What martial arts software actually does and who needs it</li>
-<li>The 12 essential features every dojo management system must have</li>
-<li>How belt progression tracking works in modern platforms</li>
-<li>Billing automation and payment processing capabilities</li>
-</ul>
-
-<ul>
-<li>Student portal and family account management</li>
-<li>Scheduling, attendance, and class capacity management</li>
-<li>Communication tools: email, SMS, and push notifications</li>
-<li>Reporting and analytics for data-driven decisions</li>
-</ul>
-
-<ul>
-<li>Integration capabilities with other business tools</li>
-<li>Implementation timeline and staff training requirements</li>
-<li>Cost considerations and ROI calculations</li>
-<li>How to choose the right platform for your school</li>
-</ul>
-
-<h2>What Is Martial Arts Software?</h2>
-
-<strong>Martial arts software</strong> is a specialised category of business management platforms designed exclusively for martial arts schools, dojos, academies, and combat sports gyms. Unlike generic gym software or retail point-of-sale systems, martial arts platforms incorporate industry-specific functionality that addresses the unique operational requirements of martial arts instruction.
-
-<p>At its core, martial arts software serves as the <strong>operational backbone</strong> of your school. It handles the administrative complexity that grows exponentially as your student base expands, from a handful of students where manual tracking remains feasible, to hundreds of active members where systematic management becomes essential.</p>
-
-<h2>The Problem Martial Arts Software Solves</h2>
-
-<p>Consider the daily operations of a typical martial arts school without dedicated software:</p>
-
-<ul>
-<li><strong>Student records scattered</strong> across paper files, spreadsheets, and memory</li>
-<li><strong>Belt progression tracked manually</strong>, with testing dates easily forgotten</li>
-<li><strong>Payments processed</strong> through generic systems that don't understand membership models</li>
-<li><strong>Class attendance recorded</strong> on clipboards, rarely analysed for patterns</li>
-<li><strong>Parent communication handled</strong> through personal email and text messages</li>
-<li><strong>Scheduling conflicts discovered</strong> only when students arrive for cancelled classes</li>
-</ul>
-
-<p>Each of these friction points creates operational overhead and increases the likelihood of errors that damage student experience and retention. A parent who misses a belt testing notification, a billing error that creates awkward conversations, or a scheduling mistake that wastes a family's time—these accumulated small failures erode trust and eventually cost you students.</p>
-
-<h2>Who Needs Martial Arts Management Software?</h2>
-
-<p>The inflection point for most schools occurs somewhere between <strong>50 and 100 active students</strong>. Below this threshold, manual systems remain manageable, though inefficient. Above it, the administrative burden without software becomes unsustainable without either hiring dedicated administrative staff or accepting operational chaos.</p>
-
-<p>Martial arts software becomes essential for:</p>
-
-<ul>
-<li>Single-location schools with 75+ active students</li>
-<li>Multi-location academies requiring centralised management</li>
-<li>Schools offering diverse programmes (kids, adults, competition teams)</li>
-</ul>
-
-<ul>
-<li>Instructors who want to focus on teaching rather than administration</li>
-<li>Owners seeking data to make informed business decisions</li>
-<li>Schools with belt progression systems requiring systematic tracking</li>
-</ul>
-
-<h2>Essential Features of Martial Arts Software</h2>
-
-<p>Not all martial arts software platforms offer equivalent functionality. When evaluating options, prioritise these twelve essential features that directly impact operational efficiency and student experience.</p>
-
-<h3>1. Student Database and Profile Management</h3>
-
-<p>The foundation of any martial arts management system is a comprehensive student database. Beyond basic contact information, effective platforms capture martial arts-specific data points:</p>
-
-<ul>
-<li>Current rank and belt history with promotion dates</li>
-<li>Training start date and total tenure</li>
-<li>Attendance patterns and class preferences</li>
-<li>Emergency contacts and medical considerations</li>
-<li>Uniform and equipment sizes for merchandise</li>
-<li>Notes from instructors about technique development</li>
-<li>Family relationships linking parents, siblings, and referred students</li>
-</ul>
-
-<strong>Family account functionality</strong> proves particularly valuable for schools with significant youth programmes. Parents manage multiple children from a single login, viewing schedules, making payments, and tracking each child's progression without creating separate accounts.
-
-<h3>2. Belt and Rank Progression Tracking</h3>
-
-<strong>Belt progression tracking represents the most martial arts-specific functionality</strong> in any management platform. Generic gym software simply cannot replicate this capability because it addresses a need unique to martial arts instruction.
-
-<p>Comprehensive belt tracking includes:</p>
-
-<ul>
-<li>Visual curriculum maps showing requirements for each rank</li>
-<li>Individual student progress against curriculum requirements</li>
-<li>Stripe and incremental achievement tracking</li>
-<li>Testing eligibility determination based on attendance and time-in-rank</li>
-<li>Automated notifications when students become eligible for testing</li>
-<li>Testing event management with scheduling and results recording</li>
-<li>Certificate generation for promotions</li>
-<li>Belt testing payment processing</li>
-</ul>
-
-<p>Advanced platforms support <strong>multiple martial arts disciplines simultaneously</strong>. A school teaching both Brazilian Jiu-Jitsu and Muay Thai needs separate progression tracks with different belt systems, testing requirements, and curriculum structures.</p>
-
-<h3>3. Class Scheduling and Calendar Management</h3>
-
-<p>Scheduling functionality must accommodate the recurring nature of martial arts classes while handling the exceptions that inevitably arise. Effective scheduling systems provide:</p>
-
-<ul>
-<li>Recurring class templates with day/time/instructor assignments</li>
-<li>Capacity limits per class with waitlist management</li>
-<li>Instructor availability tracking and substitute assignment</li>
-<li>Room and mat space allocation for multi-room facilities</li>
-<li>Private lesson scheduling with instructor-specific calendars</li>
-<li>Special event management (seminars, belt testings, competitions)</li>
-<li>Public-facing schedules that sync with student calendars</li>
-<li>Mobile access for instructors to view their teaching schedule</li>
-</ul>
-
-<h3>4. Attendance Tracking and Check-In</h3>
-
-<p>Attendance data serves multiple purposes: verifying membership usage, determining belt testing eligibility, identifying at-risk students showing declining engagement, and providing instructors with class rosters.</p>
-
-<p>Modern check-in options include:</p>
-
-<ul>
-<li>Kiosk mode for tablet-based self check-in</li>
-<li>Barcode or RFID scanning for rapid processing</li>
-<li>Mobile check-in through student apps</li>
-<li>Instructor-side attendance marking</li>
-<li>Family check-in allowing parents to check in multiple children</li>
-<li>Retroactive attendance correction for administrative purposes</li>
-</ul>
-
-<h3>5. Membership and Billing Management</h3>
-
-<p>Martial arts billing models differ significantly from standard gym memberships. Most schools offer multiple programme types, family discounts, contract terms, and promotional pricing that require flexible billing configuration.</p>
-
-<p>Essential billing capabilities include:</p>
-
-<ul>
-<li>Recurring membership billing with automatic processing</li>
-<li>Multiple payment methods (card, bank transfer, cash tracking)</li>
-<li>Family and sibling discount automation</li>
-<li>Promotional pricing and introductory offers</li>
-<li>Contract management with term tracking</li>
-</ul>
-
-<ul>
-<li>Failed payment handling with automatic retry and notifications</li>
-<li>Pro-rata billing for mid-cycle enrolments</li>
-<li>Equipment and merchandise sales</li>
-<li>Belt testing fee processing</li>
-<li>Drop-in class and punch card options</li>
-</ul>
-
-<h3>6. Payment Processing Integration</h3>
-
-<p>Integrated payment processing eliminates the reconciliation headaches of managing payments through external systems. Look for platforms offering:</p>
-
-<ul>
-<li>PCI-compliant card storage for recurring billing</li>
-<li>Multiple gateway options (Stripe, GoCardless, etc.)</li>
-<li>Direct debit/ACH support for reduced processing fees</li>
-<li>In-person payment processing for point-of-sale</li>
-<li>Automatic receipt generation and delivery</li>
-<li>Payment history and transaction reporting</li>
-<li>Refund and credit processing</li>
-</ul>
-
-<h3>7. Communication Tools</h3>
-
-<p>Effective communication keeps students and families engaged while reducing administrative burden. Comprehensive communication features include:</p>
-
-<ul>
-<li>Email marketing with segmentation and automation</li>
-<li>SMS notifications for time-sensitive messages</li>
-<li>Push notifications through mobile apps</li>
-<li>Automated reminders (class, payment, testing)</li>
-<li>Announcement broadcasting to specific groups</li>
-<li>Two-way messaging for individual conversations</li>
-<li>Template library for common communications</li>
-</ul>
-
-<h3>8. Student and Parent Portal</h3>
-
-<p>Self-service portals reduce administrative enquiries while improving member experience. Portal functionality should include:</p>
-
-<ul>
-<li>Profile and contact information management</li>
-<li>Payment method updates and billing history</li>
-<li>Class schedule viewing and booking</li>
-<li>Belt progression and curriculum visibility</li>
-<li>Attendance history</li>
-<li>Document access (contracts, policies, certificates)</li>
-<li>Communication preferences</li>
-</ul>
-
-<h3>9. Mobile Applications</h3>
-
-<p>Mobile accessibility has become expected rather than optional. Both student/parent apps and instructor apps serve distinct purposes:</p>
-
-<strong>Student/Parent App Features:</strong>
-
-<ul>
-<li>Class schedule and booking</li>
-<li>Check-in functionality</li>
-<li>Belt progression viewing</li>
-<li>Payment management</li>
-<li>Push notification receipt</li>
-</ul>
-
-<strong>Instructor App Features:</strong>
-
-<ul>
-<li>Class roster and attendance</li>
-<li>Student progress notes</li>
-<li>Schedule viewing</li>
-<li>Student contact access</li>
-</ul>
-
-<h3>10. Reporting and Analytics</h3>
-
-<p>Data-driven decision making requires accessible reporting. Essential reports include:</p>
-
-<ul>
-<li>Revenue and financial summaries</li>
-<li>Membership statistics and trends</li>
-<li>Attendance patterns and utilisation</li>
-</ul>
-
-<ul>
-<li>Retention and churn analysis</li>
-<li>Belt testing and progression metrics</li>
-<li>Lead and trial conversion tracking</li>
-</ul>
-
-<ul>
-<li>Instructor performance metrics</li>
-<li>Class capacity and utilisation</li>
-<li>Marketing campaign effectiveness</li>
-</ul>
-
-<h3>11. Lead and Trial Management</h3>
-
-<p>Converting enquiries to enrolled students requires systematic follow-up. Lead management features include:</p>
-
-<ul>
-<li>Lead capture forms for website integration</li>
-<li>Trial class scheduling and tracking</li>
-<li>Automated follow-up sequences</li>
-<li>Lead source tracking for marketing attribution</li>
-<li>Conversion funnel reporting</li>
-</ul>
-
-<h3>12. Integration Capabilities</h3>
-
-<p>No software operates in isolation. Integration capabilities extend functionality through connections with:</p>
-
-<ul>
-<li>Website and landing pages</li>
-<li>Email marketing platforms (Mailchimp, etc.)</li>
-<li>Accounting software (QuickBooks, Xero)</li>
-<li>Calendar applications (Google Calendar, iCal)</li>
-<li>Zapier and automation platforms</li>
-<li>Social media platforms</li>
-</ul>
-
-<h2>Implementation and Onboarding</h2>
-
-<p>Successful software implementation requires planning beyond simply signing up and logging in. A structured approach minimises disruption and maximises adoption.</p>
-
-<h3>Pre-Implementation Planning</h3>
-
-<ul>
-<li>Audit current processes and identify pain points</li>
-<li>Clean and organise existing student data for import</li>
-<li>Document current pricing structures and membership types</li>
-<li>Map belt curricula and progression requirements</li>
-<li>Identify staff who will require training</li>
-</ul>
-
-<h3>Data Migration</h3>
-
-<p>Migrating from existing systems—whether spreadsheets, another platform, or paper records—requires careful attention. Most platforms support importing:</p>
-
-<ul>
-<li>Student profiles and contact information</li>
-<li>Membership and billing data</li>
-<li>Attendance history (where available)</li>
-<li>Belt rank and progression data</li>
-</ul>
-
-<strong>Allow 2-4 weeks for data migration and verification</strong> before going live with billing.
-
-<h3>Staff Training</h3>
-
-<p>Different staff roles require different training focus:</p>
-
-<ul>
-<li><strong>Front desk:</strong> Check-in, payments, basic member management</li>
-<li><strong>Instructors:</strong> Attendance, progression notes, mobile app usage</li>
-<li><strong>Owners/managers:</strong> Reporting, billing configuration, system administration</li>
-</ul>
-
-<h3>Realistic Timeline</h3>
-
-<p>A typical implementation timeline spans <strong>4-8 weeks</strong>:</p>
-
-<ul>
-<li><strong>Weeks 1-2:</strong> Configuration, data import, testing</li>
-<li><strong>Weeks 3-4:</strong> Staff training, parallel operation</li>
-<li><strong>Weeks 5-6:</strong> Soft launch with new features</li>
-<li><strong>Weeks 7-8:</strong> Full deployment, old system retirement</li>
-</ul>
-
-<h2>Cost Considerations and ROI</h2>
-
-<h3>Typical Pricing Models</h3>
-
-<p>ModelDescriptionBest For<strong>Per-Student</strong>£1-3 per active student per monthSmall to medium schools with predictable growth<strong>Tiered Plans</strong>Fixed monthly fees based on feature sets and student limitsSchools with stable student counts wanting predictable costs<strong>Flat Rate</strong>Single monthly fee regardless of student countGrowing schools that want cost predictability</p>
-
-<h3>Hidden Costs to Consider</h3>
-
-<ul>
-<li><strong>Payment processing fees</strong> (typically 2-3% plus fixed per-transaction)</li>
-<li><strong>SMS credits</strong> for text messaging</li>
-<li><strong>Additional user accounts</strong> for staff</li>
-<li><strong>Premium features or add-ons</strong></li>
-<li><strong>Implementation and training fees</strong></li>
-<li><strong>Data migration assistance</strong></li>
-</ul>
-
-<h3>Calculating Return on Investment</h3>
-
-<p>Software ROI comes from multiple sources:</p>
-
-<ul>
-<li><strong>Administrative time savings:</strong> Schools typically report 10-15 hours per week saved on manual tasks. At reasonable staff costs, this represents significant monthly savings.</li>
-<li><strong>Reduced payment failures:</strong> Automated billing with retry logic typically reduces failed payment revenue loss by 30-50%.</li>
-<li><strong>Improved retention:</strong> Better communication and engagement tracking can improve retention by 5-15%, directly impacting lifetime student value.</li>
-<li><strong>Reduced missed revenue:</strong> Automated belt testing notifications and equipment sales capture revenue otherwise lost to oversight.</li>
-</ul>
-
-<h2>Related Guides</h2>
-
-<p>Understanding martial arts operations helps you evaluate software requirements:</p>
-
-<ul>
-<li><a href="/blog/karate-belts/" class="link">Complete Guide to Karate Belts</a> — How belt progression works and why tracking matters</li>
-<li><a href="/blog/types-of-martial-arts/" class="link">Types of Martial Arts</a> — Overview of different disciplines and their management needs</li>
-<li><a href="/martial-arts-crm/" class="link">Martial Arts CRM</a> — Lead management and student retention</li>
-<li><a href="/martial-arts-billing-software/" class="link">Martial Arts Billing Software</a> — Payment processing and membership management</li>
-</ul>
-
-<h2>Frequently Asked Questions</h2>
-
-<h3>What is martial arts software?</h3>
-
-<p>Martial arts software is a specialised management platform designed for dojos, academies, and combat sports gyms. It handles student databases, belt progression tracking, class scheduling, membership billing, attendance, and communication—all tailored to the unique operational needs of martial arts instruction rather than generic gym management.</p>
-
-<h3>How much does martial arts software cost?</h3>
-
-<p>Most martial arts software costs between £50-300 per month depending on your student count and required features. Common pricing models include per-student charges (£1-3 per active student), tiered plans based on school size, or flat monthly rates. Additional costs may include payment processing fees (2-3%), SMS credits, and premium feature add-ons.</p>
-
-<h3>What features should I look for in martial arts management software?</h3>
-
-<p>Essential features include: student database with family accounts, belt/rank progression tracking with curriculum mapping, class scheduling with capacity management, recurring billing with multiple payment options, attendance tracking with check-in systems, communication tools (email, SMS, push notifications), student portal for self-service, mobile apps for students and instructors, and comprehensive reporting. Belt progression tracking is particularly crucial as generic gym software cannot replicate this martial arts-specific functionality.</p>
-
-<h3>Can martial arts software track belt progression and testing?</h3>
-
-<p>Yes, belt progression tracking is a core feature of dedicated martial arts software. Comprehensive systems include visual curriculum maps, individual progress tracking against requirements, stripe and incremental achievements, automatic testing eligibility determination based on attendance and time-in-rank, testing event scheduling, certificate generation, and support for multiple martial arts disciplines with different belt systems.</p>
-
-<!-- FAQPage Schema -->
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is martial arts software?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Martial arts software is a specialised management platform designed for dojos, academies, and combat sports gyms. It handles student databases, belt progression tracking, class scheduling, membership billing, attendance, and communication—all tailored to the unique operational needs of martial arts instruction rather than generic gym management."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does martial arts software cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most martial arts software costs between £50-300 per month depending on your student count and required features. Common pricing models include per-student charges (£1-3 per active student), tiered plans based on school size, or flat monthly rates. Additional costs may include payment processing fees (2-3%), SMS credits, and premium feature add-ons."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What features should I look for in martial arts management software?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Essential features include: student database with family accounts, belt/rank progression tracking with curriculum mapping, class scheduling with capacity management, recurring billing with multiple payment options, attendance tracking with check-in systems, communication tools (email, SMS, push notifications), student portal for self-service, mobile apps for students and instructors, and comprehensive reporting."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can martial arts software track belt progression and testing?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, belt progression tracking is a core feature of dedicated martial arts software. Comprehensive systems include visual curriculum maps, individual progress tracking against requirements, stripe and incremental achievements, automatic testing eligibility determination based on attendance and time-in-rank, testing event scheduling, certificate generation, and support for multiple martial arts disciplines with different belt systems."
-      }
+  <BreadcrumbsEnhanced site="mydojo" items={breadcrumbItems} />
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block bg-red-50 text-red-600 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          Complete Platform Guide
+        </span>
+        <h1 class="text-4xl md:text-5xl font-bold text-navy mb-6">
+          Martial Arts Software
+        </h1>
+        <p class="text-xl text-gray-600 mb-8">
+          The complete management platform for dojos, academies, and combat sports gyms. Belt tracking, automated billing, scheduling, and student engagement—all in one system.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="/contact/" class="btn-primary">Start Free Trial</a>
+          <a href="/pricing/" class="btn-secondary">View Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FeaturedAnswer question="What is martial arts software?">
+    Martial arts software is a specialized management platform for dojos and combat sports gyms. It handles student databases, belt progression tracking with curriculum mapping, class scheduling, automated recurring billing, attendance tracking, family accounts, communication (email/SMS/push), student portals, mobile apps, and comprehensive reporting.
+  </FeaturedAnswer>
+
+  <StatisticsSection
+    site="mydojo"
+    pageUrl="https://mydojo.software/martial-arts-software/"
+    title="Martial Arts Software Industry Statistics"
+    stats={platformStats}
+  />
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+        <h2>What Is Martial Arts Software?</h2>
+        <p>
+          Martial arts software is a specialized management platform designed exclusively for dojos, academies, and combat sports gyms. Unlike generic gym software or retail point-of-sale systems, martial arts platforms incorporate industry-specific functionality that addresses the unique operational requirements of martial arts instruction.
+        </p>
+        <p>
+          Running a martial arts school involves far more than teaching techniques. Between tracking student progress through belt ranks, managing class schedules, processing membership payments, and communicating with families, administrative tasks can consume 15-20 hours weekly that should be spent on the mats. Modern martial arts software consolidates these scattered responsibilities into a single, purpose-built platform.
+        </p>
+
+        <h2>The Problem It Solves</h2>
+        <p>
+          Consider the daily operations of a typical martial arts school without dedicated software: student records scattered across paper files and spreadsheets, belt progression tracked manually with testing dates easily forgotten, payments processed through generic systems that don't understand membership models, class attendance recorded on clipboards and rarely analyzed, and parent communication handled through personal email and text messages.
+        </p>
+        <p>
+          Each of these friction points creates operational overhead and increases the likelihood of errors that damage student experience and retention. A parent who misses a belt testing notification, a billing error that creates awkward conversations, or a scheduling mistake that wastes a family's time—these accumulated small failures erode trust and eventually cost you students.
+        </p>
+
+        <h2>Who Needs Martial Arts Management Software?</h2>
+        <p>
+          The inflection point for most schools occurs somewhere between 50 and 100 active students. Below this threshold, manual systems remain manageable, though inefficient. Above it, the administrative burden without software becomes unsustainable without either hiring dedicated administrative staff or accepting operational chaos.
+        </p>
+        <p>
+          Martial arts software becomes essential for single-location schools with 75+ active students, multi-location academies requiring centralized management, schools offering diverse programs (kids, adults, competition teams), instructors who want to focus on teaching rather than administration, owners seeking data to make informed business decisions, and schools with belt progression systems requiring systematic tracking.
+        </p>
+
+        <h2>Essential Feature: Belt and Rank Progression Tracking</h2>
+        <p>
+          Belt progression tracking represents the most martial arts-specific functionality in any management platform. Generic gym software simply cannot replicate this capability because it addresses a need unique to martial arts instruction. Comprehensive belt tracking includes visual curriculum maps showing requirements for each rank, individual student progress against curriculum requirements, stripe and incremental achievement tracking, testing eligibility determination based on attendance and time-in-rank, automated notifications when students become eligible for testing, testing event management with scheduling and results recording, certificate generation for promotions, and belt testing payment processing.
+        </p>
+        <p>
+          Advanced platforms support multiple martial arts disciplines simultaneously. A school teaching both Brazilian Jiu-Jitsu and Muay Thai needs separate progression tracks with different belt systems, testing requirements, and curriculum structures. Each discipline maintains its own progression logic while sharing the same student database and billing system.
+        </p>
+
+        <h2>Scheduling and Attendance</h2>
+        <p>
+          Class scheduling must accommodate the recurring nature of martial arts training while handling exceptions that inevitably arise. Effective scheduling systems provide recurring class templates with day/time/instructor assignments, capacity limits per class with waitlist management, instructor availability tracking and substitute assignment, room and mat space allocation for multi-room facilities, private lesson scheduling with instructor-specific calendars, special event management (seminars, belt testings, competitions), and public-facing schedules that sync with student calendars.
+        </p>
+        <p>
+          Attendance data serves multiple purposes: verifying membership usage, determining belt testing eligibility, identifying at-risk students showing declining engagement, and providing instructors with class rosters. Modern check-in options include kiosk mode for tablet-based self check-in, barcode or RFID scanning for rapid processing, mobile check-in through student apps, instructor-side attendance marking, and family check-in allowing parents to check in multiple children simultaneously.
+        </p>
+
+        <h2>Automated Billing and Payment Processing</h2>
+        <p>
+          Martial arts billing models differ significantly from standard gym memberships. Most schools offer multiple program types, family discounts, contract terms, and promotional pricing that require flexible billing configuration. Essential billing capabilities include recurring membership billing with automatic processing, multiple payment methods (card, bank transfer, cash tracking), family and sibling discount automation, promotional pricing and introductory offers, contract management with term tracking, failed payment handling with automatic retry and notifications, pro-rata billing for mid-cycle enrollments, equipment and merchandise sales, belt testing fee processing, and drop-in class and punch card options.
+        </p>
+        <p>
+          Integrated payment processing eliminates the reconciliation headaches of managing payments through external systems. Look for platforms offering PCI-compliant card storage for recurring billing, multiple gateway options (Stripe, GoCardless), direct debit/ACH support for reduced processing fees, in-person payment processing for point-of-sale, automatic receipt generation and delivery, payment history and transaction reporting, and refund and credit processing.
+        </p>
+
+        <h2>Student and Parent Portals</h2>
+        <p>
+          Self-service portals reduce administrative inquiries while improving member experience. Portal functionality should include profile and contact information management, payment method updates and billing history, class schedule viewing and booking, belt progression and curriculum visibility, attendance history, document access (contracts, policies, certificates), and communication preferences.
+        </p>
+        <p>
+          Mobile accessibility has become expected rather than optional. Student and parent apps provide class schedule and booking, check-in functionality, belt progression viewing, payment management, and push notification receipt. Instructor apps offer class roster and attendance, student progress notes, schedule viewing, and student contact access—all from their phone while on the mat.
+        </p>
+
+        <h2>Communication Tools</h2>
+        <p>
+          Effective communication keeps students and families engaged while reducing administrative burden. Comprehensive communication features include email marketing with segmentation and automation, SMS notifications for time-sensitive messages, push notifications through mobile apps, automated reminders (class, payment, testing), announcement broadcasting to specific groups, two-way messaging for individual conversations, and template libraries for common communications.
+        </p>
+        <p>
+          Automated communication sequences handle routine touchpoints without staff intervention: welcome sequences for new students, reminder sequences before belt testing, re-engagement campaigns for students with declining attendance, and win-back sequences for canceled members. These automated flows keep students engaged while freeing staff to handle high-value personal interactions.
+        </p>
+
+        <h2>Lead Management and Trial Tracking</h2>
+        <p>
+          Converting inquiries to enrolled students requires systematic follow-up. Lead management features include lead capture forms for website integration, trial class scheduling and tracking, automated follow-up sequences, lead source tracking for marketing attribution, and conversion funnel reporting.
+        </p>
+        <p>
+          The trial-to-member conversion process is critical for growth. Software tracks each lead from initial inquiry through trial class attendance and enrollment decision. Automated reminders ensure trials don't forget their scheduled class. Follow-up sequences nurture fence-sitters with social proof, testimonials, and limited-time offers. Conversion reports identify which lead sources drive the highest-quality students.
+        </p>
+
+        <h2>Reporting and Analytics</h2>
+        <p>
+          Data-driven decision making requires accessible reporting. Essential reports include revenue and financial summaries, membership statistics and trends, attendance patterns and utilization, retention and churn analysis, belt testing and progression metrics, lead and trial conversion tracking, instructor performance metrics, class capacity and utilization, and marketing campaign effectiveness.
+        </p>
+        <p>
+          Advanced analytics identify at-risk students before they cancel. Declining attendance patterns, approaching contract end dates, or missed payments trigger alerts for staff intervention. Retention reports segment students by program, belt rank, tenure, and other factors to understand what drives long-term commitment.
+        </p>
+
+        <h2>Family Account Management</h2>
+        <p>
+          Family account functionality proves particularly valuable for schools with significant youth programs. Parents manage multiple children from a single login, viewing schedules, making payments, and tracking each child's progression without creating separate accounts. Family discounts apply automatically based on the number of enrolled children. Billing consolidates all children onto one invoice with clear itemization. Scheduling shows all children's classes in one calendar view, making it easy to coordinate drop-offs and pickups.
+        </p>
+
+        <h2>Multi-Location Management</h2>
+        <p>
+          Schools with multiple locations need centralized management while maintaining site-specific operations. Quality platforms support multi-location operations with shared student databases, consolidated reporting across all sites, cross-location class booking, and location-specific schedules and pricing. Students can train at any location based on their membership tier. Instructors may teach at multiple locations with unified scheduling. Owners get consolidated financial reporting while maintaining visibility into each location's performance.
+        </p>
+
+        <h2>Integration Capabilities</h2>
+        <p>
+          No software operates in isolation. Integration capabilities extend functionality through connections with websites and landing pages for lead capture and class booking, email marketing platforms (Mailchimp, Constant Contact) for advanced campaigns, accounting software (QuickBooks, Xero) for financial reconciliation, calendar applications (Google Calendar, iCal) for personal schedule syncing, Zapier and automation platforms for custom workflows, and social media platforms for community engagement.
+        </p>
+
+        <h2>Implementation and Onboarding</h2>
+        <p>
+          Successful software implementation requires planning beyond simply signing up and logging in. A structured approach minimizes disruption and maximizes adoption. Pre-implementation planning includes auditing current processes to identify pain points, cleaning and organizing existing student data for import, documenting current pricing structures and membership types, mapping belt curricula and progression requirements, and identifying staff who will require training.
+        </p>
+        <p>
+          A typical implementation timeline spans 4-8 weeks. Weeks 1-2 focus on configuration, data import, and testing. Weeks 3-4 involve staff training and parallel operation with existing systems. Weeks 5-6 soft launch new features to students. Weeks 7-8 complete full deployment and retire old systems. Allow 2-4 weeks for data migration and verification before going live with billing to ensure accuracy.
+        </p>
+
+        <h2>Cost Considerations and ROI</h2>
+        <p>
+          Most martial arts software costs £50-300 per month depending on student count and features. Common pricing models include per-student charges (£1-3 per active student per month), tiered plans with fixed monthly fees based on feature sets and student limits, or flat rate pricing with a single monthly fee regardless of student count.
+        </p>
+        <p>
+          Additional costs to consider include payment processing fees (typically 2-3% plus fixed per-transaction), SMS credits for text messaging, additional user accounts for staff, premium features or add-ons, implementation and training fees, and data migration assistance.
+        </p>
+        <p>
+          Software ROI comes from multiple sources: administrative time savings (schools typically report 10-15 hours per week saved on manual tasks), reduced payment failures (automated billing with retry logic reduces failed payment revenue loss by 30-50%), improved retention (better communication and engagement tracking can improve retention by 5-15%), and reduced missed revenue (automated belt testing notifications and equipment sales capture revenue otherwise lost to oversight).
+        </p>
+
+        <h2>Choosing the Right Platform</h2>
+        <p>
+          When evaluating martial arts software, prioritize platforms that understand martial arts terminology and workflows, not just generic gym operations. Belt progression tracking should be comprehensive and flexible. Billing must support complex membership structures, family discounts, and contract terms. Scheduling needs to handle both recurring classes and special events. Communication tools should include automated sequences and segmentation. Reporting must provide actionable insights, not just raw data exports.
+        </p>
+        <p>
+          Trial the platform with real data before committing. Import a subset of students, configure your actual pricing and schedule, and have staff test daily workflows. The best software feels intuitive because it matches how martial arts schools actually operate, not how a generic gym functions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ComparisonTable
+    title="Martial Arts Software vs Generic Gym Software vs Manual Management"
+    headers={['MyDojo (Martial Arts-Specific)', 'Generic Gym Software', 'Manual Management']}
+    rows={comparisonData}
+  />
+
+  <FAQEnhanced
+    site="mydojo"
+    pageUrl="https://mydojo.software/martial-arts-software/"
+    title="Frequently Asked Questions About Martial Arts Software"
+    faqs={faqItems}
+  />
+
+  <section class="section bg-navy text-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Ready to Transform Your Dojo Operations?
+        </h2>
+        <p class="text-xl mb-8 text-gray-300">
+          Save 15+ hours weekly, improve retention by 22%, and give students the modern experience they expect. Start your free trial today.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="/contact/" class="btn-primary">Start Free Trial</a>
+          <a href="/pricing/" class="btn-secondary bg-white text-navy hover:bg-gray-100">View Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 4rem 0;
+  }
+
+  @media (min-width: 768px) {
+    .section {
+      padding: 6rem 0;
     }
-  ]
-})} is:inline />
-</PillarPageLayout>
+  }
+
+  .prose {
+    color: #1a1a2e;
+  }
+
+  .prose h2 {
+    color: #1a1a2e;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose p {
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+  }
+
+  .prose a {
+    color: #e94560;
+    text-decoration: none;
+  }
+
+  .prose a:hover {
+    text-decoration: underline;
+  }
+</style>

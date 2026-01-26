@@ -2,9 +2,135 @@
 // Pricing Page
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+// Pricing tiers
+const pricingTiers = [
+  {
+    name: 'Starter Plan',
+    description: 'Perfect for small dojos',
+    monthlyPrice: 49,
+    studentRange: '0-30 students',
+    perStudentCost: '$1.63',
+    popular: false
+  },
+  {
+    name: 'Growth Plan',
+    description: 'For growing academies',
+    monthlyPrice: 79,
+    studentRange: '31-75 students',
+    perStudentCost: '$1.05',
+    popular: true
+  },
+  {
+    name: 'Professional Plan',
+    description: 'For established schools',
+    monthlyPrice: 119,
+    studentRange: '76-150 students',
+    perStudentCost: '$0.79',
+    popular: false
+  }
+];
+
+// Offer schemas for each pricing tier
+const offerSchemas = pricingTiers.map((tier) => ({
+  "@context": "https://schema.org",
+  "@type": "Offer",
+  "@id": `https://mydojo.software/pricing/#${tier.name.toLowerCase().replace(/\s+/g, '-')}`,
+  "name": tier.name,
+  "description": `${tier.description} - ${tier.studentRange}. All features included.`,
+  "price": tier.monthlyPrice,
+  "priceCurrency": "GBP",
+  "priceSpecification": {
+    "@type": "UnitPriceSpecification",
+    "price": tier.monthlyPrice,
+    "priceCurrency": "GBP",
+    "unitText": "month",
+    "billingIncrement": 1
+  },
+  "priceValidUntil": "2026-12-31",
+  "availability": "https://schema.org/InStock",
+  "url": "https://mydojo.software/contact/",
+  "seller": {
+    "@type": "Organization",
+    "name": "MyDojo.Software"
+  },
+  "itemOffered": {
+    "@type": "SoftwareApplication",
+    "name": "MyDojo.Software",
+    "applicationCategory": "BusinessApplication"
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Student Capacity",
+      "value": tier.studentRange
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Per Student Cost",
+      "value": tier.perStudentCost
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Free Trial",
+      "value": "30 days"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Setup Fee",
+      "value": "No"
+    }
+  ]
+}));
+
+// Free trial offer schema
+const freeTrialSchema = {
+  "@context": "https://schema.org",
+  "@type": "Offer",
+  "@id": "https://mydojo.software/pricing/#free-trial",
+  "name": "30-Day Free Trial",
+  "description": "Try MyDojo.Software free for 30 days with full access to all features. No credit card required.",
+  "price": "0",
+  "priceCurrency": "GBP",
+  "priceValidUntil": "2026-12-31",
+  "availability": "https://schema.org/InStock",
+  "url": "https://mydojo.software/contact/",
+  "eligibleRegion": {
+    "@type": "Place",
+    "name": "United Kingdom"
+  },
+  "itemOffered": {
+    "@type": "SoftwareApplication",
+    "name": "MyDojo.Software",
+    "applicationCategory": "BusinessApplication"
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Trial Duration",
+      "value": "30 days"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Credit Card Required",
+      "value": "No"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Full Feature Access",
+      "value": "Yes"
+    }
+  ]
+};
 ---
 
 <BaseLayout title="Pricing Plans for Martial Arts Schools" description="Simple, transparent pricing for martial arts software. All features included from $49/month. 30-day free trial, no credit card required.">
+  <!-- Offer Schemas -->
+  {offerSchemas.map(offerSchema => (
+    <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
+  ))}
+  <script type="application/ld+json" set:html={JSON.stringify(freeTrialSchema)} />
+
   <!-- Breadcrumbs -->
   <div class="bg-gray-100 py-3">
     <div class="container-custom">
