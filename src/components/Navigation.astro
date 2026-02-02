@@ -16,6 +16,8 @@ const navLinks = [
       { label: 'Martial Arts CRM', href: '/martial-arts-crm/' },
       { label: 'Scheduling Software', href: '/martial-arts-scheduling-software/' },
       { label: 'Billing Software', href: '/martial-arts-billing-software/' },
+      { label: 'divider', href: '#', isDivider: true },
+      { label: '📊 Revenue Calculator', href: '/dojo-revenue-calculator/' },
     ]
   },
   { label: 'Pricing', href: '/pricing/' },
@@ -65,17 +67,21 @@ function isActive(href: string): boolean {
               <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div class="bg-white rounded-xl shadow-lg border border-gray-100 py-2 min-w-[220px]">
                   {link.dropdown.map((item) => (
-                    <a 
-                      href={item.href}
-                      class:list={[
-                        'block px-4 py-2 text-sm transition-colors',
-                        isActive(item.href)
-                          ? 'text-brand-red bg-brand-red-light'
-                          : 'text-gray-600 hover:text-brand-red hover:bg-gray-50'
-                      ]}
-                    >
-                      {item.label}
-                    </a>
+                    item.isDivider ? (
+                      <div class="border-t border-gray-200 my-2"></div>
+                    ) : (
+                      <a
+                        href={item.href}
+                        class:list={[
+                          'block px-4 py-2 text-sm transition-colors',
+                          isActive(item.href)
+                            ? 'text-brand-red bg-brand-red-light'
+                            : 'text-gray-600 hover:text-brand-red hover:bg-gray-50'
+                        ]}
+                      >
+                        {item.label}
+                      </a>
+                    )
                   ))}
                 </div>
               </div>
@@ -124,17 +130,21 @@ function isActive(href: string): boolean {
           {link.dropdown && (
             <div class="ml-4 border-l-2 border-gray-100">
               {link.dropdown.map((item) => (
-                <a 
-                  href={item.href}
-                  class:list={[
-                    'block px-4 py-2 text-sm',
-                    isActive(item.href)
-                      ? 'text-brand-red'
-                      : 'text-gray-500 hover:text-brand-red'
-                  ]}
-                >
-                  {item.label}
-                </a>
+                item.isDivider ? (
+                  <div class="border-t border-gray-200 my-2 ml-4"></div>
+                ) : (
+                  <a
+                    href={item.href}
+                    class:list={[
+                      'block px-4 py-2 text-sm',
+                      isActive(item.href)
+                        ? 'text-brand-red'
+                        : 'text-gray-500 hover:text-brand-red'
+                    ]}
+                  >
+                    {item.label}
+                  </a>
+                )
               ))}
             </div>
           )}

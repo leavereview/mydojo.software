@@ -1,0 +1,1822 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Dojo Revenue Calculator — Free Martial Arts School Profit Planner";
+const description = "Calculate your martial arts school's revenue, costs, and growth potential with our free dojo revenue calculator. Plan memberships, classes, and profit margins.";
+
+// Additional schema markup for calculator
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mydojo.software/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Dojo Revenue Calculator",
+      "item": "https://mydojo.software/dojo-revenue-calculator/"
+    }
+  ]
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Calculate Your Dojo Revenue and Profitability",
+  "description": "Step-by-step guide to calculate your martial arts school's revenue, costs, and growth projections",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Enter Your Dojo Profile",
+      "text": "Input your martial arts style, currency, number of active students, monthly membership fee, classes per week, average students per class, and number of instructors."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Configure Revenue Streams",
+      "text": "Enable and configure additional revenue sources including grading fees, private lessons, merchandise sales, introductory courses, seminars, and summer camps."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Enter Operating Costs",
+      "text": "Input your monthly expenses including rent, utilities, insurance, instructor costs, equipment maintenance, marketing spend, software tools, and other costs."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Project Growth Scenarios",
+      "text": "Define your growth parameters including monthly new student sign-ups, churn rate, planned price increases, and projection period (6-24 months)."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Review Your Financial Dashboard",
+      "text": "Analyze your comprehensive financial picture including current revenue, profitability, growth projections, and industry benchmark comparisons."
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  schemaType="WebPage"
+>
+  <!-- Additional Schema Markup -->
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
+
+  <!-- Hero Section -->
+  <section class="section bg-gradient-to-br from-brand-navy via-brand-navy to-gray-900 text-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="badge bg-brand-red-light text-brand-red mb-6 inline-flex">
+          Free Financial Planning Tool
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          Dojo Revenue & Growth Calculator
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+          Model your martial arts school's income, costs, and growth potential with real industry benchmarks
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Content -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose-custom">
+        <div class="bg-white rounded-xl shadow-sm p-8 md:p-12">
+          <p class="text-lg text-text-secondary leading-relaxed mb-6">
+            Understanding your martial arts school's financial picture is crucial for sustainable growth. Whether you're planning to open a new dojo, evaluating your current school's performance, or exploring expansion opportunities, having clarity on your revenue and costs makes all the difference.
+          </p>
+          <p class="text-lg text-text-secondary leading-relaxed mb-6">
+            This free dojo revenue calculator helps you model realistic scenarios based on industry benchmarks drawn from successful martial arts schools across the UK and US. Unlike generic business calculators, this tool understands the specific revenue streams and cost structures of martial arts schools—from membership fees and belt testing to private lessons and summer camps.
+          </p>
+
+          <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-4">What You'll Discover</h2>
+          <ul class="space-y-3 text-text-secondary mb-6">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span><strong>Comprehensive revenue analysis</strong> across all your income streams—memberships, private lessons, grading fees, merchandise, and more</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span><strong>True profitability picture</strong> after accounting for rent, instructor costs, insurance, utilities, and all operating expenses</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span><strong>Growth projections</strong> showing your school's trajectory over 6-24 months factoring in new sign-ups and student churn</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span><strong>Actionable insights</strong> comparing your numbers to industry benchmarks and identifying opportunities to increase revenue or reduce costs</span>
+            </li>
+          </ul>
+
+          <p class="text-lg text-text-secondary leading-relaxed mb-8">
+            The calculator uses real-world data from successful martial arts schools. Average UK martial arts schools have 80-150 active students at £60-£100 monthly membership, with profitable schools typically achieving 20-40% profit margins. Understanding where your school sits relative to these benchmarks helps you make informed decisions about pricing, marketing, and operational efficiency.
+          </p>
+
+          <div class="bg-brand-red-light border-l-4 border-brand-red p-6 rounded-lg">
+            <h3 class="text-lg font-semibold text-brand-navy mb-2">For Martial Arts School Owners</h3>
+            <p class="text-text-secondary">
+              Whether you run a traditional karate dojo, BJJ gym, MMA facility, or multi-discipline martial arts school, this calculator adapts to your business model. All your data stays private—calculations happen entirely in your browser, nothing is stored or transmitted.
+            </p>
+          </div>
+
+          <div class="mt-8 text-center">
+            <p class="text-sm text-text-tertiary mb-4">
+              Already using <a href="/dojo-management-software/" class="text-brand-red hover:underline">dojo management software</a>? This calculator complements your existing systems by providing strategic financial planning insights. Learn more about <a href="/martial-arts-billing-software/" class="text-brand-red hover:underline">martial arts billing software</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-6xl mx-auto">
+        <div id="calculator-app" class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+          <!-- Progress bar -->
+          <div class="bg-gray-100 h-2">
+            <div id="progress-bar" class="bg-brand-red h-full transition-all duration-300" style="width: 20%"></div>
+          </div>
+
+          <!-- Calculator content -->
+          <div class="p-6 md:p-10">
+            <!-- Step indicators -->
+            <div class="flex justify-between items-center mb-8">
+              <div class="flex-1 text-center step-indicator active" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-label">Profile</div>
+              </div>
+              <div class="flex-1 text-center step-indicator" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-label">Revenue</div>
+              </div>
+              <div class="flex-1 text-center step-indicator" data-step="3">
+                <div class="step-number">3</div>
+                <div class="step-label">Costs</div>
+              </div>
+              <div class="flex-1 text-center step-indicator" data-step="4">
+                <div class="step-number">4</div>
+                <div class="step-label">Growth</div>
+              </div>
+              <div class="flex-1 text-center step-indicator" data-step="5">
+                <div class="step-number">5</div>
+                <div class="step-label">Results</div>
+              </div>
+            </div>
+
+            <!-- Step 1: Dojo Profile -->
+            <div id="step-1" class="calculator-step">
+              <h2 class="text-3xl font-bold text-brand-navy mb-6">Your Dojo Profile</h2>
+              <p class="text-text-secondary mb-8">Tell us about your martial arts school to get started.</p>
+
+              <div class="space-y-6">
+                <div>
+                  <label for="martial-art-style" class="block text-sm font-semibold text-brand-navy mb-2">Martial Arts Style</label>
+                  <select id="martial-art-style" class="input">
+                    <option value="Karate">Karate</option>
+                    <option value="BJJ/Jiu-Jitsu">BJJ/Jiu-Jitsu</option>
+                    <option value="MMA">MMA</option>
+                    <option value="Taekwondo">Taekwondo</option>
+                    <option value="Kickboxing">Kickboxing</option>
+                    <option value="Kung Fu">Kung Fu</option>
+                    <option value="Judo">Judo</option>
+                    <option value="Multi-Discipline">Multi-Discipline</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="currency" class="block text-sm font-semibold text-brand-navy mb-2">Currency</label>
+                  <select id="currency" class="input">
+                    <option value="£">£ (GBP)</option>
+                    <option value="$">$ (USD)</option>
+                    <option value="€">€ (EUR)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="active-students" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Current Active Students
+                    <span class="text-text-tertiary font-normal">(10-1000)</span>
+                  </label>
+                  <input type="number" id="active-students" class="input" value="80" min="10" max="1000">
+                </div>
+
+                <div>
+                  <label for="monthly-fee" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Monthly Membership Fee
+                    <span class="text-text-tertiary font-normal" id="fee-range">(£20-£500)</span>
+                  </label>
+                  <input type="number" id="monthly-fee" class="input" value="75" min="20" max="500">
+                </div>
+
+                <div>
+                  <label for="classes-per-week" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Number of Classes Per Week
+                    <span class="text-text-tertiary font-normal">(1-60)</span>
+                  </label>
+                  <input type="number" id="classes-per-week" class="input" value="15" min="1" max="60">
+                </div>
+
+                <div>
+                  <label for="students-per-class" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Average Students Per Class
+                    <span class="text-text-tertiary font-normal">(1-50)</span>
+                  </label>
+                  <input type="number" id="students-per-class" class="input" value="12" min="1" max="50">
+                </div>
+
+                <div>
+                  <label for="instructors" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Number of Instructors
+                    <span class="text-text-tertiary font-normal">(1-20)</span>
+                  </label>
+                  <input type="number" id="instructors" class="input" value="2" min="1" max="20">
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Revenue Streams -->
+            <div id="step-2" class="calculator-step hidden">
+              <h2 class="text-3xl font-bold text-brand-navy mb-6">Revenue Streams</h2>
+              <p class="text-text-secondary mb-8">Enable additional revenue streams beyond core memberships.</p>
+
+              <div class="space-y-4">
+                <!-- Grading fees -->
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 class="text-lg font-semibold text-brand-navy">Grading / Belt Testing Fees</h3>
+                      <p class="text-sm text-text-tertiary">Revenue from belt examinations and rank progression</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-grading" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="grading-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="grading-fee" class="block text-sm font-medium text-brand-navy mb-2">Average Fee Per Test</label>
+                      <input type="number" id="grading-fee" class="input" value="30" min="0">
+                    </div>
+                    <div>
+                      <label for="tests-per-year" class="block text-sm font-medium text-brand-navy mb-2">Tests Per Student Per Year</label>
+                      <input type="number" id="tests-per-year" class="input" value="2" min="0" max="6">
+                    </div>
+                    <div>
+                      <label for="students-grading-pct" class="block text-sm font-medium text-brand-navy mb-2">% of Students Who Grade Annually</label>
+                      <input type="number" id="students-grading-pct" class="input" value="70" min="0" max="100">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Private lessons -->
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 class="text-lg font-semibold text-brand-navy">Private Lessons</h3>
+                      <p class="text-sm text-text-tertiary">One-on-one or small group instruction</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-private" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="private-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="private-fee" class="block text-sm font-medium text-brand-navy mb-2">Price Per Session</label>
+                      <input type="number" id="private-fee" class="input" value="40" min="0">
+                    </div>
+                    <div>
+                      <label for="private-per-week" class="block text-sm font-medium text-brand-navy mb-2">Sessions Per Week</label>
+                      <input type="number" id="private-per-week" class="input" value="5" min="0" max="50">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Merchandise -->
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 class="text-lg font-semibold text-brand-navy">Merchandise & Equipment Sales</h3>
+                      <p class="text-sm text-text-tertiary">Uniforms, gear, training equipment</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-merchandise" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="merchandise-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="merchandise-monthly" class="block text-sm font-medium text-brand-navy mb-2">Average Monthly Revenue</label>
+                      <input type="number" id="merchandise-monthly" class="input" value="200" min="0">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Intro courses -->
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 class="text-lg font-semibold text-brand-navy">Introductory / Trial Courses</h3>
+                      <p class="text-sm text-text-tertiary">Paid trial programmes for new students</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-intro" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="intro-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="intro-fee" class="block text-sm font-medium text-brand-navy mb-2">Price Per Intro Course</label>
+                      <input type="number" id="intro-fee" class="input" value="30" min="0">
+                    </div>
+                    <div>
+                      <label for="intro-per-month" class="block text-sm font-medium text-brand-navy mb-2">New Trials Per Month</label>
+                      <input type="number" id="intro-per-month" class="input" value="8" min="0" max="100">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Seminars -->
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 class="text-lg font-semibold text-brand-navy">Seminars & Workshops</h3>
+                      <p class="text-sm text-text-tertiary">Special training events and guest instructors</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-seminars" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="seminars-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="seminars-per-year" class="block text-sm font-medium text-brand-navy mb-2">Events Per Year</label>
+                      <input type="number" id="seminars-per-year" class="input" value="4" min="0" max="24">
+                    </div>
+                    <div>
+                      <label for="seminar-revenue" class="block text-sm font-medium text-brand-navy mb-2">Average Revenue Per Event</label>
+                      <input type="number" id="seminar-revenue" class="input" value="500" min="0">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Summer camps -->
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 class="text-lg font-semibold text-brand-navy">Summer Camps / Holiday Programmes</h3>
+                      <p class="text-sm text-text-tertiary">Intensive training camps during school breaks</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-camps" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="camps-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="camps-per-year" class="block text-sm font-medium text-brand-navy mb-2">Camps Per Year</label>
+                      <input type="number" id="camps-per-year" class="input" value="2" min="0" max="12">
+                    </div>
+                    <div>
+                      <label for="camp-revenue" class="block text-sm font-medium text-brand-navy mb-2">Average Revenue Per Camp</label>
+                      <input type="number" id="camp-revenue" class="input" value="800" min="0">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Additional revenue summary -->
+                <div class="bg-brand-red-light border-l-4 border-brand-red p-6 rounded-lg">
+                  <h4 class="font-semibold text-brand-navy mb-2">Additional Monthly Revenue</h4>
+                  <p class="text-3xl font-bold text-brand-red" id="additional-revenue-preview">£0</p>
+                  <p class="text-sm text-text-tertiary mt-2">Beyond core membership fees</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Operating Costs -->
+            <div id="step-3" class="calculator-step hidden">
+              <h2 class="text-3xl font-bold text-brand-navy mb-6">Operating Costs</h2>
+              <p class="text-text-secondary mb-8">Enter your monthly operating expenses to calculate profitability.</p>
+
+              <div class="space-y-6">
+                <div>
+                  <label for="rent" class="block text-sm font-semibold text-brand-navy mb-2">Monthly Rent / Facility Cost</label>
+                  <input type="number" id="rent" class="input" value="1200" min="0">
+                </div>
+
+                <div>
+                  <label for="utilities" class="block text-sm font-semibold text-brand-navy mb-2">Utilities (Electric, Gas, Water)</label>
+                  <input type="number" id="utilities" class="input" value="200" min="0">
+                </div>
+
+                <div>
+                  <label for="insurance" class="block text-sm font-semibold text-brand-navy mb-2">Insurance</label>
+                  <input type="number" id="insurance" class="input" value="100" min="0">
+                </div>
+
+                <div>
+                  <label class="block text-sm font-semibold text-brand-navy mb-2">Instructor Costs</label>
+                  <div class="flex gap-4 mb-3">
+                    <label class="flex items-center">
+                      <input type="radio" name="instructor-payment" value="per-class" class="mr-2" checked>
+                      <span class="text-sm">Per-Class Rate</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input type="radio" name="instructor-payment" value="monthly" class="mr-2">
+                      <span class="text-sm">Monthly Salary</span>
+                    </label>
+                  </div>
+                  <input type="number" id="instructor-cost" class="input" value="30" min="0" placeholder="Cost per class or monthly salary">
+                  <p class="text-sm text-text-tertiary mt-2">Will be applied to the number of instructors from Step 1</p>
+                </div>
+
+                <div>
+                  <label for="equipment-maintenance" class="block text-sm font-semibold text-brand-navy mb-2">Equipment & Maintenance</label>
+                  <input type="number" id="equipment-maintenance" class="input" value="100" min="0">
+                </div>
+
+                <div>
+                  <label for="marketing-spend" class="block text-sm font-semibold text-brand-navy mb-2">Marketing Spend</label>
+                  <input type="number" id="marketing-spend" class="input" value="150" min="0">
+                </div>
+
+                <div>
+                  <label for="software-admin" class="block text-sm font-semibold text-brand-navy mb-2">Software & Admin Tools</label>
+                  <input type="number" id="software-admin" class="input" value="50" min="0">
+                </div>
+
+                <div>
+                  <label for="other-costs" class="block text-sm font-semibold text-brand-navy mb-2">Other Monthly Costs</label>
+                  <input type="number" id="other-costs" class="input" value="0" min="0">
+                </div>
+
+                <!-- Cost breakdown preview -->
+                <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg">
+                  <h4 class="font-semibold text-brand-navy mb-4">Cost Breakdown</h4>
+                  <div id="cost-breakdown-list" class="space-y-2 text-sm"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4: Growth Scenarios -->
+            <div id="step-4" class="calculator-step hidden">
+              <h2 class="text-3xl font-bold text-brand-navy mb-6">Growth Scenarios</h2>
+              <p class="text-text-secondary mb-8">Project your school's growth over time.</p>
+
+              <div class="space-y-6">
+                <div>
+                  <label for="new-signups" class="block text-sm font-semibold text-brand-navy mb-2">Monthly New Student Sign-ups</label>
+                  <input type="number" id="new-signups" class="input" value="6" min="0" max="100">
+                  <p class="text-sm text-text-tertiary mt-2">Expected new students joining each month</p>
+                </div>
+
+                <div>
+                  <label for="churn-rate" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Monthly Student Churn Rate (%)
+                    <span class="text-text-tertiary font-normal">(1-20%)</span>
+                  </label>
+                  <input type="number" id="churn-rate" class="input" value="5" min="1" max="20" step="0.5">
+                  <p class="text-sm text-text-tertiary mt-2">Industry average is 5-8% monthly. Lower is better.</p>
+                </div>
+
+                <div>
+                  <label for="price-increase" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Planned Membership Price Increase (%)
+                    <span class="text-text-tertiary font-normal">(0-25%)</span>
+                  </label>
+                  <input type="number" id="price-increase" class="input" value="0" min="0" max="25" step="0.5">
+                  <p class="text-sm text-text-tertiary mt-2">Optional: Apply a price increase during the projection period</p>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-semibold text-brand-navy mb-4">Projection Period</label>
+                  <div class="flex gap-4">
+                    <label class="flex-1">
+                      <input type="radio" name="projection-months" value="6" class="sr-only peer">
+                      <div class="projection-option">6 months</div>
+                    </label>
+                    <label class="flex-1">
+                      <input type="radio" name="projection-months" value="12" class="sr-only peer" checked>
+                      <div class="projection-option">12 months</div>
+                    </label>
+                    <label class="flex-1">
+                      <input type="radio" name="projection-months" value="18" class="sr-only peer">
+                      <div class="projection-option">18 months</div>
+                    </label>
+                    <label class="flex-1">
+                      <input type="radio" name="projection-months" value="24" class="sr-only peer">
+                      <div class="projection-option">24 months</div>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-lg">
+                  <h4 class="font-semibold text-brand-navy mb-2">Understanding Growth Projections</h4>
+                  <p class="text-sm text-text-secondary">
+                    The calculator models month-by-month growth by applying your new sign-ups and churn rate. Net student change = new sign-ups minus (current students × churn rate). This compounds over time to show realistic growth trajectories.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 5: Results -->
+            <div id="step-5" class="calculator-step hidden">
+              <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Your Dojo Financial Dashboard</h2>
+                <p class="text-lg text-text-secondary">Comprehensive analysis of your martial arts school's financial picture</p>
+              </div>
+
+              <div id="results-content" class="space-y-6">
+                <!-- Results will be dynamically generated -->
+              </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="flex justify-between items-center mt-10 pt-6 border-t border-gray-200">
+              <button id="btn-back" class="btn-secondary hidden">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back
+              </button>
+              <div id="back-spacer"></div>
+              <button id="btn-next" class="btn-primary ml-auto">
+                Next
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Content -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-xl shadow-sm p-8 md:p-12">
+          <h2 class="text-3xl font-bold text-brand-navy mb-6">How to Increase Your Dojo's Revenue</h2>
+
+          <p class="text-lg text-text-secondary leading-relaxed mb-6">
+            The calculator reveals your current financial position—but what can you do to improve it? Successful martial arts school owners focus on three key areas: growing student count, increasing revenue per student, and managing costs efficiently.
+          </p>
+
+          <h3 class="text-2xl font-bold text-brand-navy mb-4">Revenue Diversification Strategies</h3>
+
+          <p class="text-text-secondary mb-4">
+            Most martial arts schools generate 70-85% of revenue from core memberships, but the most profitable schools diversify their income streams. If your calculator results show you're heavily reliant on membership fees alone, consider these proven revenue additions:
+          </p>
+
+          <ul class="space-y-3 text-text-secondary mb-6">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span><strong>Private lessons</strong> typically add 15-25% to total revenue and require minimal additional overhead. If you're not offering private training, you're leaving significant revenue on the table.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span><strong>Belt testing fees</strong> are standard practice in martial arts and students value the formal progression. Grading fees typically account for 5-10% of annual revenue.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span><strong>Summer camps and holiday programmes</strong> leverage existing space during periods when regular classes may see lower attendance. These intensive programmes often have high margins.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span><strong>Merchandise and equipment sales</strong> serve your students while generating additional income. Even modest monthly sales add up significantly over a year.</span>
+            </li>
+          </ul>
+
+          <h3 class="text-2xl font-bold text-brand-navy mb-4 mt-8">Student Retention: The Hidden Revenue Multiplier</h3>
+
+          <p class="text-text-secondary mb-4">
+            The calculator asks about churn rate for a crucial reason—retention has an outsized impact on profitability. Acquiring a new student costs £50-£200+ in marketing and sales effort, while retaining existing students costs far less. Even small improvements in retention compound dramatically over time.
+          </p>
+
+          <p class="text-text-secondary mb-6">
+            If your calculator shows a churn rate above 8%, focus on retention before spending heavily on acquisition. A 2% improvement in monthly churn (from 8% to 6%) means retaining dozens of additional students annually, directly increasing annual revenue by thousands of pounds. Learn about <a href="/martial-arts-crm/" class="text-brand-red hover:underline">martial arts CRM systems</a> that help track and improve student engagement.
+          </p>
+
+          <h3 class="text-2xl font-bold text-brand-navy mb-4 mt-8">Operational Efficiency and Cost Management</h3>
+
+          <p class="text-text-secondary mb-4">
+            Profitable dojos don't just focus on revenue—they ruthlessly optimise costs without sacrificing quality. Your calculator's cost breakdown reveals where your money goes each month. Compare your numbers to these benchmarks:
+          </p>
+
+          <ul class="space-y-2 text-text-secondary mb-6">
+            <li><strong>Rent:</strong> Should be 15-25% of gross revenue. Higher than 30% makes profitability very difficult.</li>
+            <li><strong>Instructor costs:</strong> Typically 20-30% of revenue for schools with additional staff. Owner-operator models save significantly here.</li>
+            <li><strong>Marketing:</strong> 5-10% of revenue is healthy for growing schools; mature schools with strong referrals often operate at 3-5%.</li>
+            <li><strong>Software and admin:</strong> Modern <a href="/dojo-management-software/" class="text-brand-red hover:underline">dojo management software</a> costs £50-£200 monthly but saves far more in administrative time and reduces billing errors.</li>
+          </ul>
+
+          <p class="text-text-secondary mb-6">
+            If your cost structure is significantly off these benchmarks, that's your opportunity. Sometimes the highest-impact change isn't growing revenue—it's renegotiating rent, improving scheduling efficiency, or automating billing with proper <a href="/martial-arts-billing-software/" class="text-brand-red hover:underline">martial arts billing software</a>.
+          </p>
+
+          <h3 class="text-2xl font-bold text-brand-navy mb-4 mt-8">Growth Planning and Realistic Projections</h3>
+
+          <p class="text-text-secondary mb-6">
+            The growth projection section of the calculator helps you think strategically about your school's future. Sustainable growth balances new student acquisition with retention—you can't simply market your way to success if students leave as fast as they join.
+          </p>
+
+          <p class="text-text-secondary mb-6">
+            Realistic monthly sign-up expectations vary by location and marketing investment, but 4-8 new students monthly is typical for small to medium schools. Successful schools use <a href="/martial-arts-scheduling-software/" class="text-brand-red hover:underline">martial arts scheduling software</a> to optimise class times and capacity, ensuring they can accommodate growth without sacrificing the student experience.
+          </p>
+
+          <div class="bg-brand-red-light border-l-4 border-brand-red p-6 rounded-lg my-8">
+            <h4 class="text-lg font-semibold text-brand-navy mb-2">Industry Insight</h4>
+            <p class="text-text-secondary">
+              Schools that reach 150+ students often face a critical decision point. Growth beyond this requires either additional instructors (reducing profit margins), expanding space (increasing fixed costs), or capping enrolment and focusing on premium pricing and retention. There's no single right answer—it depends on your goals and market position.
+            </p>
+          </div>
+
+          <h2 class="text-3xl font-bold text-brand-navy mb-6 mt-12">Frequently Asked Questions</h2>
+
+          <div class="space-y-4">
+            <details class="group border border-gray-200 rounded-lg">
+              <summary class="cursor-pointer p-6 font-semibold text-brand-navy flex justify-between items-center hover:bg-gray-50">
+                How much does the average martial arts school owner make?
+                <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </summary>
+              <div class="p-6 pt-0 text-text-secondary">
+                <p>Owner income varies dramatically by school size and location. Small schools (under 100 students) typically generate £25,000-£60,000 in owner income annually. Medium schools (100-250 students) typically generate £50,000-£120,000. Large successful schools (250+ students) can generate £100,000-£250,000+ in owner income. These figures represent what the owner actually takes home after all expenses, not gross revenue. Many factors affect profitability including location, pricing, cost management, and whether the owner teaches most classes or employs additional instructors. See our detailed guide on <a href="/blog/gym-owner-salary-guide/" class="text-brand-red hover:underline">gym owner salaries</a>.</p>
+              </div>
+            </details>
+
+            <details class="group border border-gray-200 rounded-lg">
+              <summary class="cursor-pointer p-6 font-semibold text-brand-navy flex justify-between items-center hover:bg-gray-50">
+                What is a good profit margin for a dojo?
+                <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </summary>
+              <div class="p-6 pt-0 text-text-secondary">
+                <p>Healthy martial arts schools typically achieve 20-40% profit margins (net income as a percentage of revenue). Schools below 15% margins struggle with long-term sustainability. Schools above 40% margins are exceptional and often involve owner-operator models with low overhead. Margins vary significantly by business model—schools where the owner teaches most classes achieve higher margins by avoiding instructor payroll costs, while schools employing multiple instructors trade margin for scale and owner time freedom. If your calculator shows margins below 15%, focus on cost optimisation or revenue enhancement. Use our calculator to model different scenarios and identify paths to healthier margins.</p>
+              </div>
+            </details>
+
+            <details class="group border border-gray-200 rounded-lg">
+              <summary class="cursor-pointer p-6 font-semibold text-brand-navy flex justify-between items-center hover:bg-gray-50">
+                How many students does a martial arts school need to be profitable?
+                <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </summary>
+              <div class="p-6 pt-0 text-text-secondary">
+                <p>Break-even student count depends entirely on your cost structure and pricing. A school with £5,000 monthly expenses and £100 average membership fees needs approximately 50 students to break even. Schools with lower rent and owner-operator models may break even at 30-40 students. Schools with high rent or significant instructor payroll may need 70-100+ students for profitability. The calculator helps you determine your specific break-even point by modelling your actual costs and pricing. As a general guideline, schools typically need 60-80 students to generate meaningful owner income beyond bare break-even. Learn more about <a href="/blog/cost-to-open-gym/" class="text-brand-red hover:underline">gym startup costs and break-even planning</a>.</p>
+              </div>
+            </details>
+
+            <details class="group border border-gray-200 rounded-lg">
+              <summary class="cursor-pointer p-6 font-semibold text-brand-navy flex justify-between items-center hover:bg-gray-50">
+                What are the biggest costs for running a martial arts school?
+                <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </summary>
+              <div class="p-6 pt-0 text-text-secondary">
+                <p>The three largest cost categories for martial arts schools are typically: (1) Rent/facility costs—usually 15-25% of revenue and often the single largest fixed expense, (2) Instructor payroll—typically 20-30% of revenue for schools with additional instructors; owner-operator models avoid most of this cost, and (3) Marketing—5-10% of revenue for growing schools, though this varies significantly based on local competition and the school's maturity. Other significant costs include insurance (£2,000-£8,000+ annually), utilities, equipment maintenance, and software/admin tools. The calculator breaks down all these costs and compares your structure to industry benchmarks, helping identify if any category is disproportionately high.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="mt-12 p-8 bg-gradient-to-br from-brand-navy to-gray-900 rounded-xl text-white">
+            <h3 class="text-2xl font-bold mb-4">Want to track these numbers in real-time?</h3>
+            <p class="text-gray-300 mb-6 leading-relaxed">
+              MyDojo automatically monitors your student count, revenue, churn rate, and class utilisation—so you always know exactly where your dojo stands. No more spreadsheets or manual calculations. Get real-time insights that help you make informed business decisions.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/contact/" class="btn-primary text-center">Start Your Free Trial</a>
+              <a href="/dojo-management-software/" class="btn-secondary text-center bg-white/10 border-white/20 text-white hover:bg-white/20">See How It Works</a>
+            </div>
+          </div>
+
+          <div class="mt-8 p-8 bg-blue-50 rounded-xl border border-blue-200">
+            <h3 class="text-xl font-bold text-brand-navy mb-4">Planning to grow?</h3>
+            <p class="text-text-secondary mb-6">
+              MyDojo's built-in <a href="/martial-arts-crm/" class="text-brand-red hover:underline">CRM</a> and automated billing help you scale without the admin overhead. Spend less time on paperwork and more time teaching.
+            </p>
+            <a href="/martial-arts-crm/" class="btn-primary">Explore Martial Arts CRM</a>
+          </div>
+
+          <div class="mt-8 text-sm text-text-tertiary">
+            <p>Related resources: <a href="/martial-arts-software/" class="text-brand-red hover:underline">Martial Arts Software</a> | <a href="/karate-school-software/" class="text-brand-red hover:underline">Karate School Software</a> | <a href="/bjj-gym-software/" class="text-brand-red hover:underline">BJJ Gym Software</a> | <a href="/mma-gym-software/" class="text-brand-red hover:underline">MMA Gym Software</a> | <a href="/martial-arts-scheduling-software/" class="text-brand-red hover:underline">Scheduling Software</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does the average martial arts school owner make?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Owner income varies dramatically by school size and location. Small schools (under 100 students) typically generate £25,000-£60,000 in owner income annually. Medium schools (100-250 students) typically generate £50,000-£120,000. Large successful schools (250+ students) can generate £100,000-£250,000+ in owner income."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good profit margin for a dojo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Healthy martial arts schools typically achieve 20-40% profit margins (net income as a percentage of revenue). Schools below 15% margins struggle with long-term sustainability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many students does a martial arts school need to be profitable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Break-even student count depends entirely on your cost structure and pricing. A school with £5,000 monthly expenses and £100 average membership fees needs approximately 50 students to break even. As a general guideline, schools typically need 60-80 students to generate meaningful owner income beyond bare break-even."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the biggest costs for running a martial arts school?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The three largest cost categories are typically: (1) Rent/facility costs—usually 15-25% of revenue, (2) Instructor payroll—typically 20-30% of revenue for schools with additional instructors, and (3) Marketing—5-10% of revenue for growing schools."
+      }
+    }
+  ]
+})} />
+
+<!-- Software Application Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Dojo Revenue Calculator",
+  "applicationCategory": "BusinessApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP"
+  },
+  "description": "Free calculator for martial arts school owners to model revenue, costs, and growth projections with industry benchmarks.",
+  "operatingSystem": "Web Browser",
+  "featureList": [
+    "Revenue stream analysis",
+    "Operating cost breakdown",
+    "Growth projections",
+    "Profit margin calculation",
+    "Industry benchmark comparison"
+  ]
+})} />
+
+<style>
+  /* Step indicators */
+  .step-indicator {
+    position: relative;
+  }
+
+  .step-indicator:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 60%;
+    right: -40%;
+    height: 2px;
+    background: #e5e7eb;
+  }
+
+  .step-indicator.active:not(:last-child)::after,
+  .step-indicator.completed:not(:last-child)::after {
+    background: #E94560;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e5e7eb;
+    color: #6b7280;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s;
+  }
+
+  .step-indicator.active .step-number,
+  .step-indicator.completed .step-number {
+    background: #E94560;
+    color: white;
+  }
+
+  .step-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6b7280;
+    transition: color 0.3s;
+  }
+
+  .step-indicator.active .step-label,
+  .step-indicator.completed .step-label {
+    color: #1A1A2E;
+  }
+
+  /* Toggle switch */
+  .toggle-switch {
+    width: 56px;
+    height: 28px;
+    background: #e5e7eb;
+    border-radius: 14px;
+    position: relative;
+    transition: background 0.3s;
+    cursor: pointer;
+  }
+
+  .toggle-switch::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  input:checked + .toggle-switch {
+    background: #E94560;
+  }
+
+  input:checked + .toggle-switch::after {
+    transform: translateX(28px);
+  }
+
+  /* Projection options */
+  .projection-option {
+    padding: 12px 24px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  input:checked + .projection-option {
+    border-color: #E94560;
+    background: #FFE7EC;
+    color: #E94560;
+  }
+
+  /* Print styles */
+  @media print {
+    nav, footer, .calculator-step:not(#step-5) {
+      display: none !important;
+    }
+
+    #step-5 {
+      display: block !important;
+    }
+
+    .section {
+      padding: 20px 0;
+    }
+
+    .no-print {
+      display: none !important;
+    }
+  }
+
+  /* Custom prose styles */
+  .prose-custom p {
+    margin-bottom: 1.5rem;
+    line-height: 1.75;
+  }
+
+  .prose-custom h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #1A1A2E;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-custom h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1A1A2E;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+</style>
+
+<script>
+  // Calculator State
+  let currentStep = 1;
+  const totalSteps = 5;
+
+  // DOM Elements
+  const progressBar = document.getElementById('progress-bar') as HTMLElement;
+  const btnBack = document.getElementById('btn-back') as HTMLButtonElement;
+  const btnNext = document.getElementById('btn-next') as HTMLButtonElement;
+  const backSpacer = document.getElementById('back-spacer') as HTMLElement;
+
+  // Currency handling
+  let currencySymbol = '£';
+  const currencySelect = document.getElementById('currency') as HTMLSelectElement;
+
+  currencySelect?.addEventListener('change', () => {
+    currencySymbol = currencySelect.value;
+    updateFeeRange();
+    updateAdditionalRevenue();
+    updateInstructorCostPlaceholder();
+  });
+
+  function updateFeeRange() {
+    const feeRangeEl = document.getElementById('fee-range');
+    if (feeRangeEl) {
+      feeRangeEl.textContent = `(${currencySymbol}20-${currencySymbol}500)`;
+    }
+  }
+
+  // Step navigation
+  function showStep(step: number) {
+    // Hide all steps
+    for (let i = 1; i <= totalSteps; i++) {
+      const stepEl = document.getElementById(`step-${i}`);
+      if (stepEl) {
+        stepEl.classList.add('hidden');
+      }
+    }
+
+    // Show current step
+    const currentStepEl = document.getElementById(`step-${step}`);
+    if (currentStepEl) {
+      currentStepEl.classList.remove('hidden');
+    }
+
+    // Update step indicators
+    document.querySelectorAll('.step-indicator').forEach((indicator, index) => {
+      indicator.classList.remove('active', 'completed');
+      if (index + 1 < step) {
+        indicator.classList.add('completed');
+      } else if (index + 1 === step) {
+        indicator.classList.add('active');
+      }
+    });
+
+    // Update progress bar
+    const progress = (step / totalSteps) * 100;
+    if (progressBar) {
+      progressBar.style.width = `${progress}%`;
+    }
+
+    // Update navigation buttons
+    if (step === 1) {
+      btnBack.classList.add('hidden');
+      backSpacer.classList.remove('hidden');
+    } else {
+      btnBack.classList.remove('hidden');
+      backSpacer.classList.add('hidden');
+    }
+
+    if (step === totalSteps) {
+      btnNext.classList.add('hidden');
+      generateResults();
+    } else {
+      btnNext.classList.remove('hidden');
+      btnNext.innerHTML = `Next<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`;
+    }
+
+    // Special handling for step 3 (cost breakdown preview)
+    if (step === 3) {
+      updateCostBreakdown();
+    }
+  }
+
+  btnNext?.addEventListener('click', () => {
+    if (currentStep < totalSteps) {
+      currentStep++;
+      showStep(currentStep);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+
+  btnBack?.addEventListener('click', () => {
+    if (currentStep > 1) {
+      currentStep--;
+      showStep(currentStep);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+
+  // Toggle switches for revenue streams
+  const revenueToggles = [
+    { checkbox: 'enable-grading', inputs: 'grading-inputs' },
+    { checkbox: 'enable-private', inputs: 'private-inputs' },
+    { checkbox: 'enable-merchandise', inputs: 'merchandise-inputs' },
+    { checkbox: 'enable-intro', inputs: 'intro-inputs' },
+    { checkbox: 'enable-seminars', inputs: 'seminars-inputs' },
+    { checkbox: 'enable-camps', inputs: 'camps-inputs' }
+  ];
+
+  revenueToggles.forEach(({ checkbox, inputs }) => {
+    const checkboxEl = document.getElementById(checkbox) as HTMLInputElement;
+    const inputsEl = document.getElementById(inputs) as HTMLElement;
+
+    checkboxEl?.addEventListener('change', () => {
+      if (checkboxEl.checked) {
+        inputsEl.classList.remove('hidden');
+      } else {
+        inputsEl.classList.add('hidden');
+      }
+      updateAdditionalRevenue();
+    });
+
+    // Also update on input changes
+    inputsEl?.querySelectorAll('input').forEach(input => {
+      input.addEventListener('input', updateAdditionalRevenue);
+    });
+  });
+
+  function updateAdditionalRevenue() {
+    let additionalMonthly = 0;
+
+    // Grading fees (annual, convert to monthly)
+    const enableGrading = (document.getElementById('enable-grading') as HTMLInputElement)?.checked;
+    if (enableGrading) {
+      const students = parseFloat((document.getElementById('active-students') as HTMLInputElement)?.value || '0');
+      const gradingFee = parseFloat((document.getElementById('grading-fee') as HTMLInputElement)?.value || '0');
+      const testsPerYear = parseFloat((document.getElementById('tests-per-year') as HTMLInputElement)?.value || '0');
+      const gradingPct = parseFloat((document.getElementById('students-grading-pct') as HTMLInputElement)?.value || '0') / 100;
+      additionalMonthly += (students * gradingPct * gradingFee * testsPerYear) / 12;
+    }
+
+    // Private lessons
+    const enablePrivate = (document.getElementById('enable-private') as HTMLInputElement)?.checked;
+    if (enablePrivate) {
+      const privateFee = parseFloat((document.getElementById('private-fee') as HTMLInputElement)?.value || '0');
+      const privatePerWeek = parseFloat((document.getElementById('private-per-week') as HTMLInputElement)?.value || '0');
+      additionalMonthly += privateFee * privatePerWeek * 4.33; // weeks per month
+    }
+
+    // Merchandise
+    const enableMerchandise = (document.getElementById('enable-merchandise') as HTMLInputElement)?.checked;
+    if (enableMerchandise) {
+      const merchandise = parseFloat((document.getElementById('merchandise-monthly') as HTMLInputElement)?.value || '0');
+      additionalMonthly += merchandise;
+    }
+
+    // Intro courses
+    const enableIntro = (document.getElementById('enable-intro') as HTMLInputElement)?.checked;
+    if (enableIntro) {
+      const introFee = parseFloat((document.getElementById('intro-fee') as HTMLInputElement)?.value || '0');
+      const introPerMonth = parseFloat((document.getElementById('intro-per-month') as HTMLInputElement)?.value || '0');
+      additionalMonthly += introFee * introPerMonth;
+    }
+
+    // Seminars (annual, convert to monthly)
+    const enableSeminars = (document.getElementById('enable-seminars') as HTMLInputElement)?.checked;
+    if (enableSeminars) {
+      const seminarsPerYear = parseFloat((document.getElementById('seminars-per-year') as HTMLInputElement)?.value || '0');
+      const seminarRevenue = parseFloat((document.getElementById('seminar-revenue') as HTMLInputElement)?.value || '0');
+      additionalMonthly += (seminarsPerYear * seminarRevenue) / 12;
+    }
+
+    // Camps (annual, convert to monthly)
+    const enableCamps = (document.getElementById('enable-camps') as HTMLInputElement)?.checked;
+    if (enableCamps) {
+      const campsPerYear = parseFloat((document.getElementById('camps-per-year') as HTMLInputElement)?.value || '0');
+      const campRevenue = parseFloat((document.getElementById('camp-revenue') as HTMLInputElement)?.value || '0');
+      additionalMonthly += (campsPerYear * campRevenue) / 12;
+    }
+
+    const previewEl = document.getElementById('additional-revenue-preview');
+    if (previewEl) {
+      previewEl.textContent = formatCurrency(additionalMonthly);
+    }
+  }
+
+  // Cost breakdown preview (Step 3)
+  function updateCostBreakdown() {
+    const rent = parseFloat((document.getElementById('rent') as HTMLInputElement)?.value || '0');
+    const utilities = parseFloat((document.getElementById('utilities') as HTMLInputElement)?.value || '0');
+    const insurance = parseFloat((document.getElementById('insurance') as HTMLInputElement)?.value || '0');
+    const instructorCost = parseFloat((document.getElementById('instructor-cost') as HTMLInputElement)?.value || '0');
+    const instructors = parseFloat((document.getElementById('instructors') as HTMLInputElement)?.value || '1');
+    const instructorPaymentType = (document.querySelector('input[name="instructor-payment"]:checked') as HTMLInputElement)?.value;
+    const equipment = parseFloat((document.getElementById('equipment-maintenance') as HTMLInputElement)?.value || '0');
+    const marketing = parseFloat((document.getElementById('marketing-spend') as HTMLInputElement)?.value || '0');
+    const software = parseFloat((document.getElementById('software-admin') as HTMLInputElement)?.value || '0');
+    const other = parseFloat((document.getElementById('other-costs') as HTMLInputElement)?.value || '0');
+
+    // Calculate instructor costs
+    let totalInstructorCost = 0;
+    if (instructorPaymentType === 'per-class') {
+      const classesPerWeek = parseFloat((document.getElementById('classes-per-week') as HTMLInputElement)?.value || '0');
+      totalInstructorCost = instructorCost * classesPerWeek * 4.33 * instructors;
+    } else {
+      totalInstructorCost = instructorCost * instructors;
+    }
+
+    const costs = [
+      { label: 'Rent', value: rent, color: '#E94560' },
+      { label: 'Instructors', value: totalInstructorCost, color: '#FF6B8A' },
+      { label: 'Marketing', value: marketing, color: '#1A1A2E' },
+      { label: 'Utilities', value: utilities, color: '#4A4A5E' },
+      { label: 'Insurance', value: insurance, color: '#7A7A8E' },
+      { label: 'Equipment', value: equipment, color: '#AAAAAE' },
+      { label: 'Software', value: software, color: '#CCCCCE' },
+      { label: 'Other', value: other, color: '#E5E5E7' }
+    ].filter(cost => cost.value > 0);
+
+    const totalCosts = costs.reduce((sum, cost) => sum + cost.value, 0);
+
+    // Generate list
+    const listEl = document.getElementById('cost-breakdown-list');
+    if (listEl) {
+      listEl.innerHTML = costs.map(cost => {
+        const pct = ((cost.value / totalCosts) * 100).toFixed(1);
+        return `
+          <div class="flex justify-between items-center">
+            <span class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full" style="background: ${cost.color}"></span>
+              ${cost.label}
+            </span>
+            <span class="font-semibold">${formatCurrency(cost.value)} (${pct}%)</span>
+          </div>
+        `;
+      }).join('');
+
+      listEl.innerHTML += `
+        <div class="flex justify-between items-center pt-2 border-t border-gray-200 font-bold text-brand-navy">
+          <span>Total Monthly Costs</span>
+          <span>${formatCurrency(totalCosts)}</span>
+        </div>
+      `;
+    }
+  }
+
+  // Listen for changes in cost inputs
+  ['rent', 'utilities', 'insurance', 'instructor-cost', 'equipment-maintenance', 'marketing-spend', 'software-admin', 'other-costs'].forEach(id => {
+    const input = document.getElementById(id) as HTMLInputElement;
+    input?.addEventListener('input', () => {
+      if (currentStep === 3) {
+        updateCostBreakdown();
+      }
+    });
+  });
+
+  // Instructor payment type change
+  document.querySelectorAll('input[name="instructor-payment"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      updateInstructorCostPlaceholder();
+      if (currentStep === 3) {
+        updateCostBreakdown();
+      }
+    });
+  });
+
+  // Update instructor cost placeholder based on payment type
+  function updateInstructorCostPlaceholder() {
+    const instructorCostInput = document.getElementById('instructor-cost') as HTMLInputElement;
+    const paymentType = (document.querySelector('input[name="instructor-payment"]:checked') as HTMLInputElement)?.value;
+
+    if (instructorCostInput) {
+      if (paymentType === 'per-class') {
+        instructorCostInput.placeholder = `${currencySymbol}30 per class`;
+      } else {
+        instructorCostInput.placeholder = `${currencySymbol}1500 per month`;
+      }
+    }
+  }
+
+  // Format currency
+  function formatCurrency(value: number): string {
+    return `${currencySymbol}${Math.round(value).toLocaleString()}`;
+  }
+
+  // Generate results (Step 5)
+  function generateResults() {
+    const resultsContent = document.getElementById('results-content');
+    if (!resultsContent) return;
+
+    // Gather all data
+    const style = (document.getElementById('martial-art-style') as HTMLSelectElement)?.value;
+    const students = parseFloat((document.getElementById('active-students') as HTMLInputElement)?.value || '0');
+    const monthlyFee = parseFloat((document.getElementById('monthly-fee') as HTMLInputElement)?.value || '0');
+    const classesPerWeek = parseFloat((document.getElementById('classes-per-week') as HTMLInputElement)?.value || '0');
+    const studentsPerClass = parseFloat((document.getElementById('students-per-class') as HTMLInputElement)?.value || '0');
+    const instructors = parseFloat((document.getElementById('instructors') as HTMLInputElement)?.value || '0');
+
+    // Calculate revenue
+    const membershipRevenue = students * monthlyFee;
+    let additionalRevenue = 0;
+
+    // Grading fees
+    if ((document.getElementById('enable-grading') as HTMLInputElement)?.checked) {
+      const gradingFee = parseFloat((document.getElementById('grading-fee') as HTMLInputElement)?.value || '0');
+      const testsPerYear = parseFloat((document.getElementById('tests-per-year') as HTMLInputElement)?.value || '0');
+      const gradingPct = parseFloat((document.getElementById('students-grading-pct') as HTMLInputElement)?.value || '0') / 100;
+      additionalRevenue += (students * gradingPct * gradingFee * testsPerYear) / 12;
+    }
+
+    // Private lessons
+    if ((document.getElementById('enable-private') as HTMLInputElement)?.checked) {
+      const privateFee = parseFloat((document.getElementById('private-fee') as HTMLInputElement)?.value || '0');
+      const privatePerWeek = parseFloat((document.getElementById('private-per-week') as HTMLInputElement)?.value || '0');
+      additionalRevenue += privateFee * privatePerWeek * 4.33;
+    }
+
+    // Merchandise
+    if ((document.getElementById('enable-merchandise') as HTMLInputElement)?.checked) {
+      additionalRevenue += parseFloat((document.getElementById('merchandise-monthly') as HTMLInputElement)?.value || '0');
+    }
+
+    // Intro courses
+    if ((document.getElementById('enable-intro') as HTMLInputElement)?.checked) {
+      const introFee = parseFloat((document.getElementById('intro-fee') as HTMLInputElement)?.value || '0');
+      const introPerMonth = parseFloat((document.getElementById('intro-per-month') as HTMLInputElement)?.value || '0');
+      additionalRevenue += introFee * introPerMonth;
+    }
+
+    // Seminars
+    if ((document.getElementById('enable-seminars') as HTMLInputElement)?.checked) {
+      const seminarsPerYear = parseFloat((document.getElementById('seminars-per-year') as HTMLInputElement)?.value || '0');
+      const seminarRevenue = parseFloat((document.getElementById('seminar-revenue') as HTMLInputElement)?.value || '0');
+      additionalRevenue += (seminarsPerYear * seminarRevenue) / 12;
+    }
+
+    // Camps
+    if ((document.getElementById('enable-camps') as HTMLInputElement)?.checked) {
+      const campsPerYear = parseFloat((document.getElementById('camps-per-year') as HTMLInputElement)?.value || '0');
+      const campRevenue = parseFloat((document.getElementById('camp-revenue') as HTMLInputElement)?.value || '0');
+      additionalRevenue += (campsPerYear * campRevenue) / 12;
+    }
+
+    const totalRevenue = membershipRevenue + additionalRevenue;
+
+    // Calculate costs
+    const rent = parseFloat((document.getElementById('rent') as HTMLInputElement)?.value || '0');
+    const utilities = parseFloat((document.getElementById('utilities') as HTMLInputElement)?.value || '0');
+    const insurance = parseFloat((document.getElementById('insurance') as HTMLInputElement)?.value || '0');
+    const instructorCost = parseFloat((document.getElementById('instructor-cost') as HTMLInputElement)?.value || '0');
+    const instructorPaymentType = (document.querySelector('input[name="instructor-payment"]:checked') as HTMLInputElement)?.value;
+    const equipment = parseFloat((document.getElementById('equipment-maintenance') as HTMLInputElement)?.value || '0');
+    const marketing = parseFloat((document.getElementById('marketing-spend') as HTMLInputElement)?.value || '0');
+    const software = parseFloat((document.getElementById('software-admin') as HTMLInputElement)?.value || '0');
+    const other = parseFloat((document.getElementById('other-costs') as HTMLInputElement)?.value || '0');
+
+    let totalInstructorCost = 0;
+    if (instructorPaymentType === 'per-class') {
+      totalInstructorCost = instructorCost * classesPerWeek * 4.33 * instructors;
+    } else {
+      totalInstructorCost = instructorCost * instructors;
+    }
+
+    const totalCosts = rent + utilities + insurance + totalInstructorCost + equipment + marketing + software + other;
+    const monthlyProfit = totalRevenue - totalCosts;
+    const annualProfit = monthlyProfit * 12;
+    const profitMargin = totalRevenue > 0 ? (monthlyProfit / totalRevenue) * 100 : 0;
+    const revenuePerStudent = totalRevenue / students;
+    const costPerStudent = totalCosts / students;
+
+    // Growth projections
+    const newSignups = parseFloat((document.getElementById('new-signups') as HTMLInputElement)?.value || '0');
+    const churnRate = parseFloat((document.getElementById('churn-rate') as HTMLInputElement)?.value || '0') / 100;
+    const priceIncrease = parseFloat((document.getElementById('price-increase') as HTMLInputElement)?.value || '0') / 100;
+    const projectionMonths = parseInt((document.querySelector('input[name="projection-months"]:checked') as HTMLInputElement)?.value || '12');
+
+    // Calculate month-by-month projections
+    const projections = [];
+    let currentStudents = students;
+    let currentPrice = monthlyFee;
+
+    for (let month = 0; month <= projectionMonths; month++) {
+      // Apply price increase at midpoint if specified
+      if (month === Math.floor(projectionMonths / 2) && priceIncrease > 0) {
+        currentPrice = currentPrice * (1 + priceIncrease);
+      }
+
+      const monthMembershipRevenue = currentStudents * currentPrice;
+      const monthAdditionalRevenue = additionalRevenue * (currentStudents / students); // Scale additional revenue
+      const monthTotalRevenue = monthMembershipRevenue + monthAdditionalRevenue;
+      const monthProfit = monthTotalRevenue - totalCosts;
+
+      projections.push({
+        month,
+        students: Math.round(currentStudents),
+        revenue: monthTotalRevenue,
+        profit: monthProfit
+      });
+
+      // Calculate next month's students
+      if (month < projectionMonths) {
+        const churnedStudents = currentStudents * churnRate;
+        currentStudents = Math.max(0, currentStudents - churnedStudents + newSignups);
+      }
+    }
+
+    const finalProjection = projections[projections.length - 1];
+    const studentGrowth = finalProjection.students - students;
+    const revenueGrowth = finalProjection.revenue - totalRevenue;
+
+    // Generate insights
+    const insights = generateInsights({
+      students,
+      monthlyFee,
+      revenuePerStudent,
+      costPerStudent,
+      profitMargin,
+      churnRate: churnRate * 100,
+      marketing,
+      totalRevenue,
+      additionalRevenue,
+      rent,
+      totalCosts,
+      studentsPerClass,
+      classesPerWeek
+    });
+
+    // Render results
+    resultsContent.innerHTML = `
+      <!-- Summary Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-gradient-to-br from-brand-red to-red-600 text-white p-6 rounded-xl shadow-lg">
+          <div class="text-sm font-medium opacity-90 mb-2">Monthly Revenue</div>
+          <div class="text-4xl font-bold mb-1">${formatCurrency(totalRevenue)}</div>
+          <div class="text-sm opacity-75">${formatCurrency(totalRevenue * 12)} annually</div>
+        </div>
+        <div class="bg-gradient-to-br from-brand-navy to-gray-800 text-white p-6 rounded-xl shadow-lg">
+          <div class="text-sm font-medium opacity-90 mb-2">Monthly Costs</div>
+          <div class="text-4xl font-bold mb-1">${formatCurrency(totalCosts)}</div>
+          <div class="text-sm opacity-75">${formatCurrency(totalCosts * 12)} annually</div>
+        </div>
+        <div class="bg-gradient-to-br ${monthlyProfit >= 0 ? 'from-green-500 to-green-600' : 'from-red-600 to-red-700'} text-white p-6 rounded-xl shadow-lg">
+          <div class="text-sm font-medium opacity-90 mb-2">Monthly Profit</div>
+          <div class="text-4xl font-bold mb-1">${formatCurrency(monthlyProfit)}</div>
+          <div class="text-sm opacity-75">${formatCurrency(annualProfit)} annually</div>
+        </div>
+      </div>
+
+      <!-- Revenue Breakdown -->
+      <div class="card mb-8">
+        <h3 class="text-2xl font-bold text-brand-navy mb-6">Revenue Breakdown</h3>
+        <div class="space-y-3 mb-6">
+          <div class="flex justify-between items-center pb-3 border-b border-gray-200">
+            <span class="text-text-secondary">Membership Revenue (${students} students × ${formatCurrency(monthlyFee)})</span>
+            <span class="font-semibold text-brand-navy">${formatCurrency(membershipRevenue)}</span>
+          </div>
+          ${additionalRevenue > 0 ? `
+            <div class="flex justify-between items-center pb-3 border-b border-gray-200">
+              <span class="text-text-secondary">Additional Revenue Streams</span>
+              <span class="font-semibold text-brand-navy">${formatCurrency(additionalRevenue)}</span>
+            </div>
+          ` : ''}
+          <div class="flex justify-between items-center pt-2">
+            <span class="font-bold text-brand-navy text-lg">Total Monthly Revenue</span>
+            <span class="font-bold text-brand-red text-2xl">${formatCurrency(totalRevenue)}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profitability Metrics -->
+      <div class="card mb-8">
+        <h3 class="text-2xl font-bold text-brand-navy mb-6">Profitability Metrics</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div>
+            <div class="text-sm text-text-tertiary mb-1">Profit Margin</div>
+            <div class="text-3xl font-bold ${profitMargin >= 20 ? 'text-green-600' : profitMargin >= 10 ? 'text-yellow-600' : 'text-red-600'}">${profitMargin.toFixed(1)}%</div>
+            <div class="text-xs text-text-tertiary mt-1">Target: 20-40%</div>
+          </div>
+          <div>
+            <div class="text-sm text-text-tertiary mb-1">Revenue per Student</div>
+            <div class="text-3xl font-bold text-brand-navy">${formatCurrency(revenuePerStudent)}</div>
+            <div class="text-xs text-text-tertiary mt-1">Industry: ${currencySymbol}80-120</div>
+          </div>
+          <div>
+            <div class="text-sm text-text-tertiary mb-1">Cost per Student</div>
+            <div class="text-3xl font-bold text-brand-navy">${formatCurrency(costPerStudent)}</div>
+            <div class="text-xs text-text-tertiary mt-1">Lower is better</div>
+          </div>
+          <div>
+            <div class="text-sm text-text-tertiary mb-1">Annual Profit</div>
+            <div class="text-3xl font-bold ${annualProfit >= 0 ? 'text-green-600' : 'text-red-600'}">${formatCurrency(annualProfit)}</div>
+            <div class="text-xs text-text-tertiary mt-1">12 months projected</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Growth Projection Chart -->
+      <div class="card mb-8">
+        <h3 class="text-2xl font-bold text-brand-navy mb-6">${projectionMonths}-Month Growth Projection</h3>
+        <div class="mb-6">
+          ${generateGrowthChart(projections)}
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 p-4 bg-gray-50 rounded-lg">
+          <div class="text-center">
+            <div class="text-sm text-text-tertiary mb-1">Starting Students</div>
+            <div class="text-2xl font-bold text-brand-navy">${students}</div>
+          </div>
+          <div class="text-center">
+            <div class="text-sm text-text-tertiary mb-1">Projected Students (Month ${projectionMonths})</div>
+            <div class="text-2xl font-bold text-brand-red">${finalProjection.students}</div>
+            <div class="text-sm ${studentGrowth >= 0 ? 'text-green-600' : 'text-red-600'}">${studentGrowth >= 0 ? '+' : ''}${studentGrowth} students</div>
+          </div>
+          <div class="text-center">
+            <div class="text-sm text-text-tertiary mb-1">Projected Monthly Revenue</div>
+            <div class="text-2xl font-bold text-brand-navy">${formatCurrency(finalProjection.revenue)}</div>
+            <div class="text-sm ${revenueGrowth >= 0 ? 'text-green-600' : 'text-red-600'}">${revenueGrowth >= 0 ? '+' : ''}${formatCurrency(revenueGrowth)}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Student Growth Chart -->
+      <div class="card mb-8">
+        <h3 class="text-2xl font-bold text-brand-navy mb-6">Student Growth Trajectory</h3>
+        ${generateStudentChart(projections)}
+      </div>
+
+      <!-- Key Insights -->
+      <div class="card mb-8">
+        <h3 class="text-2xl font-bold text-brand-navy mb-6">Key Insights</h3>
+        <div class="space-y-4">
+          ${insights.map(insight => `
+            <div class="flex items-start gap-3 p-4 bg-${insight.type === 'positive' ? 'green' : insight.type === 'warning' ? 'yellow' : 'blue'}-50 rounded-lg border border-${insight.type === 'positive' ? 'green' : insight.type === 'warning' ? 'yellow' : 'blue'}-200">
+              <svg class="w-6 h-6 text-${insight.type === 'positive' ? 'green' : insight.type === 'warning' ? 'yellow' : 'blue'}-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${insight.type === 'positive' ? 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' : insight.type === 'warning' ? 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z' : 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'}"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-brand-navy mb-1">${insight.title}</h4>
+                <p class="text-sm text-text-secondary">${insight.message}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <!-- Action Items -->
+      ${generateActionItems({
+        students,
+        additionalRevenue,
+        churnRate: churnRate * 100,
+        studentsPerClass,
+        classesPerWeek,
+        marketing,
+        profitMargin
+      })}
+
+      <!-- Actions -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-8 no-print">
+        <button onclick="window.print()" class="btn-primary">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg>
+          Download PDF Report
+        </button>
+        <button onclick="location.reload()" class="btn-secondary">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+          </svg>
+          Start Over
+        </button>
+      </div>
+    `;
+  }
+
+  function generateGrowthChart(projections: any[]): string {
+    const maxRevenue = Math.max(...projections.map(p => p.revenue));
+    const maxProfit = Math.max(...projections.map(p => p.profit));
+    const minProfit = Math.min(...projections.map(p => p.profit));
+    const range = Math.max(maxRevenue, maxProfit) - Math.min(0, minProfit);
+    const chartHeight = 300;
+    const chartWidth = 800;
+    const padding = 40;
+
+    const revenuePoints = projections.map((p, i) => {
+      const x = padding + (i / (projections.length - 1)) * (chartWidth - 2 * padding);
+      const y = chartHeight - padding - ((p.revenue - Math.min(0, minProfit)) / range) * (chartHeight - 2 * padding);
+      return `${x},${y}`;
+    }).join(' ');
+
+    const profitPoints = projections.map((p, i) => {
+      const x = padding + (i / (projections.length - 1)) * (chartWidth - 2 * padding);
+      const y = chartHeight - padding - ((p.profit - Math.min(0, minProfit)) / range) * (chartHeight - 2 * padding);
+      return `${x},${y}`;
+    }).join(' ');
+
+    return `
+      <svg viewBox="0 0 ${chartWidth} ${chartHeight}" class="w-full" style="max-height: 300px;">
+        <!-- Grid lines -->
+        ${[0, 0.25, 0.5, 0.75, 1].map(pct => {
+          const y = chartHeight - padding - pct * (chartHeight - 2 * padding);
+          return `<line x1="${padding}" y1="${y}" x2="${chartWidth - padding}" y2="${y}" stroke="#e5e7eb" stroke-width="1"/>`;
+        }).join('')}
+
+        <!-- Revenue line -->
+        <polyline points="${revenuePoints}" fill="none" stroke="#E94560" stroke-width="3"/>
+
+        <!-- Profit line -->
+        <polyline points="${profitPoints}" fill="none" stroke="#1A1A2E" stroke-width="3" stroke-dasharray="5,5"/>
+
+        <!-- Legend -->
+        <g transform="translate(${padding}, 20)">
+          <line x1="0" y1="0" x2="30" y2="0" stroke="#E94560" stroke-width="3"/>
+          <text x="35" y="5" fill="#374151" font-size="12">Revenue</text>
+
+          <line x1="120" y1="0" x2="150" y2="0" stroke="#1A1A2E" stroke-width="3" stroke-dasharray="5,5"/>
+          <text x="155" y="5" fill="#374151" font-size="12">Profit</text>
+        </g>
+
+        <!-- X-axis labels -->
+        ${projections.filter((_, i) => i % Math.ceil(projections.length / 6) === 0 || i === projections.length - 1).map(p => {
+          const x = padding + (p.month / (projections.length - 1)) * (chartWidth - 2 * padding);
+          return `<text x="${x}" y="${chartHeight - 15}" text-anchor="middle" fill="#6b7280" font-size="12">Month ${p.month}</text>`;
+        }).join('')}
+      </svg>
+    `;
+  }
+
+  function generateStudentChart(projections: any[]): string {
+    const maxStudents = Math.max(...projections.map(p => p.students));
+    const minStudents = Math.min(...projections.map(p => p.students));
+    const range = maxStudents - minStudents;
+    const chartHeight = 300;
+    const chartWidth = 800;
+    const padding = 40;
+    const barWidth = (chartWidth - 2 * padding) / projections.length - 4;
+
+    return `
+      <svg viewBox="0 0 ${chartWidth} ${chartHeight}" class="w-full" style="max-height: 300px;">
+        <!-- Bars -->
+        ${projections.map((p, i) => {
+          const x = padding + (i * (chartWidth - 2 * padding) / projections.length);
+          const barHeight = range > 0 ? ((p.students - minStudents) / range) * (chartHeight - 2 * padding) : chartHeight - 2 * padding;
+          const y = chartHeight - padding - barHeight;
+          const color = i === 0 ? '#1A1A2E' : '#E94560';
+
+          return `
+            <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" fill="${color}" opacity="0.8"/>
+            ${i % Math.ceil(projections.length / 6) === 0 || i === projections.length - 1 ?
+              `<text x="${x + barWidth / 2}" y="${y - 5}" text-anchor="middle" fill="#374151" font-size="11" font-weight="600">${p.students}</text>` :
+              ''}
+          `;
+        }).join('')}
+
+        <!-- X-axis labels -->
+        ${projections.filter((_, i) => i % Math.ceil(projections.length / 6) === 0 || i === projections.length - 1).map(p => {
+          const x = padding + (p.month * (chartWidth - 2 * padding) / projections.length) + barWidth / 2;
+          return `<text x="${x}" y="${chartHeight - 15}" text-anchor="middle" fill="#6b7280" font-size="12">M${p.month}</text>`;
+        }).join('')}
+      </svg>
+    `;
+  }
+
+  function generateInsights(data: any): any[] {
+    const insights = [];
+
+    // Revenue per student insight
+    if (data.revenuePerStudent < 80) {
+      insights.push({
+        type: 'warning',
+        title: 'Revenue per student is below industry average',
+        message: `At ${formatCurrency(data.revenuePerStudent)} per student, you're below the typical ${currencySymbol}80-120 range. Consider adding revenue streams like private lessons, belt testing fees, or merchandise sales to increase this metric.`
+      });
+    } else if (data.revenuePerStudent > 120) {
+      insights.push({
+        type: 'positive',
+        title: 'Excellent revenue per student',
+        message: `At ${formatCurrency(data.revenuePerStudent)} per student, you're above industry average. This indicates strong revenue diversification or premium pricing—keep it up!`
+      });
+    }
+
+    // Churn rate insight
+    if (data.churnRate > 8) {
+      insights.push({
+        type: 'warning',
+        title: 'Student churn rate is above average',
+        message: `At ${data.churnRate.toFixed(1)}% monthly churn, you're above the 5-8% industry average. Reducing churn by just 1-2% would significantly impact annual revenue. Focus on student engagement, progress tracking, and community building to improve retention.`
+      });
+
+      // Calculate retention impact
+      const currentAnnualChurn = data.students * (data.churnRate / 100) * 12;
+      const improvedChurnRate = data.churnRate - 2;
+      const improvedAnnualChurn = data.students * (improvedChurnRate / 100) * 12;
+      const studentsRetained = Math.round(currentAnnualChurn - improvedAnnualChurn);
+      const annualValueOfRetention = studentsRetained * data.monthlyFee * 12;
+
+      insights.push({
+        type: 'info',
+        title: 'Retention opportunity',
+        message: `Reducing churn by just 2% (from ${data.churnRate.toFixed(1)}% to ${improvedChurnRate.toFixed(1)}%) would retain approximately ${studentsRetained} additional students annually, worth ${formatCurrency(annualValueOfRetention)} in annual revenue.`
+      });
+    } else if (data.churnRate < 5) {
+      insights.push({
+        type: 'positive',
+        title: 'Outstanding student retention',
+        message: `Your ${data.churnRate.toFixed(1)}% monthly churn is excellent—well below the industry average. This indicates strong student satisfaction and loyalty, which is crucial for long-term profitability.`
+      });
+    }
+
+    // Additional revenue streams insight
+    if (data.additionalRevenue === 0) {
+      insights.push({
+        type: 'info',
+        title: 'Consider diversifying revenue streams',
+        message: `You're currently relying entirely on membership fees. Successful dojos typically generate 15-30% of revenue from additional sources. Private lessons, belt testing fees, and summer camps could add ${formatCurrency(data.totalRevenue * 0.2)} or more monthly.`
+      });
+    } else {
+      const additionalPct = (data.additionalRevenue / data.totalRevenue) * 100;
+      if (additionalPct > 20) {
+        insights.push({
+          type: 'positive',
+          title: 'Well-diversified revenue',
+          message: `Additional revenue streams account for ${additionalPct.toFixed(0)}% of your total revenue, reducing dependence on membership fees alone. This diversity strengthens your business model.`
+        });
+      }
+    }
+
+    // Profit margin insight
+    if (data.profitMargin < 15) {
+      insights.push({
+        type: 'warning',
+        title: 'Profit margin needs attention',
+        message: `At ${data.profitMargin.toFixed(1)}%, your margin is below healthy levels (20-40% target). Review your cost structure—particularly rent and instructor costs—or explore ways to increase revenue per student.`
+      });
+    } else if (data.profitMargin >= 20 && data.profitMargin <= 40) {
+      insights.push({
+        type: 'positive',
+        title: 'Healthy profit margin',
+        message: `Your ${data.profitMargin.toFixed(1)}% profit margin is within the healthy 20-40% range for martial arts schools. This indicates good cost management and sustainable pricing.`
+      });
+    } else if (data.profitMargin > 40) {
+      insights.push({
+        type: 'positive',
+        title: 'Exceptional profitability',
+        message: `At ${data.profitMargin.toFixed(1)}%, your profit margin is exceptional. This likely indicates an owner-operator model with low overhead—maintain this efficiency as you grow.`
+      });
+    }
+
+    // Rent-to-revenue insight
+    const rentPct = (data.rent / data.totalRevenue) * 100;
+    if (rentPct > 30) {
+      insights.push({
+        type: 'warning',
+        title: 'Rent is consuming significant revenue',
+        message: `Rent represents ${rentPct.toFixed(0)}% of your revenue (target: 15-25%). This high percentage makes profitability challenging. Consider negotiating rent, relocating, or focusing on revenue growth to improve this ratio.`
+      });
+    }
+
+    // Student growth opportunity
+    const additionalStudentsNeeded = Math.ceil((data.totalCosts - data.totalRevenue) / data.monthlyFee);
+    if (additionalStudentsNeeded > 0 && additionalStudentsNeeded < 20) {
+      insights.push({
+        type: 'info',
+        title: 'Close to profitability',
+        message: `Adding just ${additionalStudentsNeeded} more students would make your school profitable. With your current pricing, that represents ${formatCurrency(additionalStudentsNeeded * data.monthlyFee * 12)} in annual revenue.`
+      });
+    }
+
+    // Class utilisation insight
+    const totalClassCapacity = data.classesPerWeek * data.studentsPerClass * 4.33;
+    const currentMonthlyAttendance = data.students * 3; // Assume 3 classes per student per week
+    const utilisation = (currentMonthlyAttendance / totalClassCapacity) * 100;
+
+    if (utilisation < 50) {
+      insights.push({
+        type: 'info',
+        title: 'Class capacity underutilised',
+        message: `Your classes are running at approximately ${utilisation.toFixed(0)}% capacity. You have room to accommodate ${Math.floor((totalClassCapacity - currentMonthlyAttendance) / 13)} more students without adding class times, maximising revenue from your existing schedule.`
+      });
+    } else if (utilisation > 85) {
+      insights.push({
+        type: 'warning',
+        title: 'Class capacity nearing limit',
+        message: `Your classes are running at ${utilisation.toFixed(0)}% capacity. You may soon need to add class times or expand your schedule to accommodate growth without overcrowding.`
+      });
+    }
+
+    return insights;
+  }
+
+  function generateActionItems(data: any): string {
+    const actions = [];
+
+    // No additional revenue streams
+    if (data.additionalRevenue === 0) {
+      actions.push({
+        title: 'Implement grading fees',
+        description: 'Belt testing fees are standard practice and students value structured progression. Charging £25-40 per test for 70% of students testing twice annually could add £1,000+ monthly revenue.'
+      });
+
+      actions.push({
+        title: 'Launch private lesson programme',
+        description: 'Private lessons typically generate 15-25% additional revenue with minimal overhead. Even 5 private sessions per week at £40 each adds £865+ monthly.'
+      });
+    }
+
+    // High churn
+    if (data.churnRate > 8) {
+      actions.push({
+        title: 'Focus on retention strategies',
+        description: 'With churn above average, prioritise student engagement. Implement progress tracking, regular check-ins, recognition programmes, and community-building events to reduce turnover.'
+      });
+    }
+
+    // Low utilisation
+    const totalClassCapacity = data.classesPerWeek * data.studentsPerClass * 4.33;
+    const currentMonthlyAttendance = data.students * 3;
+    const utilisation = (currentMonthlyAttendance / totalClassCapacity) * 100;
+
+    if (utilisation < 50) {
+      actions.push({
+        title: 'Optimise class schedule',
+        description: `Your classes are underutilised (${utilisation.toFixed(0)}% capacity). You can accommodate more students without adding overhead. Focus marketing efforts on filling existing class times before expanding your schedule.`
+      });
+    }
+
+    // No marketing budget
+    if (data.marketing === 0) {
+      actions.push({
+        title: 'Allocate marketing budget',
+        description: 'Even a modest £150-300 monthly marketing budget can significantly accelerate student acquisition. Start with targeted Facebook/Instagram ads and track your cost per lead.'
+      });
+    }
+
+    // Low profit margin
+    if (data.profitMargin < 15) {
+      actions.push({
+        title: 'Review cost structure',
+        description: `With a ${data.profitMargin.toFixed(1)}% margin, examine your largest expenses. Can rent be renegotiated? Are instructor costs proportional to revenue? Small cost reductions compound significantly over time.`
+      });
+    }
+
+    if (actions.length === 0) {
+      actions.push({
+        title: 'Maintain operational excellence',
+        description: 'Your metrics look strong across the board. Continue focusing on student experience, retention, and community building to sustain this performance.'
+      });
+    }
+
+    return `
+      <div class="card">
+        <h3 class="text-2xl font-bold text-brand-navy mb-6">Recommended Action Items</h3>
+        <div class="space-y-4">
+          ${actions.map((action, i) => `
+            <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+              <div class="flex-shrink-0 w-8 h-8 bg-brand-red text-white rounded-full flex items-center justify-center font-bold">
+                ${i + 1}
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-brand-navy mb-1">${action.title}</h4>
+                <p class="text-sm text-text-secondary">${action.description}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  // Initialize
+  showStep(1);
+  updateInstructorCostPlaceholder();
+</script>

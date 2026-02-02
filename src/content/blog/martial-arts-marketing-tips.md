@@ -315,6 +315,26 @@ Invest more in what works, reduce what doesn't.
 | Content creation | 15% |
 | Print/local | 10% |
 
+<div style="background: linear-gradient(135deg, #FFE7EC 0%, #FFF5F7 100%); border-left: 4px solid #E94560; padding: 1.5rem; border-radius: 0.5rem; margin: 2rem 0;">
+  <div style="display: flex; align-items: start; gap: 1rem;">
+    <div style="flex-shrink: 0; width: 48px; height: 48px; background: #E94560; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+      <svg style="width: 28px; height: 28px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+      </svg>
+    </div>
+    <div style="flex: 1;">
+      <h3 style="font-size: 1.25rem; font-weight: 700; color: #1A1A2E; margin: 0 0 0.5rem 0;">See How Marketing Spend Impacts Growth</h3>
+      <p style="color: #4A4A5E; margin: 0 0 1rem 0; line-height: 1.6;">Model your marketing investment alongside other revenue factors to project student count and revenue growth over 6-24 months. Factor in realistic sign-up rates and understand your break-even timeline.</p>
+      <a href="/dojo-revenue-calculator/" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #E94560; font-weight: 600; text-decoration: none;">
+        Project Your Growth
+        <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
 ### Measuring ROI
 
 **Calculate cost per student:**
