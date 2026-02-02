@@ -207,7 +207,7 @@ const howToSchema = {
                   <label for="currency" class="block text-sm font-semibold text-brand-navy mb-2">Currency</label>
                   <select id="currency" class="input">
                     <option value="£">£ (GBP)</option>
-                    <option value="$">$ (USD)</option>
+                    <option value="$" selected>$ (USD)</option>
                     <option value="€">€ (EUR)</option>
                   </select>
                 </div>
@@ -223,7 +223,7 @@ const howToSchema = {
                 <div>
                   <label for="monthly-fee" class="block text-sm font-semibold text-brand-navy mb-2">
                     Monthly Membership Fee
-                    <span class="text-text-tertiary font-normal" id="fee-range">(£20-£500)</span>
+                    <span class="text-text-tertiary font-normal" id="fee-range">($20-$500)</span>
                   </label>
                   <input type="number" id="monthly-fee" class="input" value="75" min="20" max="500">
                 </div>
@@ -407,7 +407,7 @@ const howToSchema = {
                 <!-- Additional revenue summary -->
                 <div class="bg-brand-red-light border-l-4 border-brand-red p-6 rounded-lg">
                   <h4 class="font-semibold text-brand-navy mb-2">Additional Monthly Revenue</h4>
-                  <p class="text-3xl font-bold text-brand-red" id="additional-revenue-preview">£0</p>
+                  <p class="text-3xl font-bold text-brand-red" id="additional-revenue-preview">$0</p>
                   <p class="text-sm text-text-tertiary mt-2">Beyond core membership fees</p>
                 </div>
               </div>
@@ -960,7 +960,7 @@ const howToSchema = {
   const backSpacer = document.getElementById('back-spacer') as HTMLElement;
 
   // Currency handling
-  let currencySymbol = '£';
+  let currencySymbol = '$';
   const currencySelect = document.getElementById('currency') as HTMLSelectElement;
 
   currencySelect?.addEventListener('change', () => {
@@ -1036,7 +1036,7 @@ const howToSchema = {
     if (currentStep < totalSteps) {
       currentStep++;
       showStep(currentStep);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.getElementById('calculator-app')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 
@@ -1044,7 +1044,7 @@ const howToSchema = {
     if (currentStep > 1) {
       currentStep--;
       showStep(currentStep);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.getElementById('calculator-app')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 
