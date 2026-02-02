@@ -196,7 +196,7 @@ Schools with diverse revenue streams typically earn more.
 **Operational efficiency:**
 - [Management software](/martial-arts-software/) reduces administrative time
 - Automated billing reduces missed payments
-- Better scheduling maximises mat utilisation
+- Better scheduling maximises mat utilisation See how [BJJ Gym Software](/bjj-gym-software/) can help. See how [Karate School Software](/karate-school-software/) can help. See how [Martial Arts Billing Software](/martial-arts-billing-software/) can help. Learn more about [Martial Arts CRM](/martial-arts-crm/). Check out [Martial Arts Scheduling Software](/martial-arts-scheduling-software/). Learn more about [MMA Gym Software](/mma-gym-software/).
 
 **Smart spending:**
 - Negotiate rent at lease renewal

@@ -105,7 +105,7 @@ Different arts use different systems:
 
 ## Running a Martial Arts School
 
-For those interested in teaching martial arts professionally, managing a school requires balancing instruction with business administration. Modern [martial arts software](/martial-arts-software/) helps school owners handle student management, scheduling, billing, and belt progression tracking—freeing up time to focus on teaching.
+For those interested in teaching martial arts professionally, managing a school requires balancing instruction with business administration. Modern [martial arts software](/martial-arts-software/) helps school owners handle student management, scheduling, billing, and belt progression tracking—freeing up time to focus on teaching. Learn more about [Dojo Management Software](/dojo-management-software/). Explore [Karate School Software](/karate-school-software/) solutions. Learn more about [Martial Arts CRM](/martial-arts-crm/).
 
 Schools teaching multiple disciplines, such as MMA academies offering BJJ, striking, and wrestling, benefit from [MMA gym software](/mma-gym-software/) that can track progression across different ranking systems simultaneously.
 

@@ -117,7 +117,7 @@ The biggest variable in your startup budget.
 | Sound system | $500-$2,000 | For classes |
 | Wi-Fi setup | $200-$500 | Business-grade |
 | Computer/tablet | $500-$2,000 | For check-in, admin |
-| **Total technology** | **$2,000-$15,000** |
+| **Total technology** | **$2,000-$15,000** | Explore [BJJ Gym Software](/bjj-gym-software/) solutions. See how [Karate School Software](/karate-school-software/) can help.
 
 ### 5. Marketing and Launch
 
@@ -361,6 +361,6 @@ Plan thoroughly, budget conservatively, and maintain reserves for the unexpected
 
 ## Managing Your Gym Finances
 
-Once open, tracking members, payments, and expenses becomes critical. [MyDojo.Software](/dojo-management-software/) helps you manage memberships, automate billing, and keep your martial arts business financially healthy.
+Once open, tracking members, payments, and expenses becomes critical. [MyDojo.Software](/dojo-management-software/) helps you manage memberships, automate billing, and keep your martial arts business financially healthy. Explore [Martial Arts Billing Software](/martial-arts-billing-software/) solutions. Learn more about [Martial Arts CRM](/martial-arts-crm/). See how [Martial Arts Scheduling Software](/martial-arts-scheduling-software/) can help. Explore [Martial Arts Software](/martial-arts-software/) solutions.
 
 [Start your free trial](/contact/) and see how proper systems make gym management easier.

@@ -89,7 +89,7 @@ When someone searches "MMA gym near me" or "Brazilian jiu-jitsu [your city]," yo
 - Proper category selection (Martial Arts School, MMA Gym)
 - Quality photos of your facility, classes, and team
 - Regular posts (events, promotions, class highlights)
-- Active review management
+- Active review management Explore [Karate School Software](/karate-school-software/) solutions. See how [Martial Arts Billing Software](/martial-arts-billing-software/) can help.
 
 ### Local Search Optimization
 
@@ -261,7 +261,7 @@ When someone requests information but doesn't sign up:
 - Upcoming events
 - Industry news
 
-Use your [martial arts management software](/martial-arts-software/) to segment members and leads for relevant communication.
+Use your [martial arts management software](/martial-arts-software/) to segment members and leads for relevant communication. Check out [Dojo Management Software](/dojo-management-software/).
 
 ## Referral Programs
 

@@ -9,7 +9,7 @@ author: "MyDojo Team"
 
 Acquiring new students costs significantly more than keeping existing ones. Yet many martial arts schools focus heavily on marketing while neglecting retention. This guide covers practical strategies to keep your students training longer.
 
-Effective [martial arts software](/martial-arts-software/) supports retention through progress tracking, communication, and engagement tools—but strategy comes first.
+Effective [martial arts software](/martial-arts-software/) supports retention through progress tracking, communication, and engagement tools—but strategy comes first. Learn more about [Martial Arts CRM](/martial-arts-crm/).
 
 ## Why Retention Matters
 
@@ -106,7 +106,7 @@ New students are most vulnerable to dropout. First impressions and early experie
 Students who see their progress feel investment. Those who don't know how far they've come are more likely to quit.
 
 **Software support:**
-Use [student management features](/dojo-management-software/) to track and display progress.
+Use [student management features](/dojo-management-software/) to track and display progress. Check out [Karate School Software](/karate-school-software/). Check out [MMA Gym Software](/mma-gym-software/).
 
 ### 3. Regular Communication
 

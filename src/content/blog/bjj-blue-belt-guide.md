@@ -266,7 +266,7 @@ Track student progress systematically. [Martial arts software](/dojo-management-
 - Attendance history
 - Competition results
 - Belt test scores
-- Instructor notes
+- Instructor notes Learn more about [Karate School Software](/karate-school-software/). Check out [Martial Arts Billing Software](/martial-arts-billing-software/). Learn more about [Martial Arts CRM](/martial-arts-crm/). Learn more about [Martial Arts Scheduling Software](/martial-arts-scheduling-software/). Check out [Martial Arts Software](/martial-arts-software/). Learn more about [MMA Gym Software](/mma-gym-software/).
 
 ### The Sandbagging Question
 

@@ -357,6 +357,6 @@ Common concerns about age, fitness, and injury are manageable with the right sch
 
 ## For Dojo Owners: Serving Adult Students
 
-Adults have different needs than children—scheduling flexibility, modified intensity, and mature communication. [Martial arts management software](/karate-school-software/) helps you track adult members, accommodate their schedules, and build programs that serve this growing demographic.
+Adults have different needs than children—scheduling flexibility, modified intensity, and mature communication. [Martial arts management software](/karate-school-software/) helps you track adult members, accommodate their schedules, and build programs that serve this growing demographic. Check out [BJJ Gym Software](/bjj-gym-software/). Learn more about [Dojo Management Software](/dojo-management-software/). Explore [Martial Arts Billing Software](/martial-arts-billing-software/) solutions. Learn more about [Martial Arts CRM](/martial-arts-crm/). Learn more about [Martial Arts Scheduling Software](/martial-arts-scheduling-software/). Explore [Martial Arts Software](/martial-arts-software/) solutions. Explore [MMA Gym Software](/mma-gym-software/) solutions.
 
 [Start your free trial](/contact/) and see how MyDojo.Software can help you serve adult students better.

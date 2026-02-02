@@ -129,7 +129,7 @@ Some academies hold formal gradings while others surprise students with promotio
 
 ## Tracking BJJ Progression
 
-Given the long timeline between belts, tracking progress becomes important for both students and instructors. Modern [martial arts software](/martial-arts-software/) helps academies monitor:
+Given the long timeline between belts, tracking progress becomes important for both students and instructors. Modern [martial arts software](/martial-arts-software/) helps academies monitor: Learn more about [BJJ Gym Software](/bjj-gym-software/). Explore [Karate School Software](/karate-school-software/) solutions. Check out [Martial Arts Billing Software](/martial-arts-billing-software/). Learn more about [Martial Arts CRM](/martial-arts-crm/). Learn more about [Martial Arts Scheduling Software](/martial-arts-scheduling-software/).
 
 - Stripe and belt promotion history
 
@@ -175,7 +175,7 @@ Brazilian Jiu-Jitsu uses white, blue, purple, brown, and black belts. Traditiona
 
 ## How do BJJ academies track belt progression?
 
-Modern academies use [martial arts management software](/martial-arts-software/) to track attendance, stripe awards, belt promotions, and curriculum progress. This helps instructors monitor student development and ensures promotion eligibility requirements are met.
+Modern academies use [martial arts management software](/martial-arts-software/) to track attendance, stripe awards, belt promotions, and curriculum progress. This helps instructors monitor student development and ensures promotion eligibility requirements are met. Explore [Dojo Management Software](/dojo-management-software/) solutions.
 
 ## Related Guides
 

@@ -243,7 +243,7 @@ Be cautious of schools that:
 
 ## Managing Belt Systems in Your Dojo
 
-If you run a [karate school](/karate-school-software/), tracking student progress through the belt system requires organisation:
+If you run a [karate school](/karate-school-software/), tracking student progress through the belt system requires organisation: Learn more about [BJJ Gym Software](/bjj-gym-software/). Learn more about [MMA Gym Software](/mma-gym-software/).
 
 ### What to Track
 - Current rank and date achieved
@@ -285,6 +285,6 @@ As the saying goes: "A black belt is just a white belt who never quit."
 
 ## Ready to Streamline Your Dojo Management?
 
-Tracking student ranks, scheduling gradings, and managing your martial arts school takes time. [MyDojo.Software](/dojo-management-software/) handles the administrative side so you can focus on what matters—teaching your students.
+Tracking student ranks, scheduling gradings, and managing your martial arts school takes time. [MyDojo.Software](/dojo-management-software/) handles the administrative side so you can focus on what matters—teaching your students. See how [Martial Arts Billing Software](/martial-arts-billing-software/) can help. Learn more about [Martial Arts CRM](/martial-arts-crm/). Check out [Martial Arts Scheduling Software](/martial-arts-scheduling-software/). Learn more about [Martial Arts Software](/martial-arts-software/).
 
 [Start your free trial](/contact/) and see how much easier running a dojo can be.

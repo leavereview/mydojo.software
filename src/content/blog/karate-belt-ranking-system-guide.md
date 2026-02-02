@@ -82,7 +82,7 @@ Successful dojo owners create detailed rubrics for each belt level, eliminating 
  	- **Character Development (15%):** Respect, discipline, and perseverance
 
 Modern [dojo management software](https://mydojo.software/dojo-management-software/) can help track student progress against these criteria, providing instructors with comprehensive student profiles and automated promotion reminders.
-## Creating Your School's Promotion Timeline
+## Creating Your School's Promotion Timeline Learn more about [BJJ Gym Software](/bjj-gym-software/).
 
 ### Minimum Time Requirements Between Ranks
 
@@ -184,7 +184,7 @@ Clear communication prevents disappointment and maintains student motivation:
 - Personal development milestones
 
 Using a [martial arts CRM](https://mydojo.software/martial-arts-crm/) system enables automated progress tracking and parent communication, ensuring no student feels overlooked or uninformed about their advancement.
-### Handling Promotion Delays and Failures
+### Handling Promotion Delays and Failures Explore [Martial Arts Scheduling Software](/martial-arts-scheduling-software/) solutions. Learn more about [MMA Gym Software](/mma-gym-software/).
 
 Not every student will pass every test on their first attempt. Establishing supportive policies maintains student retention:
 

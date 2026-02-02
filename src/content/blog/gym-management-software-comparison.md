@@ -249,7 +249,7 @@ General scheduling platforms used for martial arts.
 - Martial arts terminology
 - Belt progression system
 - Grading management
-- Designed for dojos
+- Designed for dojos Explore [Dojo Management Software](/dojo-management-software/) solutions. See how [Martial Arts Billing Software](/martial-arts-billing-software/) can help. Learn more about [Martial Arts CRM](/martial-arts-crm/). Learn more about [Martial Arts Scheduling Software](/martial-arts-scheduling-software/). See how [MMA Gym Software](/mma-gym-software/) can help.
 
 **Weaknesses:**
 - Smaller platform
@@ -270,7 +270,7 @@ General scheduling platforms used for martial arts.
 | RhinoFit | Partial | Basic | £57 | Budget-conscious |
 | Glofox | No | Limited | £100 | Modern tech preference |
 | WellnessLiving | No | Limited | £89 | Marketing-focused |
-| MyDojo.Software | Yes | Yes | £49 | Small-medium schools |
+| MyDojo.Software | Yes | Yes | £49 | Small-medium schools | Check out [BJJ Gym Software](/bjj-gym-software/). Explore [Karate School Software](/karate-school-software/) solutions.
 
 ## Making Your Decision
 

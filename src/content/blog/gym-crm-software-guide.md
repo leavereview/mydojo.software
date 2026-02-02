@@ -7,7 +7,7 @@ tags: ["Software"]
 author: "MyDojo Team"
 ---
 
-Customer relationship management (CRM) software helps martial arts schools track prospects, manage leads, and convert inquiries into students. With numerous options available, choosing the right system can be overwhelming.
+Customer relationship management (CRM) software helps martial arts schools track prospects, manage leads, and convert inquiries into students. With numerous options available, choosing the right system can be overwhelming. Explore [BJJ Gym Software](/bjj-gym-software/) solutions. Learn more about [Karate School Software](/karate-school-software/). Explore [Martial Arts Software](/martial-arts-software/) solutions. Learn more about [MMA Gym Software](/mma-gym-software/).
 
 This guide explains what gym CRM software does, what features matter for martial arts schools, and how to evaluate options for your [dojo](/dojo-management-software/).
 
@@ -373,6 +373,6 @@ Choose a system that fits your school's size, budget, and technical comfort leve
 
 ## All-in-One Martial Arts Management
 
-[MyDojo.Software](/martial-arts-crm/) includes CRM functionality alongside member management, scheduling, and billing—everything you need in one system.
+[MyDojo.Software](/martial-arts-crm/) includes CRM functionality alongside member management, scheduling, and billing—everything you need in one system. See how [Martial Arts Billing Software](/martial-arts-billing-software/) can help. Explore [Martial Arts Scheduling Software](/martial-arts-scheduling-software/) solutions.
 
 [Start your free trial](/contact/) and see how integrated CRM helps you convert more leads to students.

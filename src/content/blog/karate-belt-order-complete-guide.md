@@ -167,7 +167,7 @@ Modern [dojo management software](https://mydojo.software/dojo-management-softwa
 - Scheduling promotion tests and ceremonies
 - Maintaining detailed records of each student's journey
 - Generating reports for instructors and parents
-- Managing testing fees through integrated billing systems
+- Managing testing fees through integrated billing systems See how [BJJ Gym Software](/bjj-gym-software/) can help. Learn more about [Martial Arts Billing Software](/martial-arts-billing-software/). Learn more about [Martial Arts CRM](/martial-arts-crm/). Check out [Martial Arts Scheduling Software](/martial-arts-scheduling-software/). See how [MMA Gym Software](/mma-gym-software/) can help.
 
 ### Creating Meaningful Promotion Ceremonies
 

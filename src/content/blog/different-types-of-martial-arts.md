@@ -161,7 +161,7 @@ Internal arts emphasise energy cultivation, breath work, and subtle movement rat
 - Position before submission philosophy
 - Rolling (sparring) from day one
 - [Clear belt progression system](/blog/bjj-blue-belt-guide/)
-- Both gi and no-gi training
+- Both gi and no-gi training Learn more about [BJJ Gym Software](/bjj-gym-software/).
 
 **Key positions:**
 - Guard (various types)
@@ -434,6 +434,6 @@ The best martial art is the one you'll train consistently in, with quality instr
 
 ## Find Your Martial Arts Path
 
-Whatever style interests you, quality instruction makes the difference. For schools managing multiple disciplines, [MyDojo.Software](/martial-arts-software/) handles diverse belt systems, class types, and student progression across all martial arts styles.
+Whatever style interests you, quality instruction makes the difference. For schools managing multiple disciplines, [MyDojo.Software](/martial-arts-software/) handles diverse belt systems, class types, and student progression across all martial arts styles. Check out [Dojo Management Software](/dojo-management-software/). See how [Karate School Software](/karate-school-software/) can help. Explore [Martial Arts Billing Software](/martial-arts-billing-software/) solutions. Learn more about [Martial Arts CRM](/martial-arts-crm/). See how [Martial Arts Scheduling Software](/martial-arts-scheduling-software/) can help. Explore [MMA Gym Software](/mma-gym-software/) solutions.
 
 [Start your free trial](/contact/) and see how purpose-built software supports your martial arts journey.

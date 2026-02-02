@@ -76,7 +76,7 @@ When someone searches "martial arts near me," Google Business Profile determines
 | Facebook | Parents, community | Events, updates, class photos |
 | Instagram | Visual appeal | Training photos, student achievements |
 | YouTube | Demonstrations | Technique videos, school tours |
-| TikTok | Youth appeal | Short, entertaining clips |
+| TikTok | Youth appeal | Short, entertaining clips | Explore [Karate School Software](/karate-school-software/) solutions. Check out [MMA Gym Software](/mma-gym-software/).
 
 **Content ideas:**
 - Student achievements (belt promotions)
@@ -367,6 +367,6 @@ Good marketing combined with great instruction builds thriving schools.
 
 ## Manage Marketing Results
 
-[MyDojo.Software](/martial-arts-software/) helps track leads, manage trials, and convert prospects into long-term students with integrated lead management and [CRM tools](/martial-arts-crm/).
+[MyDojo.Software](/martial-arts-software/) helps track leads, manage trials, and convert prospects into long-term students with integrated lead management and [CRM tools](/martial-arts-crm/). Learn more about [Dojo Management Software](/dojo-management-software/). See how [Martial Arts Billing Software](/martial-arts-billing-software/) can help.
 
 [Start your free trial](/contact/) and grow your student base efficiently.

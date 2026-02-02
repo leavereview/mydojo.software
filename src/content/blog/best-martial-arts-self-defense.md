@@ -59,7 +59,7 @@ Can you train regularly without constant injury? Is there a school near you? The
 
 **Time to basic competence:** 6-12 months
 
-Learn more about the [BJJ belt ranking system](/blog/jiu-jitsu-belt-ranks/) and progression timeline.
+Learn more about the [BJJ belt ranking system](/blog/jiu-jitsu-belt-ranks/) and progression timeline. Explore [BJJ Gym Software](/bjj-gym-software/) solutions. Check out [Dojo Management Software](/dojo-management-software/). Check out [Karate School Software](/karate-school-software/).
 
 ## 2. Muay Thai
 
@@ -135,7 +135,7 @@ Learn more about the [BJJ belt ranking system](/blog/jiu-jitsu-belt-ranks/) and 
 
 ## 5. MMA (Mixed Martial Arts)
 
-**Why it works:** MMA combines the most effective techniques from multiple martial arts into a complete fighting system. Training MMA means developing skills in striking, wrestling, and ground fighting—covering all ranges.
+**Why it works:** MMA combines the most effective techniques from multiple martial arts into a complete fighting system. Training MMA means developing skills in striking, wrestling, and ground fighting—covering all ranges. See how [Martial Arts Billing Software](/martial-arts-billing-software/) can help. Learn more about [Martial Arts CRM](/martial-arts-crm/). See how [Martial Arts Scheduling Software](/martial-arts-scheduling-software/) can help. Check out [Martial Arts Software](/martial-arts-software/).
 
 **Strengths:**
 

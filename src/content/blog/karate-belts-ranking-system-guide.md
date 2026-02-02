@@ -281,7 +281,7 @@ Today's successful dojos leverage technology to enhance their belt programs:
 
 ### Administrative Efficiency
 
-[Martial arts CRM](https://mydojo.software/martial-arts-crm/) systems streamline belt management by automating record-keeping, generating testing schedules, and managing [billing for testing fees](https://mydojo.software/martial-arts-billing-software/).
+[Martial arts CRM](https://mydojo.software/martial-arts-crm/) systems streamline belt management by automating record-keeping, generating testing schedules, and managing [billing for testing fees](https://mydojo.software/martial-arts-billing-software/). Check out [BJJ Gym Software](/bjj-gym-software/). Learn more about [Martial Arts Scheduling Software](/martial-arts-scheduling-software/). Explore [MMA Gym Software](/mma-gym-software/) solutions.
 
 ## Frequently Asked Questions
 

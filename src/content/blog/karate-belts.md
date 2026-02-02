@@ -201,7 +201,7 @@ Stripes (small pieces of tape on the belt) mark progress between full belt ranks
 
 ## Digital Tracking
 
-Modern karate schools increasingly use software to track belt progression, attendance requirements, and curriculum completion. This systematic approach ensures consistent standards and helps students understand exactly what they need to achieve for their next rank. Schools using dedicated karate management software can automate eligibility checking and testing notifications, making the advancement process transparent and well-organised.
+Modern karate schools increasingly use software to track belt progression, attendance requirements, and curriculum completion. This systematic approach ensures consistent standards and helps students understand exactly what they need to achieve for their next rank. Schools using dedicated karate management software can automate eligibility checking and testing notifications, making the advancement process transparent and well-organised. See how [BJJ Gym Software](/bjj-gym-software/) can help. See how [Dojo Management Software](/dojo-management-software/) can help. Learn more about [MMA Gym Software](/mma-gym-software/).
 
 ## Tracking Belt Progression in Modern Dojos
 
@@ -238,3 +238,4 @@ Whether you're a student tracking your own journey or a school owner managing hu
 **Q7: Why did my belt colour change but my friend in another school has a different colour for the same level?A: **Different karate styles and individual schools use different belt colour sequences. A green belt in one style might represent the same skill level as a blue belt in another. The important thing is progress within your own school system.
 
 **Q8: How do schools track belt progression?A: **Modern schools typically use martial arts management software to track attendance, time-in-rank, and curriculum completion. This ensures consistent standards and helps students understand their progress toward the next belt. Some systems automatically notify students when they become eligible for testing.
+ See how [Martial Arts Billing Software](/martial-arts-billing-software/) can help. Learn more about [Martial Arts CRM](/martial-arts-crm/). Check out [Martial Arts Software](/martial-arts-software/).
