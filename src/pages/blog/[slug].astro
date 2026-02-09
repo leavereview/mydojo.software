@@ -102,9 +102,9 @@ const relatedPosts = allPosts
     {post.data.image && (
       <div class="container-custom -mt-8 mb-8">
         <div class="max-w-4xl">
-          <img 
-            src={post.data.image} 
-            alt={post.data.title}
+          <img
+            src={post.data.image}
+            alt={post.data.imageAlt || post.data.title}
             class="w-full rounded-2xl shadow-xl"
           />
         </div>

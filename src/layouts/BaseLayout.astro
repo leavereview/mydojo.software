@@ -33,7 +33,14 @@ const {
 const resolvedSchemaType = schemaType || (type === 'article' ? 'Article' : 'WebPage');
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const fullTitle = title === 'Home' ? 'MyDojo Software - Martial Arts Management Platform' : `${title} | MyDojo Software`;
+
+// Dynamic title suffix: skip for long titles, use shorter brand name
+const getTitleSuffix = (pageTitle: string): string => {
+  if (pageTitle === 'Home') return 'MyDojo Software - Martial Arts Management Platform';
+  if (pageTitle.length > 50) return pageTitle; // No suffix for long titles
+  return `${pageTitle} | MyDojo`;
+};
+const fullTitle = getTitleSuffix(title);
 
 // Schema.org JSON-LD
 const schemaOrg = {
@@ -50,7 +57,26 @@ const schemaOrg = {
         "width": 200,
         "height": 60
       },
-      "sameAs": []
+      "sameAs": [
+        "https://twitter.com/mydojosoftware",
+        "https://www.linkedin.com/company/mydojo-software",
+        "https://www.facebook.com/mydojosoftware"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "email": "support@mydojo.software",
+        "url": "https://mydojo.software/contact/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "124 City Road",
+        "addressLocality": "London",
+        "postalCode": "EC1V 2NX",
+        "addressCountry": "GB"
+      },
+      "foundingDate": "2024",
+      "description": "Complete martial arts management software for dojos, karate schools, MMA gyms, and BJJ academies. Streamline scheduling, billing, and student management."
     },
     {
       "@type": "WebSite",

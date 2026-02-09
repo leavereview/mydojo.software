@@ -4,7 +4,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://mydojo.software/sitemap.xml
+Sitemap: https://mydojo.software/sitemap-index.xml
 
 # Disallow admin and private paths (if any)
 Disallow: /api/
