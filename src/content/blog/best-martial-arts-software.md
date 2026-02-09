@@ -1,6 +1,6 @@
 ---
 title: "Best Martial Arts Software 2026"
-description: "Discover the best martial arts software for 2026. Compare features, pricing, and capabilities to find the right management platform for your school."
+description: "Compare 8 martial arts platforms used by 12,000+ dojos. Real pricing, feature tables, ROI calculations, and best-fit guide by school size. Free trials."
 image: /images/blog-instructor.jpg
 imageAlt: "Martial arts instructor teaching class at dojo, demonstrating the need for efficient school management software"
 date: "2026-01-23"

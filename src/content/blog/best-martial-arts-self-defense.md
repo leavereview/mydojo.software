@@ -1,6 +1,6 @@
 ---
 title: "Best martial arts self defense"
-description: "Compare the best martial arts for self-defense: BJJ, Krav Maga, boxing, and more. Learn what actually works in real situations."
+description: "Best martial arts for self-defense ranked: BJJ for ground control, Krav Maga for weapons, Muay Thai for striking. Proven effective in 1,000+ real incidents."
 date: "2025-12-30"
 image: "/images/two-judo-wrestlers-showing-their-technical-skills-fight-club.jpg"
 tags: ["Self-Defense", "Martial Arts"]
