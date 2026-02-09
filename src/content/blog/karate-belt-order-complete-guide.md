@@ -87,6 +87,8 @@ This seemingly backward counting for kyu ranks reflects the traditional Japanese
 
 ## Variations in Karate Belt Order by Style
 
+Different [types of martial arts](/blog/types-of-martial-arts/) have unique belt progression systems. Here's how the major karate styles differ:
+
 ### Shotokan Karate Belt Progression
 
 Shotokan, one of the most popular karate styles globally, typically follows this belt order:
@@ -343,7 +345,7 @@ Successful martial arts schools maintain detailed promotion requirements for eac
 
 ### Technology Solutions for Tracking Progress
 
-Modern [dojo management software](https://mydojo.software/dojo-management-software/) streamlines the belt promotion process by:
+Modern [dojo management software](/blog/best-martial-arts-software/) streamlines the belt promotion process by:
 
 - **Progress Tracking**: Individual student advancement against requirements
 - **Automated Eligibility**: System flags students ready for testing based on time, attendance, and instructor marks
