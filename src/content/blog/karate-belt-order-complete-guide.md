@@ -3,6 +3,7 @@ title: "Karate Belt Order Guide"
 description: "Complete karate belt system guide: historical origins, belt meanings, style variations, timeline expectations, testing requirements, and modern tracking. 3-5 year journey from white to black belt."
 date: "2026-01-06"
 image: "/images/black-white-portrait-athlete-participating-olympic-championship-sports.jpg"
+imageAlt: "Karate athlete in traditional white gi demonstrating martial arts stance during competition, representing progression through belt ranks"
 tags: ["Karate", "Belts"]
 author: "MyDojo Team"
 faqs:

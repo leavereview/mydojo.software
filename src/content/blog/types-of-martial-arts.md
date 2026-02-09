@@ -3,6 +3,7 @@ title: "Types of Martial Arts: Complete Guide to Fighting Styles"
 description: "Explore different types of martial arts from around the world. Complete guide to striking, grappling, and hybrid styles to find the right martial art for you."
 date: "2026-02-09"
 image: "/images/karate-player-performing-karate-stance.jpg"
+imageAlt: "Martial artist in karate gi performing traditional fighting stance, demonstrating fundamental technique used across striking martial arts"
 tags: ["Martial Arts", "Training"]
 author: "MyDojo Team"
 ---

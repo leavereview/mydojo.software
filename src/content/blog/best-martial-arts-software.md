@@ -2,6 +2,7 @@
 title: "Best Martial Arts Software 2026"
 description: "Discover the best martial arts software for 2026. Compare features, pricing, and capabilities to find the right management platform for your school."
 image: /images/blog-instructor.jpg
+imageAlt: "Martial arts instructor teaching class at dojo, demonstrating the need for efficient school management software"
 date: "2026-01-23"
 tags: ["Software"]
 author: "MyDojo Team"
