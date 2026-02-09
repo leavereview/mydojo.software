@@ -140,7 +140,7 @@ You won't be expected to perform complex techniques or spar with experienced stu
 
 ### Style Considerations
 
-Major karate styles for adults:
+Major karate styles for adults (learn about [other martial arts styles](/blog/types-of-martial-arts/) if you're considering alternatives):
 
 **Shotokan**
 - Emphasis on strong stances and powerful techniques
@@ -190,7 +190,7 @@ Each style has merit. Visit schools to see what resonates with you.
 - How do you handle beginners with no experience?
 - What's your approach to contact and sparring?
 - What are the costs and contract terms?
-- What's the typical progression timeline?
+- What's the typical progression timeline? (Learn about [karate belt progression](/blog/karate-belt-order-complete-guide/) to understand the journey)
 
 ## Training Tips for Adult Beginners
 
