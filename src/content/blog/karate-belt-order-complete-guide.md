@@ -489,6 +489,19 @@ The belt system serves as more than just a hierarchy—it's a motivational tool,
 - Clear documented standards prevent disputes and maintain quality
 - Modern tracking software streamlines administration while preserving tradition
 
-For dojo owners looking to streamline their belt promotion processes while maintaining traditional standards, [MyDojo's martial arts management software](https://mydojo.software/martial-arts-software/) offers comprehensive tools to track student progress, manage testing requirements, and celebrate achievements—helping you focus on what matters most: developing skilled, confident martial artists.
+---
 
-Ready to modernize your belt tracking while honoring tradition? [Start your free 14-day trial](/contact/) and see how systematic progress tracking transforms student engagement and school operations.
+## For Dojo Owners
+
+Running a dojo means managing belt testing, student records, and scheduling alongside teaching. The right software saves hours every week:
+
+- **[Dojo Management Software](/dojo-management-software/)** — student records, belt tracking, and promotion workflows
+- **[Karate School Software](/karate-school-software/)** — purpose-built tools for karate schools
+- **[Martial Arts Scheduling Software](/martial-arts-scheduling-software/)** — class scheduling and attendance tracking
+- **[Martial Arts Billing Software](/martial-arts-billing-software/)** — automated fees, memberships, and payment collection
+- **[Martial Arts CRM](/martial-arts-crm/)** — manage leads, trials, and student retention
+- **[BJJ Gym Software](/bjj-gym-software/)** — if you teach Brazilian jiu-jitsu alongside karate
+- **[MMA Gym Software](/mma-gym-software/)** — for multi-discipline training programmes
+- **[Martial Arts Software](/martial-arts-software/)** — all-in-one platform for any martial art
+
+[Start your free 14-day trial](/contact/) and see how systematic progress tracking transforms student engagement and school operations.
