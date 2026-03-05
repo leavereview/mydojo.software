@@ -7,6 +7,10 @@ tags: ["Taekwondo", "Belts"]
 author: "MyDojo Team"
 ---
 
+## Running Belt Grading Events at Your Taekwondo School
+
+Belt grading days are among the most important events in your taekwondo school calendar. Well-run gradings build student confidence, showcase your school's standards, and create community moments that drive word-of-mouth referrals. [Martial arts scheduling software](/martial-arts-scheduling-software/) helps you plan grading events, send automated reminders, track attendance, and manage payment for grading fees — all in one place. Below is a complete breakdown of the taekwondo belt system, which underpins your grading structure.
+
 ## Taekwondo Belt Order and Colors: The Complete Guide to TKD Belt Ranks
 
 The taekwondo belt system marks a student's journey from white belt beginner to black belt practitioner—and beyond. Like karate, taekwondo uses coloured belts to indicate rank, but the specific colours, order, and requirements vary between the major taekwondo organisations.
@@ -135,7 +139,7 @@ Children may earn "junior black belt" (poom) before age 15, which converts to ad
 
 ## Tracking Taekwondo Belt Progression
 
-Modern taekwondo schools use [martial arts software](/martial-arts-software/) to track student progression through the belt ranks. These systems monitor: Check out [Dojo Management Software](/dojo-management-software/). Explore [Karate School Software](/karate-school-software/) solutions. Learn more about [Martial Arts CRM](/martial-arts-crm/). See how [MMA Gym Software](/mma-gym-software/) can help.
+Modern taekwondo schools use [martial arts software](/martial-arts-software/) to track student progression through the belt ranks. These systems monitor:
 
 - Current rank and complete belt history
 
@@ -179,12 +183,8 @@ Red belt signifies danger and represents the student's developing power that mus
 
 No. While both use coloured belts progressing to black, the specific colours and order differ. Taekwondo typically emphasises red belt before black, while [karate belt order](/blog/karate-belts/) often uses brown belt at the advanced level. The meanings and testing requirements also vary between arts.
 
-## Related Guides
+## Related Articles
 
-- [Karate Belt Colors & Order](/blog/karate-belts/) — Compare to karate's ranking system
-
-- [BJJ Belt Ranks](/blog/jiu-jitsu-belt-ranks/) — Understand Brazilian Jiu-Jitsu's belt system
-
-- [Types of Martial Arts](/blog/types-of-martial-arts/) — Explore different fighting styles
-
-- [Martial Arts Software](/martial-arts-software/) — Track student belt progression
+- [Martial Arts Scheduling Software](/martial-arts-scheduling-software/) — schedule grading events and manage TKD class timetables
+- [Karate Belt Order Complete Guide](/blog/karate-belt-order-complete-guide/) — belt systems in similar traditional martial arts
+- [Types of Martial Arts](/blog/types-of-martial-arts/) — how taekwondo compares to other styles

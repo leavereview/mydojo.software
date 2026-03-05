@@ -7,6 +7,10 @@ tags: ["BJJ", "Belts"]
 author: "MyDojo Team"
 ---
 
+## Teaching BJJ Belt Ranks: A Guide for School Owners
+
+Understanding and communicating your belt rank system clearly is fundamental to running a successful BJJ school. Students join expecting a structured journey — your job as a school owner is to define that journey, track their progress, and recognise their achievements consistently. [BJJ gym software](/bjj-gym-software/) makes it easy to log belt promotions, track stripe milestones, and set automated reminders for testing eligibility. Here's the complete breakdown of BJJ belt ranks, which you can use as the foundation for your own promotion criteria.
+
 ## Brazilian Jiu-Jitsu Belt Ranks: The Complete Guide to BJJ Belt Order and Progression
 
 The Brazilian Jiu-Jitsu belt system represents one of the most demanding progression paths in martial arts. Unlike karate or taekwondo where black belt might be achieved in 3-5 years, BJJ practitioners typically spend 10-15 years reaching black belt—a timeline that reflects the art's depth and the skill required at each level.
@@ -129,7 +133,7 @@ Some academies hold formal gradings while others surprise students with promotio
 
 ## Tracking BJJ Progression
 
-Given the long timeline between belts, tracking progress becomes important for both students and instructors. Modern [martial arts software](/martial-arts-software/) helps academies monitor: Learn more about [BJJ Gym Software](/bjj-gym-software/). Explore [Karate School Software](/karate-school-software/) solutions. Check out [Martial Arts Billing Software](/martial-arts-billing-software/). Learn more about [Martial Arts CRM](/martial-arts-crm/). Learn more about [Martial Arts Scheduling Software](/martial-arts-scheduling-software/).
+Given the long timeline between belts, tracking progress becomes important for both students and instructors. Modern [martial arts software](/martial-arts-software/) helps academies monitor:
 
 - Stripe and belt promotion history
 
@@ -175,12 +179,10 @@ Brazilian Jiu-Jitsu uses white, blue, purple, brown, and black belts. Traditiona
 
 ## How do BJJ academies track belt progression?
 
-Modern academies use [martial arts management software](/martial-arts-software/) to track attendance, stripe awards, belt promotions, and curriculum progress. This helps instructors monitor student development and ensures promotion eligibility requirements are met. Explore [Dojo Management Software](/dojo-management-software/) solutions.
+Modern academies use [martial arts management software](/martial-arts-software/) to track attendance, stripe awards, belt promotions, and curriculum progress. This helps instructors monitor student development and ensures promotion eligibility requirements are met.
 
-## Related Guides
+## Related Articles
 
-- [Karate Belt Colors & Order](/blog/karate-belts/) — How the original belt system works
-
-- [Types of Martial Arts](/blog/types-of-martial-arts/) — Compare BJJ to other fighting styles
-
-- [MMA Gym Software](/mma-gym-software/) — Multi-discipline tracking for BJJ and striking
+- [BJJ Gym Software](/bjj-gym-software/) — manage belt ranks and student progression at your BJJ academy
+- [BJJ Belts Order Complete Guide](/blog/bjj-belts-order-complete-guide/) — complete guide to the BJJ progression system
+- [BJJ Blue Belt Guide](/blog/bjj-blue-belt-guide/) — preparing students for their blue belt test

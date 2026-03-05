@@ -5,6 +5,70 @@ import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
 import StatisticsSection from '../components/seo/StatisticsSection.astro';
 import ComparisonTable from '../components/seo/ComparisonTable.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+import ScreenshotPlaceholder from '../components/ScreenshotPlaceholder.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is MMA gym software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MMA gym software is a management platform designed for mixed martial arts facilities. It handles multi-discipline class scheduling (BJJ, Muay Thai, wrestling, boxing, MMA), fighter development tracking, varied membership models, and unique operational requirements of gyms serving both recreational members and competitive athletes. Software tracks progression across multiple arts simultaneously, manages fight camp scheduling, and provides performance analytics for fighters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does MMA software handle multiple disciplines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quality MMA software supports separate class categories, progression systems, and scheduling for each discipline (BJJ, striking, wrestling, MMA). Students can track advancement in each art independently while maintaining a unified membership and payment relationship. You can configure BJJ belt progression (white to black), striking skill levels (beginner/intermediate/advanced), and MMA-specific competition readiness assessments all within one student profile."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can MMA software track fighter development?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, competition-focused features include training logs documenting rounds and techniques, sparring session records with partner information, fight history and results, weight tracking for cut management, goal setting and milestone tracking, and video integration for technique review. Coaches can monitor fighter preparation over entire fight camps, identify training gaps, and adjust camp schedules based on performance data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What membership options should MMA software support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MMA software should accommodate all-access memberships covering every discipline, single-discipline plans (BJJ-only, striking-only), competition team memberships with additional training access, drop-in and punch card options for visitors, private coaching packages sold separately, and family memberships for households training together. MyDojo supports unlimited membership tier configurations with automatic billing and proration for mid-cycle changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does MMA software track BJJ belt ranks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, MMA software includes complete BJJ belt progression tracking from white through black belt with 4 stripes per belt, time-in-rank requirements, testing eligibility automation, and promotion history. This exists alongside progression systems for striking (beginner/intermediate/advanced skill levels), wrestling achievement tracking, and MMA competition readiness assessments. Students training multiple disciplines see all their progressions in one unified profile."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can MMA software manage fight camps and competition schedules?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, professional MMA software includes fight camp management with extended private session booking during camps, fighter availability tracking for sparring partners, recovery period blocking after competitions, weigh-in and event date tracking, and camp-specific training plan templates. You can assign sparring partners based on weight class and style matchups, track rounds completed by discipline, and monitor whether fighters are hitting volume targets across their camp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does MMA gym software cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MMA gym software typically costs £80-200 per month depending on gym size and features. Smaller gyms (under 100 members) find suitable options at £80-120 monthly. Mid-size facilities (100-300 members) pay £120-160. Large MMA academies with competition teams and multiple coaches pay £160-200. Pricing models include flat-rate (unlimited members) or per-member (£1-3 per active member). MyDojo offers £99/month flat-rate for unlimited members."
+      }
+    }
+  ]
+};
 
 const mmaStats = [
   {
@@ -175,6 +239,7 @@ const faqItems = [
   title="MMA Gym Software (2026)"
   description="MMA gym management software for mixed martial arts academies. Multi-discipline training, fighter development tracking, competition team management, and flexible membership options."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <!-- Breadcrumbs -->
   <BreadcrumbsEnhanced
     site="mydojo"
@@ -225,6 +290,8 @@ const faqItems = [
           This dual mission—developing competitive athletes alongside recreational members—creates operational complexity that single-discipline schools rarely encounter. MMA gym software addresses these challenges with features designed for multi-discipline environments, fighter management, and the performance tracking that combat sports demand.
         </p>
 
+        <ScreenshotPlaceholder caption="MMA gym dashboard showing multi-discipline class schedule, member activity across BJJ, Muay Thai, and wrestling, and revenue overview" />
+
         <h3>Multi-Discipline Training Structure</h3>
 
         <p>A typical MMA gym offers instruction across several combat disciplines:</p>
@@ -240,6 +307,8 @@ const faqItems = [
         <p>
           Each discipline may have its own progression system. BJJ follows belt ranks from white through black. Striking arts may use different advancement structures. Wrestling typically lacks formal ranking altogether. Software must accommodate these parallel systems while maintaining unified student records.
         </p>
+
+        <ScreenshotPlaceholder caption="Fighter development profile showing training log, sparring session history, fight record, and weight tracking over time" />
 
         <h3>Recreational vs Competition Focus</h3>
 
@@ -291,6 +360,8 @@ const faqItems = [
           <li>Capacity limits and waitlists per class</li>
         </ul>
 
+        <ScreenshotPlaceholder caption="Multi-discipline membership management screen showing all-access and single-discipline plans with usage and billing status" />
+
         <h3>2. Fighter Development Tracking</h3>
         <ul>
           <li>Training logs documenting rounds, techniques, and focus areas</li>
@@ -320,6 +391,8 @@ const faqItems = [
           <li>Private coaching packages sold separately</li>
           <li>Family memberships with automatic sibling discounts</li>
         </ul>
+
+        <ScreenshotPlaceholder caption="Fight camp scheduling view showing fighter's training plan, sparring partner assignments, and countdown to fight night" />
 
         <h3>5. Fight Camp Management</h3>
         <ul>
@@ -361,6 +434,33 @@ const faqItems = [
           <li><a href="/blog/best-martial-arts-software/">Best Martial Arts Software</a> — Detailed comparisons</li>
         </ul>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold text-brand-navy mb-6 text-center">What MMA Gym Owners Say</h2>
+        {/* PLACEHOLDER — replace with real testimonials */}
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <p class="text-gray-700 italic mb-4">"Running four disciplines under one roof was chaos before MyDojo. Now I have separate class tracks for BJJ, Muay Thai, wrestling, and MMA — all in one system. My coaches love the fighter development logs."</p>
+            <div class="font-semibold text-brand-navy">Tony Hughes</div>
+            <div class="text-sm text-gray-500">Owner, Hughes MMA & Fitness, Glasgow</div>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <p class="text-gray-700 italic mb-4">"The all-access membership model was a game changer. Students can train every discipline on one membership, and the system handles all the billing automatically. Revenue per member went up significantly."</p>
+            <div class="font-semibold text-brand-navy">Keisha Brown</div>
+            <div class="text-sm text-gray-500">Head Coach, Brown's Fight Academy, Leeds</div>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <p class="text-gray-700 italic mb-4">"Fight camp scheduling used to mean dozens of messages and spreadsheets. MyDojo handles fighter availability, sparring partner matching, and private session booking in one place. It's transformed how we prepare fighters."</p>
+            <div class="font-semibold text-brand-navy">Dan Reilly</div>
+            <div class="text-sm text-gray-500">Director, Reilly Combat Sports, Liverpool</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

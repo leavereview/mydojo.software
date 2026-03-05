@@ -7,6 +7,10 @@ tags: ["BJJ", "Belts", "Training"]
 author: "MyDojo Team"
 ---
 
+## Preparing Your Students for the BJJ Blue Belt Test
+
+For BJJ gym owners, the blue belt promotion is a make-or-break moment in student retention. Students who earn their blue belt are far more likely to continue training — but students who feel the test was unclear or unfair often leave. Setting explicit expectations, tracking attendance and progress with [BJJ gym software](/bjj-gym-software/), and communicating your promotion criteria clearly makes the difference. This guide walks through everything you and your students need to know about the BJJ blue belt requirement — use it as a reference when setting your own promotion standards.
+
 The blue belt is the first major milestone in Brazilian Jiu-Jitsu. It represents the transition from complete beginner to someone who genuinely understands the art. But what does it actually take to earn one? How long does it take? And what should you expect once you get there?
 
 This guide covers everything you need to know about the BJJ blue belt, whether you're a white belt working toward it, an instructor wondering about promotion standards, or someone curious about starting your [BJJ journey](/bjj-gym-software/).
@@ -266,7 +270,7 @@ Track student progress systematically. [Martial arts software](/dojo-management-
 - Attendance history
 - Competition results
 - Belt test scores
-- Instructor notes Learn more about [Karate School Software](/karate-school-software/). Check out [Martial Arts Billing Software](/martial-arts-billing-software/). Learn more about [Martial Arts CRM](/martial-arts-crm/). Learn more about [Martial Arts Scheduling Software](/martial-arts-scheduling-software/). Check out [Martial Arts Software](/martial-arts-software/). Learn more about [MMA Gym Software](/mma-gym-software/).
+- Instructor notes
 
 ### The Sandbagging Question
 
@@ -325,3 +329,9 @@ It's not about being "good" at BJJ—it's about having a solid foundation for th
 Tracking student progress toward blue belt and beyond requires organisation. [MyDojo.Software](/bjj-gym-software/) helps you monitor attendance, record technique proficiency, and manage promotions systematically.
 
 [Start your free trial](/contact/) and see how much easier running a BJJ gym can be.
+
+## Related Articles
+
+- [BJJ Gym Software](/bjj-gym-software/) — track student progression and belt promotions automatically
+- [BJJ Belts Order Complete Guide](/blog/bjj-belts-order-complete-guide/) — the full BJJ belt system explained
+- [Jiu Jitsu Belt Ranks](/blog/jiu-jitsu-belt-ranks/) — detailed breakdown of each BJJ rank

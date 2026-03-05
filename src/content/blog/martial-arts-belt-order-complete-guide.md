@@ -7,6 +7,10 @@ tags: ["Belts", "Martial Arts"]
 author: "MyDojo Team"
 ---
 
+## Multi-Style Belt Tracking for Martial Arts Schools
+
+If your dojo teaches multiple disciplines — karate, BJJ, taekwondo, or a combination — managing belt progressions across different styles is a genuine operational challenge. Each style has its own ranking system, requirements, and timeline. [Martial arts software](/martial-arts-software/) designed for multi-style schools lets you track students across disciplines in one place, ensuring no promotions are missed and every student's journey is properly documented. This guide covers the major martial arts belt systems so you understand what you're tracking — and how they differ.
+
 Picture this: a new student walks into your dojo, excited to begin their martial arts journey, and immediately asks, "How long until I get my black belt?" As a martial arts instructor, you know the answer isn't simple—it depends entirely on the discipline, the specific **martial arts belt order** system you follow, and the individual student's dedication. With over 200 different martial arts styles worldwide, each with unique ranking systems, understanding belt progression is crucial for both instructors and students navigating their martial arts path.
 
 Whether you're managing a traditional karate dojo or a modern mixed martial arts gym, having a clear grasp of various belt ranking systems helps you better serve your students and establish credible progression pathways in your school.
@@ -167,3 +171,9 @@ Understanding martial arts belt order systems is essential for any school owner 
 The key lies not in perfectly following any single traditional system, but in creating consistent, motivating progression pathways that serve your students and community. Modern technology makes managing these systems easier than ever, allowing you to focus on what matters most—developing skilled, confident martial artists.
 
 Ready to streamline your belt ranking system? MyDojo's comprehensive management platform helps martial arts schools track student progress, manage promotions, and maintain consistent standards across all programs, making your ranking system work as hard as your students do.
+
+## Related Articles
+
+- [Martial Arts Software](/martial-arts-software/) — manage belt progressions across multiple disciplines
+- [Karate Belt Order Complete Guide](/blog/karate-belt-order-complete-guide/) — detailed guide to the karate ranking system
+- [Types of Martial Arts](/blog/types-of-martial-arts/) — choosing disciplines to offer at your school

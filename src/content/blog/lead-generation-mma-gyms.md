@@ -89,7 +89,7 @@ When someone searches "MMA gym near me" or "Brazilian jiu-jitsu [your city]," yo
 - Proper category selection (Martial Arts School, MMA Gym)
 - Quality photos of your facility, classes, and team
 - Regular posts (events, promotions, class highlights)
-- Active review management Explore [Karate School Software](/karate-school-software/) solutions. See how [Martial Arts Billing Software](/martial-arts-billing-software/) can help.
+- Active review management
 
 ### Local Search Optimization
 
@@ -436,3 +436,9 @@ None of these require massive budgets—just consistent effort and attention.
 More leads means more members to track. [MyDojo.Software](/mma-gym-software/) helps you manage leads, memberships, and your entire martial arts business from one platform.
 
 [Start your free trial](/contact/) and see how much easier gym management can be.
+
+## Related Articles
+
+- [MMA Gym Software](/mma-gym-software/) — software to convert and retain MMA gym members
+- [Martial Arts Marketing Tips](/blog/martial-arts-marketing-tips/) — broader marketing strategies for martial arts schools
+- [Best Martial Arts Self Defence](/blog/best-martial-arts-self-defense/) — expand your offering to attract more students

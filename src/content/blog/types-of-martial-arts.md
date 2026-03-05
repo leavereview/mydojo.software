@@ -8,6 +8,10 @@ tags: ["Martial Arts", "Training"]
 author: "MyDojo Team"
 ---
 
+## Choosing Which Martial Arts to Offer at Your School
+
+One of the most important decisions when starting or growing a martial arts school is which disciplines to offer. Each style attracts a different demographic, requires different equipment, and demands different instructor expertise. [Martial arts software](/martial-arts-software/) designed for multi-style schools can help you manage classes, students, and billing across disciplines from a single dashboard. Here's a complete breakdown of the major martial arts styles — useful both for choosing your curriculum and for educating prospective students about what makes your school unique.
+
 The world of martial arts encompasses hundreds of distinct fighting systems developed across every inhabited continent over thousands of years. From the striking arts of Southeast Asia to the grappling traditions of Brazil and Japan, each style reflects the culture and practical needs of its origin.
 
 Whether you're considering starting martial arts training, looking to cross-train in a complementary discipline, or simply curious about different combat systems, this comprehensive guide examines major martial arts categories, introduces the most popular styles worldwide, and helps you understand what distinguishes one art from another.
@@ -614,3 +618,9 @@ The best martial art is the one you'll train consistently in, with quality instr
 Whatever style interests you, quality instruction and consistent training matter more than style selection. Visit schools, try classes, talk to students and instructors, then choose the art and school where you'll enjoy training for years to come.
 
 For schools managing students across multiple martial arts disciplines, [MyDojo Software](/martial-arts-software/) handles diverse belt systems, class types, and student progression. [Start your free trial](/contact/) and focus on teaching while software handles administration.
+
+## Related Articles
+
+- [Martial Arts Software](/martial-arts-software/) — manage any style or combination of disciplines
+- [Best Martial Arts Software 2026](/blog/best-martial-arts-software/) — top management platforms reviewed
+- [Martial Arts Belt Order Complete Guide](/blog/martial-arts-belt-order-complete-guide/) — belt systems across all major styles

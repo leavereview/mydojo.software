@@ -5,6 +5,70 @@ import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
 import StatisticsSection from '../components/seo/StatisticsSection.astro';
 import ComparisonTable from '../components/seo/ComparisonTable.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+import ScreenshotPlaceholder from '../components/ScreenshotPlaceholder.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is karate school software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Karate school software is a management platform designed specifically for karate dojos. It handles student databases, kyu-dan belt progression, kata curriculum tracking, class scheduling, testing management, and billing while using karate-appropriate terminology and workflows. Software tracks students through 10 kyu grades to black belt dan ranks, monitors kata mastery, automates testing eligibility, and manages family accounts common in traditional karate schools."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can karate software track kata progress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, quality karate software includes kata library management. You can track which kata students have learned, which they're currently studying, and which are required for their next belt level. Some systems link video resources for reference, allow performance notes from instructors, and track competition kata separately from curriculum kata. Kata requirements can be mapped to specific belt ranks and styles (Shotokan, Goju-Ryu, Shito-Ryu, Wado-Ryu)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does belt testing work in karate software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The system tracks attendance and time-in-rank to determine testing eligibility automatically. When students qualify based on your criteria (minimum classes, months at current rank, curriculum completion), they can register online and pay testing fees. After the test, results are recorded with pass/fail/defer outcomes, ranks update automatically, and certificates generate with organization logos. Parents receive notification of their children's promotions automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does karate software support different styles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, configurable systems support various karate styles (Shotokan, Goju-Ryu, Shito-Ryu, Wado-Ryu, Kyokushin) with custom belt colors, kata lists, and testing requirements specific to each style's traditions. You can manage multiple styles within the same dojo, track style-specific curriculum, and maintain separate rank progressions. Many schools teaching both traditional and sport karate use different curriculum tracks within one system."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can parents manage children's accounts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, family accounts allow parents to manage multiple children from a single login. They can view schedules, track belt progress for each child, make consolidated payments with automatic sibling discounts, receive communications about their children's training, and access progress reports. Parents see which kata their children are learning, when they're eligible for testing, and attendance patterns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does karate school software cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most karate software costs £50-150 per month depending on student count and features. Smaller schools (under 75 students) typically find options at £50-80 monthly. Mid-size schools (75-200 students) pay £80-120. Larger academies or multi-location operations pay £120-200. Pricing models include flat-rate (unlimited students) or per-student (£1-2 per active student). MyDojo offers £79/month flat-rate for unlimited students."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can software track organization and federation requirements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, professional karate software tracks organization membership (JKA, SKA, WKF, ISKF, etc.) with federation-specific rank requirements, registration processes, and dan rank recognition. You can configure minimum time-in-rank based on organization standards, track federation dues and renewals, and generate reports for federation audits. Some systems integrate directly with national governing bodies for digital rank certificates and competition registration."
+      }
+    }
+  ]
+};
 
 const karateStats = [
   {
@@ -175,6 +239,7 @@ const faqItems = [
   title="Karate School Software (2026)"
   description="Karate school management software with kyu/dan belt tracking, kata progression, class scheduling, and automated billing. Built specifically for karate dojos."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <!-- Breadcrumbs -->
   <BreadcrumbsEnhanced
     site="mydojo"
@@ -225,6 +290,8 @@ const faqItems = [
           Karate school software bridges this divide by handling administrative complexity while respecting the pedagogical structures that define karate education. From tracking students through the kyu ranks to managing kihon, kata, and kumite curriculum requirements, purpose-built software supports rather than disrupts the training methodology you have established.
         </p>
 
+        <ScreenshotPlaceholder caption="Karate school dashboard showing kyu-dan rank overview, upcoming belt tests, and class attendance summary" />
+
         <h3>The Kyu-Dan Ranking System</h3>
 
         <p>
@@ -243,6 +310,8 @@ const faqItems = [
         <p>
           Software must track not just current rank but progression history, time-in-rank, attendance requirements, and specific technique mastery at each level.
         </p>
+
+        <ScreenshotPlaceholder caption="Kata library screen showing student progress through Shotokan kata requirements mapped to each kyu grade" />
 
         <h3>Curriculum Components: Kihon, Kata, and Kumite</h3>
 
@@ -299,6 +368,8 @@ const faqItems = [
           <li>Organization and federation rank requirements</li>
         </ul>
 
+        <ScreenshotPlaceholder caption="Belt testing management screen showing eligible students, online registration, and fee collection for grading events" />
+
         <h3>2. Kata Library and Progress</h3>
         <ul>
           <li>Complete kata list by style and level</li>
@@ -319,6 +390,8 @@ const faqItems = [
           <li>Certificate generation with organization logos</li>
           <li>Rank updates triggered automatically upon passing</li>
         </ul>
+
+        <ScreenshotPlaceholder caption="Parent portal showing children's belt progress, upcoming class schedule, and consolidated family billing" />
 
         <h3>4. Family and Youth Focus</h3>
         <ul>
@@ -352,6 +425,33 @@ const faqItems = [
           <li><a href="/martial-arts-billing-software/">Billing Software Features</a> — Payment processing details</li>
         </ul>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold text-brand-navy mb-6 text-center">What Karate School Owners Say</h2>
+        {/* PLACEHOLDER — replace with real testimonials */}
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <p class="text-gray-700 italic mb-4">"The kata tracking is outstanding. I can see exactly where each student is in the curriculum at a glance. Belt testing events are so much smoother now — students register online and fees are collected automatically."</p>
+            <div class="font-semibold text-brand-navy">David Kim</div>
+            <div class="text-sm text-gray-500">Chief Instructor, Kim's Karate Academy, London</div>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <p class="text-gray-700 italic mb-4">"As a JKA-affiliated school, we had very specific testing requirements. MyDojo let us configure exactly the right eligibility criteria — attendance minimums, time-in-rank, and kata requirements. It's built for karate."</p>
+            <div class="font-semibold text-brand-navy">Helen Foster</div>
+            <div class="text-sm text-gray-500">Owner, Foster Traditional Karate, Newcastle</div>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+            <p class="text-gray-700 italic mb-4">"We have over 200 students across three age groups. Before MyDojo, tracking who was eligible for grading was a nightmare. Now it's automatic and I have time to actually coach."</p>
+            <div class="font-semibold text-brand-navy">Rob Ashton</div>
+            <div class="text-sm text-gray-500">Sensei, Ashton Dojo, Edinburgh</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

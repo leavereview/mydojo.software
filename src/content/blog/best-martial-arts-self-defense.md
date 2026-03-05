@@ -7,6 +7,10 @@ tags: ["Self-Defense", "Martial Arts"]
 author: "MyDojo Team"
 ---
 
+## Teaching Self-Defence Classes: Which Styles to Offer at Your School
+
+Self-defence classes are one of the highest-converting offerings for martial arts schools — adults who can't commit to a full martial arts curriculum will often sign up for a self-defence workshop or short course. Choosing which styles to base your self-defence programme on is a strategic decision. [MMA gym software](/mma-gym-software/) lets you schedule one-off workshops, manage drop-in attendance, and convert self-defence students to regular members. Below is a breakdown of which martial arts are most effective for self-defence — giving you the evidence base to design your curriculum.
+
 ## Best Martial Arts for Self Defense: What Actually Works
 
 When choosing a martial art for self-defense, the options can be overwhelming. Karate, taekwondo, kung fu, Brazilian Jiu-Jitsu, boxing, Muay Thai, Krav Maga, MMA—each claims effectiveness, but which actually work when it matters?
@@ -59,7 +63,7 @@ Can you train regularly without constant injury? Is there a school near you? The
 
 **Time to basic competence:** 6-12 months
 
-Learn more about the [BJJ belt ranking system](/blog/jiu-jitsu-belt-ranks/) and progression timeline. Explore [BJJ Gym Software](/bjj-gym-software/) solutions. Check out [Dojo Management Software](/dojo-management-software/). Check out [Karate School Software](/karate-school-software/).
+Learn more about the [BJJ belt ranking system](/blog/jiu-jitsu-belt-ranks/) and progression timeline.
 
 ## 2. Muay Thai
 
@@ -135,7 +139,7 @@ Learn more about the [BJJ belt ranking system](/blog/jiu-jitsu-belt-ranks/) and 
 
 ## 5. MMA (Mixed Martial Arts)
 
-**Why it works:** MMA combines the most effective techniques from multiple martial arts into a complete fighting system. Training MMA means developing skills in striking, wrestling, and ground fighting—covering all ranges. See how [Martial Arts Billing Software](/martial-arts-billing-software/) can help. Learn more about [Martial Arts CRM](/martial-arts-crm/). See how [Martial Arts Scheduling Software](/martial-arts-scheduling-software/) can help. Check out [Martial Arts Software](/martial-arts-software/).
+**Why it works:** MMA combines the most effective techniques from multiple martial arts into a complete fighting system. Training MMA means developing skills in striking, wrestling, and ground fighting—covering all ranges.
 
 **Strengths:**
 
@@ -245,12 +249,8 @@ Karate can be effective for self-defense if the school emphasizes practical spar
 
 Either works. Striking (boxing, Muay Thai) gives faster early results and addresses the standing range where fights begin. Grappling (BJJ, wrestling) addresses where fights often end and helps against larger opponents. Eventually, learning both is ideal.
 
-## Related Guides
+## Related Articles
 
-- [Types of Martial Arts](/blog/types-of-martial-arts/) — Complete overview of fighting styles
-
-- [BJJ Belt Ranks](/blog/jiu-jitsu-belt-ranks/) — Understanding jiu-jitsu progression
-
-- [Karate Belts](/blog/karate-belts/) — Karate ranking system explained
-
-- [MMA Gym Software](/mma-gym-software/) — Managing multi-discipline training
+- [MMA Gym Software](/mma-gym-software/) — manage self-defence and MMA classes in one platform
+- [MMA Gym Lead Generation Strategies](/blog/lead-generation-mma-gyms/) — attract students to your self-defence programme
+- [Types of Martial Arts](/blog/types-of-martial-arts/) — complete guide to martial arts styles and their applications

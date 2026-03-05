@@ -126,7 +126,7 @@ Smaller schools or those starting out need functional software without overwhelm
 | MyDojo | Excellent | Yes | Yes | Yes |
 | Zen Planner | Good | Yes | Limited | Yes |
 | Mindbody | Basic | Limited | No | No |
-| Glofox | Basic | No | No | No | Explore [BJJ Gym Software](/bjj-gym-software/) solutions. See how [Dojo Management Software](/dojo-management-software/) can help. Check out [Karate School Software](/karate-school-software/). Learn more about [MMA Gym Software](/mma-gym-software/).
+| Glofox | Basic | No | No | No |
 
 ### Scheduling Features
 
@@ -171,7 +171,7 @@ Smaller schools or those starting out need functional software without overwhelm
 - Built for martial arts
 - Good belt tracking
 - Lead management included
-- Reasonable pricing Check out [Martial Arts Billing Software](/martial-arts-billing-software/). Learn more about [Martial Arts CRM](/martial-arts-crm/). Learn more about [Martial Arts Scheduling Software](/martial-arts-scheduling-software/).
+- Reasonable pricing
 
 **Weaknesses:**
 - Interface can feel dated
@@ -401,3 +401,9 @@ Trial before committing. The best software is what you'll actually use effective
 ## Try MyDojo.Software
 
 See if our martial arts-focused approach fits your school. [Start your free trial](/contact/) and evaluate our belt tracking, scheduling, and billing features with your actual data.
+
+## Related Articles
+
+- [Martial Arts Software](/martial-arts-software/) — the leading platform for UK martial arts schools
+- [Gym Management Software Comparison](/blog/gym-management-software-comparison/) — compare the top platforms in detail
+- [Gym CRM Software Guide](/blog/gym-crm-software-guide/) — choosing the right CRM for your school

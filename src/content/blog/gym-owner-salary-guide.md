@@ -216,7 +216,7 @@ Schools with diverse revenue streams typically earn more.
 **Operational efficiency:**
 - [Management software](/martial-arts-software/) reduces administrative time
 - Automated billing reduces missed payments
-- Better scheduling maximises mat utilisation See how [BJJ Gym Software](/bjj-gym-software/) can help. See how [Karate School Software](/karate-school-software/) can help. See how [Martial Arts Billing Software](/martial-arts-billing-software/) can help. Learn more about [Martial Arts CRM](/martial-arts-crm/). Check out [Martial Arts Scheduling Software](/martial-arts-scheduling-software/). Learn more about [MMA Gym Software](/mma-gym-software/).
+- Better scheduling maximises mat utilisation
 
 **Smart spending:**
 - Negotiate rent at lease renewal
@@ -327,3 +327,9 @@ Realistic expectations help you plan properly, whether you're entering the indus
 Better systems mean more efficiency and higher margins. [MyDojo.Software](/dojo-management-software/) helps martial arts schools streamline operations, reduce administrative time, and focus on what generates revenue—great instruction.
 
 [Start your free trial](/contact/) and see how the right tools support your business goals.
+
+## Related Articles
+
+- [Dojo Management Software](/dojo-management-software/) — software to increase profitability and reduce admin
+- [Cost to Open a Gym](/blog/cost-to-open-gym/) — full breakdown of startup costs and ROI
+- [Member Retention Strategies](/blog/member-retention-strategies/) — strategies to increase revenue per student
