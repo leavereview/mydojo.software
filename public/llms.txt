@@ -1,0 +1,38 @@
+# MyDojo
+
+> Complete martial arts school management software for dojos, karate schools, BJJ academies, and MMA gyms.
+
+MyDojo helps martial arts school owners automate scheduling, billing, and student tracking — saving 10+ hours per week. 2,000+ martial arts schools enrolled. 14-day free trial, no credit card required.
+
+## Core Pages
+
+- [Home](https://mydojo.software/): Product overview, key features, testimonials, and free trial call to action
+- [Dojo Management Software](https://mydojo.software/dojo-management-software/): Full product overview covering class scheduling, student management, belt tracking, and billing
+- [Pricing](https://mydojo.software/pricing/): Starter, Growth, and Professional plans with feature comparison
+- [About](https://mydojo.software/about/): Founder story and product mission
+- [Contact](https://mydojo.software/contact/): Start a free trial or get in touch
+
+## Feature Pages
+
+- [Martial Arts Scheduling Software](https://mydojo.software/martial-arts-scheduling-software/): Class and instructor scheduling with conflict detection
+- [Martial Arts Billing Software](https://mydojo.software/martial-arts-billing-software/): Automated invoicing, payment recording, and overdue reminders
+- [Martial Arts CRM](https://mydojo.software/martial-arts-crm/): Student and prospect management, attendance tracking, and communication tools
+
+## Vertical Pages
+
+- [Karate School Software](https://mydojo.software/karate-school-software/): Management tools tailored for karate dojos and schools
+- [BJJ Gym Software](https://mydojo.software/bjj-gym-software/): Software for Brazilian jiu-jitsu gyms and academies
+- [MMA Gym Software](https://mydojo.software/mma-gym-software/): Software for mixed martial arts gyms and fight teams
+
+## Tools
+
+- [Dojo Revenue Calculator](https://mydojo.software/dojo-revenue-calculator/): Free calculator to model gym revenue, class profitability, instructor costs, and growth projections using UK industry benchmarks
+
+## Blog
+
+- [Blog](https://mydojo.software/blog/): 17 guides covering martial arts school management, training methodology, student retention, and business growth
+
+## Legal
+
+- [Privacy Policy](https://mydojo.software/privacy-policy/)
+- [Terms of Service](https://mydojo.software/terms/)
